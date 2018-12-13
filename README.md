@@ -2,6 +2,12 @@
 A list of concise write-ups on small things I learn day to day across a
 variety of languages and technologies.
 
+2 TILs and counting ...
+---
+### Django
+- [.values()](django/values.md)
+- [.values_list()](django/values-list.md)
+---
 ## Inspiration
 Inspired by [thoughtbot/til](https://github.com/thoughtbot/til) and [jbranchaud/til](https://github.com/jbranchaud/til)
 
