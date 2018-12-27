@@ -4,10 +4,13 @@ variety of languages and technologies.
 
 3 TILs and counting ...
 ---
+### Python
+- [pep8 E125: Continuation line with same indent as next logical line](python/pep8-e125.md)
+
 ### Django
 - [.values()](django/values.md)
 - [.values_list()](django/values-list.md)
-- [django-orm-cookbook](django-orm-cookbook.md)
+- [django-orm-cookbook](django/django-orm-cookbook.md)
 ---
 ## Inspiration
 Inspired by [thoughtbot/til](https://github.com/thoughtbot/til) and [jbranchaud/til](https://github.com/jbranchaud/til)
