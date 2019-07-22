@@ -7,6 +7,7 @@ variety of languages and technologies.
 ### Python
 - [pep8 E125: Continuation line with same indent as next logical line](python/pep8-e125.md)
 - [Remove .pyc files](python/remove-pyc.md)
+- [pipenv](python/pipenv.md)
 
 ### Django
 - [.values()](django/values.md)
