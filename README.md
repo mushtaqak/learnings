@@ -19,6 +19,10 @@ variety of languages and technologies.
 - [git](tools/git.md)
 - [npm](tools/npm.md)
 - [vscode](tools/vscode.md)
+
+### Others
+- [Software Engineering Interview Resources](others/interview-resources.md)
+
 ---
 ## Inspiration
 Inspired by [thoughtbot/til](https://github.com/thoughtbot/til) and [jbranchaud/til](https://github.com/jbranchaud/til)
