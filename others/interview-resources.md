@@ -5,10 +5,10 @@
 
 #### Python
 1. [Interview collections](https://github.com/mre/the-coding-interview)
-2. https://github.com/ramlaxman/Python-Interview-Questions
+2. [Top 100 Python Interview Questions In 2019](https://www.edureka.co/blog/interview-questions/python-interview-questions/)
 3. https://github.com/luceCoding/Programming-Interview-Questions-in-Python
 4. https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
 5. https://github.com/donnemartin/interactive-coding-challenges
-   
+
 #### React.js
 1. https://github.com/sudheerj/reactjs-interview-questions
