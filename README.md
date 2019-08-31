@@ -15,10 +15,12 @@ variety of languages and technologies.
 - [django-orm-cookbook](django/django-orm-cookbook.md)
 
 ### Tools
-- [docker](tools/docker.md)
-- [git](tools/git.md)
-- [npm](tools/npm.md)
-- [vscode](tools/vscode.md)
+#### [docker](tools/docker.md)
+#### [git](tools/git.md)
+#### [git](tools/commandline.md)
+- [Port 8000 already in use](tools/commandline.md#port-8000-already-in-use)
+#### [npm](tools/npm.md)
+#### [vscode](tools/vscode.md)
 
 ### Others
 - [Software Engineering Interview Resources](others/interview-resources.md)
