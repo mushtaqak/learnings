@@ -17,7 +17,7 @@ variety of languages and technologies.
 ### Tools
 #### [docker](tools/docker.md)
 #### [git](tools/git.md)
-#### [git](tools/commandline.md)
+#### [command line tricks and tips](tools/commandline.md)
 - [Port 8000 already in use](tools/commandline.md#port-8000-already-in-use)
 #### [npm](tools/npm.md)
 #### [vscode](tools/vscode.md)
