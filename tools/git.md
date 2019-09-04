@@ -69,3 +69,9 @@ NEW: Save with name
 
 ### Update file permissions (esp. script files)   
 > `git update-index --chmod=+x release.sh`
+
+### Patch from a remote repo
+1. Create a patch file. On remote repo: `git diff > my-latest-diff.patch`
+
+2. Download the patched file. On local machine root project directory: `scp mushtaqak@example.com:path-to-patch-file/my-latest-diff.patch my-latest-diff.patch`
+3. Apply the patch now. On local machine root project directory: `git apply my-latest-diff.patch`
