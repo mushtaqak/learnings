@@ -23,6 +23,7 @@ variety of languages and technologies.
 #### [git](tools/git.md)
 #### [command line tricks and tips](tools/commandline.md)
 - [Port 8000 already in use](tools/commandline.md#port-8000-already-in-use)
+- [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
 #### [npm](tools/npm.md)
 #### [vscode](tools/vscode.md)
 
