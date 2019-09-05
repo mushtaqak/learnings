@@ -16,6 +16,7 @@ variety of languages and technologies.
 
 ### React
 - [How to console log in react render](react/console-log.md)
+- [Error boundary](react/error-handling.md)
 
 ### Tools
 #### [docker](tools/docker.md)
