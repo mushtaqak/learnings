@@ -19,4 +19,16 @@ render() {
 }
 ```
 
+Or Place your `console.log` before the return():   
+```javascript
+render() {
+  console.log(this.props.todos);
+  return (
+    <div>
+      <h1>List of todos</h1>
+    </div>
+  );
+}
+```
+
 Read more: https://medium.com/javascript-in-plain-english/can-you-console-log-in-jsx-732f2ad46fe1
