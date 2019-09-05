@@ -31,3 +31,42 @@
     "python.pythonPath": "/Users/mushtaqali/.local/share/virtualenvs/app-nfj3kebl/bin/python3"
 }
 ```
+
+### Add prettier and eslint to react
+1. Create a `.eslintrc` file
+2. Paste the following:   
+```javascript
+{
+  "extends": ["react-app", "plugin:prettier/recommended"]
+}
+```
+3. Update `package.json`:   
+```javascript
+{
+  "scripts": {
+    "precommit": "pretty-quick --staged"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1"
+  }
+}
+```
+4. Update user settings or workspace settings:    
+```javascript
+{
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "prettier.disableLanguages": [
+    "js"
+  ],
+  "files.autoSave": "onFocusChange",
+}
+```
+
