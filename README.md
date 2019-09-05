@@ -13,6 +13,7 @@ variety of languages and technologies.
 - [.values()](django/values.md)
 - [.values_list()](django/values-list.md)
 - [django-orm-cookbook](django/django-orm-cookbook.md)
+- [reverse migrations](django/reverse-migrations.md)
 
 ### Tools
 #### [docker](tools/docker.md)
