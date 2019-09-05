@@ -2,7 +2,6 @@
 A list of concise write-ups on small things I learn day to day across a
 variety of languages and technologies.
 
-4 TILs and counting ...
 ---
 ### Python
 - [pep8 E125: Continuation line with same indent as next logical line](python/pep8-e125.md)
@@ -14,6 +13,9 @@ variety of languages and technologies.
 - [.values_list()](django/values-list.md)
 - [django-orm-cookbook](django/django-orm-cookbook.md)
 - [reverse migrations](django/reverse-migrations.md)
+
+### React
+- [How to console log in react render](react/console-log.md)
 
 ### Tools
 #### [docker](tools/docker.md)
