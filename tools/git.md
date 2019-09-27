@@ -75,3 +75,7 @@ NEW: Save with name
 
 2. Download the patched file. On local machine root project directory: `scp mushtaqak@example.com:path-to-patch-file/my-latest-diff.patch my-latest-diff.patch`
 3. Apply the patch now. On local machine root project directory: `git apply my-latest-diff.patch`
+
+### Add 2 git accounts on local machine
+https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46
+
