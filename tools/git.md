@@ -79,3 +79,6 @@ NEW: Save with name
 ### Add 2 git accounts on local machine
 https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46
 
+### Create a git last command to view last commit only
+1. `git config --global alias.last 'log -1 HEAD'`
+2. Find more about Git Tips and Tricks: https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
