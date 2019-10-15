@@ -21,3 +21,9 @@ a = all (everybody)
 r = read aces to the file   
 w = write access   
 x = execute (run) access   
+
+### Mac lock screen
+- command + Ctrl + Q
+
+### Mac show/hide hidden files/folders
+- Command + Shift + Dot
