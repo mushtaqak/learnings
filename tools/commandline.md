@@ -1,9 +1,12 @@
+### Info
+This file covers commands that are used in terminal or general commands.
+
+Note: For mac specific, go to [Mac Commands](tools/mac-commands.md).
+
 ### Port 8000 already in use
-- ```sudo kill -9 $(sudo lsof -t -i:8000)```    
-- For Mac    
-- Find:  ```lsof -i :3000```    
-- Kill:  ```kill -9 <PID>```
-- Or ```pkill -If 'manage.py'```   
+- Find: `sudo kill -9 $(sudo lsof -t -i:8000)`   
+- Or `pkill -If 'manage.py'`
+- For Mac, see [here](/tools/mac-commands.md#port-8000-already-in-use)
 
 ### chmod cheetsheet
 chmod a-w file (removes all writing permissions)   
@@ -21,9 +24,3 @@ a = all (everybody)
 r = read aces to the file   
 w = write access   
 x = execute (run) access   
-
-### Mac lock screen
-- command + Ctrl + Q
-
-### Mac show/hide hidden files/folders
-- Command + Shift + Dot
