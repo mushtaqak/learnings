@@ -21,11 +21,12 @@ variety of languages and technologies.
 ### Tools
 #### [docker](tools/docker.md)
 #### [git](tools/git.md)
-#### [command line tricks and tips](tools/commandline.md)
-- [Port 8000 already in use](tools/commandline.md#port-8000-already-in-use)
-- [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
 #### [npm](tools/npm.md)
 #### [vscode](tools/vscode.md)
+#### [Mac Commands](tools/mac-commands.md)
+- [Port 8000 already in use](tools/mac-commands.md#port-8000-already-in-use)
+#### Other Terminal Commands & Tricks
+- [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
 
 ### Others
 - [Software Engineering Interview Resources](others/interview-resources.md)
