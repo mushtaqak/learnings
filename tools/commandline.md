@@ -24,3 +24,6 @@ a = all (everybody)
 r = read aces to the file   
 w = write access   
 x = execute (run) access   
+
+### Ubuntu show/hide hidden files/folders
+- `Ctrl + H`
