@@ -40,6 +40,11 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b z`: Fullscreen a pane.
 - `Ctrl-b C-<arrow-key>`: Resize pane in direction of <arrow-key>.
 
+## Customization
+- `tmux source <path-to-config-file>`: Configure tmux with a config file. Eg. `tmux source ~/.tmux.com`.
+- A sample config file by one friend: https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2
+
 
 ## Reference and more help
 - More on tmux: https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+- More on customization: https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
