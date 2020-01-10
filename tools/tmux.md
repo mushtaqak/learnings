@@ -19,20 +19,20 @@ Fortunately installing tmux is pretty straightforward on most distributions
 a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install tmux` (Mac) should be sufficient.
 
 ## Commands and shortcut keys
-- `tmux`: Creates a tmux new session.
- - tmux new -s <session-name>`: Creates a tmux new session with <session-name>.
+- `tmux`: Creates a new tmux session.
+- `tmux new -s <session-name>`: Creates a new tmux session with <session-name>.
 - `tmux ls`: List all tmux sessions.
 - `tmux rename-session -t 0 <session-name>`: Renames session 0 to <session-name>.
 - `Ctrl-b ,`: Renames current session.
-- `tmux attach -t "session-name"`: Attach an existing tmux session.
+- `tmux attach -t <session-name>`: Attach an existing tmux session.
 - `tmux detach`: Detach the current tmux window.
 - `Ctrl-b d`: Detach the current tmux window.
 
 ## Prefixed Commands 
-- `Ctrl-b <any-keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
+- `Ctrl-b <keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
 - `Ctrl-b %`: Split the window vertically, creating a new vertical pane.
 - `Ctrl-b "`: Split the window horizentally, creating a new horizental pane.
-- `Ctrl-b <any-arrow-key>`: Navigate to particular pane using arrow keys.
+- `Ctrl-b <arrow-key>`: Navigate to particular pane using arrow keys.
 - `Ctrl-b c`: Creates a new window in the current tmux session.
 - `Ctrl-b n`: Navigate to next window in current tmux session.
 - `Ctrl-b p`: Navigate to previous window in current tmux session.
@@ -42,7 +42,7 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 
 ## Customization
 - `tmux source <path-to-config-file>`: Configure tmux with a config file. Eg. `tmux source ~/.tmux.com`.
-- A sample config file by one friend: https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2
+- A [sample config](https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2) file by [saleem-latif](github.com/saleem-latif).
 
 
 ## Reference and more help
