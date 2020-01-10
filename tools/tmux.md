@@ -1,0 +1,45 @@
+# tmux
+
+## What is tmux?
+- tmux: a terminal multiplexer.
+- Within one terminal window you can open multiple windows and split-views (called “panes” in tmux lingo).
+- Each pane will contain its own, independently running terminal instance. 
+- This allows you to have multiple terminal commands and applications running visually next to each other without the need to open multiple terminal emulator windows.
+- tmux keeps these windows and panes in a session.
+
+## Features
+- **Session handling**: Detaching from and attaching to sessions helps me with context switching and remote working.
+- **Platform independence**: I can use tmux on my Macbook, my Linux notebook, Cloud servers, Raspberry Pis, BeagleBones, etc.
+- **Customizable**: There are many ways I can customize the look and behavior of my tmux environment.
+- **Street credibility**: You don’t want others to call you a lamer, do you? :P
+
+
+## Installation
+Fortunately installing tmux is pretty straightforward on most distributions 
+a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install tmux` (Mac) should be sufficient.
+
+## Commands and shortcut keys
+- `tmux`: Creates a tmux new session.
+ - tmux new -s <session-name>`: Creates a tmux new session with <session-name>.
+- `tmux ls`: List all tmux sessions.
+- `tmux rename-session -t 0 <session-name>`: Renames session 0 to <session-name>.
+- `Ctrl-b ,`: Renames current session.
+- `tmux attach -t "session-name"`: Attach an existing tmux session.
+- `tmux detach`: Detach the current tmux window.
+- `Ctrl-b d`: Detach the current tmux window.
+
+## Prefixed Commands 
+- `Ctrl-b <any-keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
+- `Ctrl-b %`: Split the window vertically, creating a new vertical pane.
+- `Ctrl-b "`: Split the window horizentally, creating a new horizental pane.
+- `Ctrl-b <any-arrow-key>`: Navigate to particular pane using arrow keys.
+- `Ctrl-b c`: Creates a new window in the current tmux session.
+- `Ctrl-b n`: Navigate to next window in current tmux session.
+- `Ctrl-b p`: Navigate to previous window in current tmux session.
+- `Ctrl-b <any-number>`: Navigate to the window numbered <any-number> in current tmux session.
+- `Ctrl-b z`: Fullscreen a pane.
+- `Ctrl-b C-<arrow-key>`: Resize pane in direction of <arrow-key>.
+
+
+## Reference and more help
+- More on tmux: https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
