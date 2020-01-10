@@ -27,6 +27,7 @@ variety of languages and technologies.
 - [Port 8000 already in use](tools/mac-commands.md#port-8000-already-in-use)
 #### Other Terminal Commands & Tricks
 - [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
+- [tmux](tools/tmux.md)
 
 ### Others
 - [Software Engineering Interview Resources](others/interview-resources.md)
