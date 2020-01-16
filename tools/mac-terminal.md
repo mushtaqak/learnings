@@ -31,3 +31,11 @@
 ## Java installed directory in Mac
 - `brew install coreutils`
 - `greadlink -f $(which java)`
+
+### Terminal
+### Jump to start of the line
+- `Ctrl-a`
+
+### Jump to next/previous word
+- `Alt-<arrow-key>`
+
