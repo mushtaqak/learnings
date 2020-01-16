@@ -45,3 +45,7 @@ x = execute (run) access
 ### Java installed directory in Ubuntu
 - `readlink -f $(which java)`
 
+### Empty a file
+- `echo "" > file.txt`
+
+
