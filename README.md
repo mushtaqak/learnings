@@ -24,11 +24,11 @@ variety of languages and technologies.
 - [npm](tools/npm.md)
 - [vscode](tools/vscode.md)
 - [tmux](tools/tmux.md)
-- [Mac Commands](tools/mac-commands.md)
-- [Port 8000 already in use](tools/mac-commands.md#port-8000-already-in-use)
 
-### Other Terminal Commands & Tricks
+### Terminal Commands & Tricks
+- [Mac Terminal](tools/mac-terminal.md)
 - [Miscellaneous](tools/commandline.md#miscellaneous)
+- [Port 8000 already in use](tools/mac-terminal.md#port-8000-already-in-use)
 - [scp](tools/commandline.md#scp-command)
 - [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
 
