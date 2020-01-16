@@ -70,3 +70,5 @@
 }
 ```
 
+### Open any file in vscode using terminal
+- `code [path/to/path]`
