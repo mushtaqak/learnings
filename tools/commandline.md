@@ -40,3 +40,8 @@ x = execute (run) access
 ### Copy a file from remote System to local system using scp
 - `scp remote-host-username@remote-host:/path-to-remote-location path-to-local-location`
 - Example: `scp root@172.20.10.8:/root/Technical-Doc-RHS.odt /tmp`
+
+## Miscellaneous
+### Java installed directory in Ubuntu
+- `readlink -f $(which java)`
+
