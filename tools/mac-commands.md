@@ -25,3 +25,7 @@
 - `compgen -b` to display only built-in commands.
 - `compgen -ac | grep net` to search for "net" using `grep` utility.
 - `compgen -k` to list all available “keywords.”. These keywords are commands that you can use when writing command line scripts for bash to execute.
+
+### Java installed directory in Ubuntu
+- `brew install coreutils`
+- `greadlink -f $(which java)`
