@@ -28,6 +28,7 @@ variety of languages and technologies.
 - [Port 8000 already in use](tools/mac-commands.md#port-8000-already-in-use)
 #### Other Terminal Commands & Tricks
 - [Miscellaneous](tools/commandline.md#miscellaneous)
+- [scp](tools/commandline.md#scp-command)
 - [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
 
 ### Others
