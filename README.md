@@ -23,11 +23,12 @@ variety of languages and technologies.
 #### [git](tools/git.md)
 #### [npm](tools/npm.md)
 #### [vscode](tools/vscode.md)
+#### [tmux](tools/tmux.md)
 #### [Mac Commands](tools/mac-commands.md)
 - [Port 8000 already in use](tools/mac-commands.md#port-8000-already-in-use)
 #### Other Terminal Commands & Tricks
+- [Miscellaneous](tools/commandline.md#miscellaneous)
 - [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
-- [tmux](tools/tmux.md)
 
 ### Others
 - [Software Engineering Interview Resources](others/interview-resources.md)
