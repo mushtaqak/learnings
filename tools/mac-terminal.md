@@ -33,8 +33,12 @@
 - `greadlink -f $(which java)`
 
 ### Terminal
+
 ### Jump to start of the line
 - `Ctrl-a`
+
+### Jump to end of the line
+- `Ctrl-e`
 
 ### Jump to next/previous word
 - `Alt-<arrow-key>`
