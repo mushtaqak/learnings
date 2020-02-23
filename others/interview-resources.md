@@ -15,6 +15,7 @@
 ### ES6
 1. [es6-mini-crash-course](https://dev.to/chrisachard/es6-mini-crash-course-javascript-can-actually-be-fun-to-write-3b9l)
 2. [es6-tutorial-a-complete-crash-course](https://www.educative.io/blog/javascript-es6-tutorial-a-complete-crash-course)
+3. [Detailed JS Book Eloquent Javascript](https://eloquentjavascript.net/)
 
 ### React.js
 1. [reactjs-interview-questions](https://github.com/sudheerj/reactjs-interview-questions)
