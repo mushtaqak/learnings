@@ -1,7 +1,7 @@
 # Interview resources
 ## General
 1. [geeksforgeeks](https://www.geeksforgeeks.org/python-programming-language/)
-2. [awesome-interview-questions]https://github.com/MaximAbramchuck/awesome-interview-questions
+2. [awesome-interview-questions](https://github.com/MaximAbramchuck/awesome-interview-questions)
 3. [hackerrank-interview-preparation-kit](https://www.hackerrank.com/interview/interview-preparation-kit)
 
 ## Python
@@ -13,8 +13,8 @@
 
 ## Javascript
 ### ES6
-1. https://dev.to/chrisachard/es6-mini-crash-course-javascript-can-actually-be-fun-to-write-3b9l
-2. https://www.educative.io/blog/javascript-es6-tutorial-a-complete-crash-course
+1. [es6-mini-crash-course](https://dev.to/chrisachard/es6-mini-crash-course-javascript-can-actually-be-fun-to-write-3b9l)
+2. [es6-tutorial-a-complete-crash-course](https://www.educative.io/blog/javascript-es6-tutorial-a-complete-crash-course)
 
 ### React.js
-1. https://github.com/sudheerj/reactjs-interview-questions
+1. [reactjs-interview-questions](https://github.com/sudheerj/reactjs-interview-questions)
