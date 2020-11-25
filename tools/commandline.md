@@ -25,8 +25,9 @@ r = read aces to the file
 w = write access   
 x = execute (run) access   
 
-## Ubuntu show/hide hidden files/folders
-- `Ctrl + H`
+## Show/hide hidden files/folders in File Explorer / Finder
+- Ubuntu: `Ctrl + H`
+- Mac: `COMMAND + SHIFT + .`
 
 ## scp command
 ### info
