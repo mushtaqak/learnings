@@ -48,4 +48,7 @@ x = execute (run) access
 ### Empty a file
 - `echo "" > file.txt`
 
+### Reload shell / terminal
+- `exec "$SHELL"`
+
 
