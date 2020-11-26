@@ -54,6 +54,8 @@ x = execute (run) access
 
 ### Add environment variable to bashrc
 - `echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc`
+- `PATH="PATH-TO-ADD:$PATH"`: Path will be concatinated i.e new-path-1:old-path2:old-path1:
+
 
 ### Print env variables
 - `printenv`: To print all env variables.
