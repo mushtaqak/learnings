@@ -52,4 +52,9 @@ x = execute (run) access
 ### Reload shell / terminal
 - `exec "$SHELL"`
 
+### Add environment variable to bashrc
+- ` echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc`
+
+
+
 
