@@ -53,8 +53,8 @@ x = execute (run) access
 - `exec "$SHELL"`
 
 ### Add environment variable to bashrc
-- ` echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc`
+- `echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc`
 
-
-
-
+### Print env variables
+- `printenv`: To print all env variables.
+- `printenv LANG`: To print `LANG` env variable.
