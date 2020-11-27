@@ -60,3 +60,11 @@ x = execute (run) access
 ### Print env variables
 - `printenv`: To print all env variables.
 - `printenv LANG`: To print `LANG` env variable.
+
+### tail
+- `tail -n 100 error.log`: Prints last 100 lines of the log file.
+- `tail -100 errorl.log`: Prints last 100 lines of the log file.
+
+### watch
+- `watch -n 1 cat error.log`: Prints new data every 1 second of log file.
+
