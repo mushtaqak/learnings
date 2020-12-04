@@ -29,9 +29,11 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b d`: Detach the current tmux window.
 
 ## Prefixed Commands 
+- `[CMD + d]`: Split horizental [Mac].
+- `[CMD + shift + d]`: Close split horizental [Mac].
 - `Ctrl-b <keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
 - `Ctrl-b %`: Split the window vertically, creating a new vertical pane.
-- `Ctrl-b "`: Split the window horizentally, creating a new horizental pane.
+- `Ctrl-b "`: Split the window horizentally, creating a new horizental pane. 
 - `Ctrl-b <arrow-key>`: Navigate to particular pane using arrow keys.
 - `Ctrl-b c`: Creates a new window in the current tmux session.
 - `Ctrl-b n`: Navigate to next window in current tmux session.
@@ -48,3 +50,5 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 ## Reference and more help
 - More on tmux: https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
 - More on customization: https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+- tmux cheetsheet: https://gist.github.com/michaellihs/b6d46fa460fa5e429ea7ee5ff8794b96
+
