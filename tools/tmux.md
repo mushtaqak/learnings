@@ -1,6 +1,7 @@
 # tmux
 
 ## What is tmux?
+
 - tmux: a terminal multiplexer.
 - Within one terminal window you can open multiple windows and split-views (called “panes” in tmux lingo).
 - Each pane will contain its own, independently running terminal instance. 
@@ -8,6 +9,7 @@
 - tmux keeps these windows and panes in a session.
 
 ## Features
+
 - **Session handling**: Detaching from and attaching to sessions helps me with context switching and remote working.
 - **Platform independence**: I can use tmux on my Macbook, my Linux notebook, Cloud servers, Raspberry Pis, BeagleBones, etc.
 - **Customizable**: There are many ways I can customize the look and behavior of my tmux environment.
@@ -15,10 +17,12 @@
 
 
 ## Installation
+
 Fortunately installing tmux is pretty straightforward on most distributions 
 a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install tmux` (Mac) should be sufficient.
 
 ## Commands and shortcut keys
+
 - `tmux`: Creates a new tmux session.
 - `tmux new -s <session-name>`: Creates a new tmux session with <session-name>.
 - `tmux ls`: List all tmux sessions.
@@ -28,7 +32,12 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `tmux detach`: Detach the current tmux window.
 - `Ctrl-b d`: Detach the current tmux window.
 
+## Ctrl + b
+
+- You need to press `Ctrl-b` together then release and then press any command, ex: `Ctrl-b %`
+
 ## Prefixed Commands 
+
 - `[CMD + d]`: Split horizental [Mac].
 - `[CMD + shift + d]`: Close split horizental [Mac].
 - `Ctrl-b <keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
@@ -43,11 +52,13 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b C-<arrow-key>`: Resize pane in direction of <arrow-key>.
 
 ## Customization
+
 - `tmux source <path-to-config-file>`: Configure tmux with a config file. Eg. `tmux source ~/.tmux.com`.
 - A [sample config](https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2) file by [saleem-latif](github.com/saleem-latif).
 
 
 ## Reference and more help
+
 - More on tmux: https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
 - More on customization: https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
 - tmux cheetsheet: https://gist.github.com/michaellihs/b6d46fa460fa5e429ea7ee5ff8794b96
