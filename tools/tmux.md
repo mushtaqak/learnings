@@ -50,6 +50,7 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b <any-number>`: Navigate to the window numbered <any-number> in current tmux session.
 - `Ctrl-b z`: Fullscreen a pane.
 - `Ctrl-b C-<arrow-key>`: Resize pane in direction of <arrow-key>.
+- Type `exit` in any pane to close the pane.
 
 ## Customization
 
