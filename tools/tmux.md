@@ -35,7 +35,7 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b <keyboard-key>`: `Ctrl-b` is the prefix, followed by a special command.
 - You need to press `Ctrl-b` together then release and then press any command, ex: `Ctrl-b %`
 
-## Ctrl-b Commands 
+### Ctrl-b Commands 
 
 - `Ctrl-b %`: Split the window vertically, creating a new vertical pane.
 - `Ctrl-b "`: Split the window horizentally, creating a new horizental pane. 
@@ -50,7 +50,7 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 - `Ctrl-b ,`: Renames current session.
 - `Ctrl-b d`: Detach the current tmux window.
   
-### Other commands
+## Other commands
 - Type `exit` in any pane to close the pane.
 - `[COMMAND + d]`: Split horizental [Mac].
 - `[COMMAND + shift + d]`: Close split horizental [Mac].
