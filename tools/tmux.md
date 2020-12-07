@@ -59,7 +59,7 @@ a simple `sudo apt-get install tmux` (Ubuntu and derivatives) or `brew install t
 ## Customization
 
 - `tmux source <path-to-config-file>`: Configure tmux with a config file. Eg. `tmux source ~/.tmux.com`.
-- A [sample config](https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2) file by [saleem-latif](github.com/saleem-latif).
+- A [sample config](https://gist.github.com/saleem-latif/3d819db15ce929da05082c4ba1f199f2) file by [saleem-latif](http://www.github.com/saleem-latif).
 
 
 ## Reference and more help
