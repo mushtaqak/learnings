@@ -3,6 +3,7 @@
 1. [geeksforgeeks](https://www.geeksforgeeks.org/python-programming-language/)
 2. [awesome-interview-questions](https://github.com/MaximAbramchuck/awesome-interview-questions)
 3. [hackerrank-interview-preparation-kit](https://www.hackerrank.com/interview/interview-preparation-kit)
+4. [AlgoDeck Interview Prep](https://github.com/teivah/algodeck)
 
 ## Python
 1. [Interview collections](https://github.com/mre/the-coding-interview)
