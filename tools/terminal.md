@@ -34,12 +34,21 @@
 
 ### Terminal
 
-### Jump to start of the line
+#### Jump to start of the line
 - `Ctrl-a`
 
-### Jump to end of the line
+#### Jump to end of the line
 - `Ctrl-e`
 
-### Jump to next/previous word
+#### Jump to next/previous word
 - `Alt-<arrow-key>`
+
+#### How to become superuser on Ubuntu Linux
+
+- Open a terminal Window. Press Ctrl+Alt+T to open the terminal on Ubuntu
+- To become root user type:
+- `sudo -i` OR `sudo -s`
+- When promoted provide your password
+- After successful login, the $ prompt would change to # to indicate that you logged in as root user on Ubuntu
+
 
