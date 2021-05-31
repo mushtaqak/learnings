@@ -38,4 +38,5 @@
 - pyenv
 - nvm
 - postgres
+    - Download via https://www.postgresql.org/download/macosx/
 - kubectl
