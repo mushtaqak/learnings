@@ -29,7 +29,7 @@
 ## Packages
 
 - Hebrew
-  - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - git
   - `$ brew install git`
   - `$ git --version`
