@@ -13,6 +13,8 @@
   
 ## Dev Applications
 
+- VS Code
+    - Install `Settings Sync` extension and turn it on.
 - Postman
 - PG Admin4
 - Hyper terminal
