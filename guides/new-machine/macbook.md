@@ -17,12 +17,14 @@
     - Install `Settings Sync` extension and turn it on.
 - Postman
 - PG Admin4
+    - Download via https://www.pgadmin.org/download/
 - Hyper terminal
 - Docker
 
 ## Office applications
 
 - MS Teams
+    - Download via https://www.microsoft.com/en-ww/microsoft-teams/download-app#desktopAppDownloadregion
 - openconnect
   - `$ brew install openconnect`
 
@@ -38,5 +40,5 @@
 - pyenv
 - nvm
 - postgres
-    - Download via https://www.postgresql.org/download/macosx/
+    - Download via https://postgresapp.com
 - kubectl
