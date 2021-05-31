@@ -46,6 +46,7 @@
     - `$ brew install kubectl`
 - [java](./mac-jdk.md)
 - tmux
+    - `$ brew install tmux`
 - pyenv
 - nvm
 

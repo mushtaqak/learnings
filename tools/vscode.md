@@ -71,4 +71,6 @@
 ```
 
 ### Open any file in vscode using terminal
+
+- Run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
 - `code [path/to/path]`
