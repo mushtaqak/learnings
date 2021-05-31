@@ -3,22 +3,28 @@
 ## Applications
 
 - Chrome / Firefox
+    - `$ brew cask install firefox`
+    - `$ brew cask install google-chrome`
 - Antivirus (Kasperski)
 - MS Office
 - Zoom
+    - `$ brew cask install zoom`
 - VLC
+    - `$ brew cask install vlc`
 - FDM (Free Download Manager)
+    - 
 - Caffeine
+    -  `$ brew cask install caffeine`
 - Guidance (Azan timings)
   
 ## Dev Applications
 
 - [VS Code](https://code.visualstudio.com)
     - Also install `Settings Sync` extension and turn it on.
-- Postman
+    - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
+- [Postman](https://www.postman.com/downloads/)
 - [PG Admin4](https://www.pgadmin.org/download/)
-- _Hyper terminal_
-- Docker
+- [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
 
 ## Office applications
 
@@ -41,3 +47,10 @@
 - tmux
 - pyenv
 - nvm
+
+## Others
+
+- Try to install if some package can be installed via brew
+- If not try if it officially exist in MacStore
+- Otherwise download via official websites
+- In last, browse and find on web, for example: http://macappstore.org/ contains a a very good collection of Mac Applications.
