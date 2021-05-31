@@ -3,18 +3,17 @@
 ## Applications
 
 - Chrome / Firefox
-    - `$ brew cask install firefox`
-    - `$ brew cask install google-chrome`
+    - `$ brew install --cask firefox`
+    - `$ brew install --cask google-chrome`
 - Antivirus (Kasperski)
 - MS Office
 - Zoom
-    - `$ brew cask install zoom`
+    - `$ brew install --cask zoom`
 - VLC
-    - `$ brew cask install vlc`
-- FDM (Free Download Manager)
-    - 
+    - `$ brew install --cask vlc`
+- [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
 - Caffeine
-    -  `$ brew cask install caffeine`
+    -  `$ brew install --cask caffeine`
 - Guidance (Azan timings)
   
 ## Dev Applications
@@ -23,7 +22,7 @@
     - Also install `Settings Sync` extension and turn it on.
     - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
 - [Postman](https://www.postman.com/downloads/)
-- [PG Admin4](https://www.pgadmin.org/download/)
+- [PG Admin 4](https://www.pgadmin.org/download/)
 - [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
 
 ## Office applications
@@ -34,7 +33,7 @@
 
 ## Packages
 
-- Hebrew
+- Homebrew
     - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - git
   - `$ brew install git`

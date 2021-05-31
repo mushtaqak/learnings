@@ -3,7 +3,7 @@
 - `$ brew tap homebrew/cask-versions`
 - `$ brew update`
 - `$ brew tap homebrew/cask`
-- `$ brew tap adoptopenjdk/openjdk`
+- ~~`$ brew tap adoptopenjdk/openjdk`~~
 - `$ brew instal --cask adoptopenjdk8`
 - Modify bash_profile:
 
@@ -18,4 +18,5 @@ java8
 - References
   - [Installation tutorial guide](https://devqa.io/brew-install-java/)
   - "Cask adoptopenjdk8 exists in multiple taps" fix
-    - rm /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-versions/Casks/adoptopenjdk8.rb
+    - `$ rm /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-versions/Casks/adoptopenjdk8.rb`
+  - Or `$ brew untap adoptopenjdk/openjdk`
