@@ -39,17 +39,21 @@
   - `$ brew install git`
   - `$ git --version`
   - If for some reason git version does not return latest git version, follow [Use brew's git](https://katopz.medium.com/how-to-upgrade-git-ff00ea12be18) to get this straight.
-- [git multiple accounts](https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46)
 - [postgres](https://postgresapp.com)
-- kubectl
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
+    - `$ brew install kubectl`
 - [java](./mac-jdk.md)
 - tmux
 - pyenv
 - nvm
 
-## Others
+## Other Applications
 
 - Try to install if some package can be installed via brew
 - If not try if it officially exist in MacStore
 - Otherwise download via official websites
 - In last, browse and find on web, for example: http://macappstore.org/ contains a a very good collection of Mac Applications.
+
+## Configurations
+
+- [Git multiple accounts && SSH keys](https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46)
