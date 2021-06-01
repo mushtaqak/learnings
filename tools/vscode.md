@@ -1,8 +1,10 @@
 ### User settings vs workspace settings
+
 1. User settings are vscode-wide settings applied to each project (`/Users/mushtaqali/Library/Application Support/Code/User/settings.json`).
 2. Each project can override some settings using workspace settings (`.vscode/settings.json`)   
 
 ### Open terminal
+
 1. ctrl + ` or ^ + `
 
 ### Create a new terminal
