@@ -49,6 +49,7 @@
   - `$ brew install tmux`
 - pyenv
   - `$ brew install pyenv`
+  - `$ brew install pyenv-virtualenv`
 - python
   - `$ brew install pyenv`
   - `$ pyenv install 3.9.5`
@@ -62,6 +63,7 @@
       if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv init --path)"
         eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
       fi
       ```
 
