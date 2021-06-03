@@ -14,6 +14,7 @@
 - VLC
   - `$ brew install --cask vlc`
 - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
+- [Memory Clean 2](https://fiplab.com/apps/memory-clean-for-mac) (free version)
 - Caffeine
   - `$ brew install --cask caffeine`
 - Guidance (Azan timings)
@@ -40,6 +41,7 @@
   - `$ git --version`
   - If for some reason git version does not return latest git version, follow [Use brew's git](https://katopz.medium.com/how-to-upgrade-git-ff00ea12be18) to get this straight.
   - If even after this it doesn't work, restart your machine and hopefully it will work, it always do :P
+- [bash autocompletion](https://sourabhbajaj.com/mac-setup/BashCompletion/)
 - [postgres](https://postgresapp.com)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - [java](./mac-jdk.md)
