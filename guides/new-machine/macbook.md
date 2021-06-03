@@ -40,6 +40,7 @@
   - `$ brew install git`
   - `$ git --version`
   - If for some reason git version does not return latest git version, follow [Use brew's git](https://katopz.medium.com/how-to-upgrade-git-ff00ea12be18) to get this straight.
+- [bash autocompletion](https://sourabhbajaj.com/mac-setup/BashCompletion/)
 - [postgres](https://postgresapp.com)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
   - Minicube
