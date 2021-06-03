@@ -21,6 +21,7 @@ Follow this 7-part official tutorial to learn django by heart.
 
 - https://docs.djangoproject.com/en/3.2/intro/tutorial01/
 
+---
 
 ### Django Rest Framework (drf)
 
@@ -35,6 +36,8 @@ Follow this 6-part tutorial to learn DRF from official resource.
 #### Training resources
 
 - [Django REST framework - Quickstart](https://www.django-rest-framework.org/tutorial/quickstart/)
+
+---
 
 ### NodeJS
 
@@ -51,6 +54,8 @@ Follow this 6-part tutorial to learn DRF from official resource.
 
 - Create basic nodejs app.
 
+---
+
 ### GraphQL
 
 #### Official documentation
@@ -61,11 +66,15 @@ Follow this 6-part tutorial to learn DRF from official resource.
 
 Follow this 4-part GraphQL guide that contains text as well as videos explains core concepts of GraphQL and ways to interact with it. It also lets us learn GraphQL in a great way.
 
-Expectations: After completion of this guide, you should be able to understand and write basic GraphQL queries and mutations.
+#### Expectations
+
+After completion of this guide, you should be able to understand and write basic GraphQL queries and mutations.
 
 #### Training resources  
 
 - [Learn GraphQL Fundamentals with Fullstack Tutorial](https://www.howtographql.com/basics/0-introduction/)
+
+---
 
 ### Prisma2
 
@@ -77,13 +86,13 @@ Expectations: After completion of this guide, you should be able to understand a
 
 Follow this prisma2 learning guide to build a simple Todos application using GraphQL and prisma2
 
-Expectation: You should be able to write code to add a new type, use queries in the code to fetch data
-
+_Expectation_: You should be able to write code to add a new type, use queries in the code to fetch data
 
 #### Training resources
 
 - [An introduction to Prisma 2 - LogRocket Blog](https://blog.logrocket.com/an-introduction-to-prisma-2/)
 
+---
 
 ## Frontend
 
@@ -97,7 +106,6 @@ Expectation: You should be able to write code to add a new type, use queries in 
 
 Follow any one of the above tutorials to get know-how of how reactjs works. These are basic guides that will get you up faster in learning reactjs.
 
-
 #### Training resources
 
 - [ReactJS Tutorial Part I: Learn ReactJS For Free | Codecademy](https://www.codecademy.com/learn/react-101)
@@ -107,6 +115,7 @@ Follow any one of the above tutorials to get know-how of how reactjs works. Thes
 
 Create basic reactjs app (todo app) that would utilise some basic react concepts, including functional & class based views, react lifecycle methods, react hooks etc.
 
+---
 
 ## Others
 
@@ -124,5 +133,5 @@ Learn this awesome library to scrape data from anywhere.
 
 - [Scrapy Official Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
 
-
+---
 
