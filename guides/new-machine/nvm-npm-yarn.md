@@ -84,4 +84,17 @@ Checkout brew doctor again. There shouldn't have WARNING message.
 
 `$ brew doctor`
 
+### Use a different version of npm
+
+- `$ nvm ls`
+- `$ nvm install lts/erbium`
+  - Installs `lts/erbium (12.22.1)`
+- `$ nvm use lts/erbium`
+- or `$ nvm use 12.22.1`
+
+### Make a version default
+
+- `$ nvm alias default 12.22.1`
+- `$ nvm alias default 12.22.1`
+
 Referenced from [Install NVM, NodeJS, Yarn via Homebrew Gist](https://gist.github.com/nijicha/e5615548181676873118df79953cb709)
