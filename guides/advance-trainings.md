@@ -7,6 +7,35 @@ It is expected that you have basic knowledge of programming concepts. So in this
 
 ## Backend
 
+### Django / Python
+
+#### Official documentation
+
+[Django: The Web framework for perfectionists with deadlines](https://www.djangoproject.com)
+
+#### Details
+
+Follow this 7-part official tutorial to learn django by heart.
+
+#### Training resources
+
+- https://docs.djangoproject.com/en/3.2/intro/tutorial01/
+
+
+### Django Rest Framework (drf)
+
+#### Official documentation
+
+[Django REST framework: Home]https://www.django-rest-framework.org)
+
+#### Details
+
+Follow this 6-part tutorial to learn DRF from official resource.
+
+#### Training resources
+
+- [Django REST framework - Quickstart](https://www.django-rest-framework.org/tutorial/quickstart/)
+
 ### NodeJS
 
 #### Official documentation
@@ -77,4 +106,23 @@ Follow any one of the above tutorials to get know-how of how reactjs works. Thes
 #### Expectation
 
 Create basic reactjs app (todo app) that would utilise some basic react concepts, including functional & class based views, react lifecycle methods, react hooks etc.
+
+
+## Others
+
+### Python Scrapy
+
+#### Official documentation
+
+[Scrapy at a glance](https://docs.scrapy.org/en/latest/intro/overview.html)
+
+#### Details
+
+Learn this awesome library to scrape data from anywhere.
+
+### Training resources
+
+- [Scrapy Official Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+
+
 
