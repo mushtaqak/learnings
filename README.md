@@ -7,19 +7,28 @@ variety of languages and technologies.
 
 ## Python
 
+- [pyenv-python](./new-machine/pyenv-python.md)
+- [pipenv](python/pipenv.md)
 - [pep8 E125: Continuation line with same indent as next logical line](python/pep8-e125.md)
 - [Remove .pyc files](python/remove-pyc.md)
-- [pipenv](python/pipenv.md)
+
 
 ## Django
 
+- [Djano Tutorial](./guides/advance-trainings.md#django--python)
 - [.values()](django/values.md)
 - [.values_list()](django/values-list.md)
 - [django-orm-cookbook](django/django-orm-cookbook.md)
 - [reverse migrations](django/reverse-migrations.md)
 
+## Javascript
+
+- [npm](tools/npm.md)
+- [nvm](./guides/nvm-npm-yarn.md)
+
 ## React
 
+- [React Tutorial](./guides/advance-trainings.md#reactjs)
 - [How to console log in react render](react/console-log.md)
 - [Error boundary](react/error-handling.md)
 
@@ -27,14 +36,18 @@ variety of languages and technologies.
 
 - [docker](tools/docker.md)
 - [git](tools/git.md)
-- [npm](tools/npm.md)
 - [vscode](tools/vscode.md)
+  - [vscode settings](./guides/new-machine/vscode-settings.json)
 - [tmux](tools/tmux.md)
+- [jdk](./new-machine/mac-jdk.md)
 
 ## Guides
 
-- [Setting up new machine](guides/new-machine)
-  - [Setup Macbook](guides/new-machine/macbook.md)
+- [Basic level trainings](./basic-trainings.md)
+- [Advance level trainigs](./advance-trainings.md)
+- [pyenv-python](./new-machine/pyenv-python.md)
+- [jdk](./new-machine/mac-jdk.md)
+- [Setting up new macbook](./new-machine/macbook.md)
 
 ### Terminal Commands & Tricks
 
