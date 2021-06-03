@@ -7,11 +7,10 @@ variety of languages and technologies.
 
 ## Python
 
-- [pyenv-python](./new-machine/pyenv-python.md)
-- [pipenv](python/pipenv.md)
+- [pyenv-python](./guides/pyenv-python.md)
+- [pipenv](./guides/pipenv.md)
 - [pep8 E125: Continuation line with same indent as next logical line](python/pep8-e125.md)
 - [Remove .pyc files](python/remove-pyc.md)
-
 
 ## Django
 
@@ -23,7 +22,7 @@ variety of languages and technologies.
 
 ## Javascript
 
-- [npm](tools/npm.md)
+- [npm](./guides/npm.md)
 - [nvm](./guides/nvm-npm-yarn.md)
 
 ## React
@@ -37,16 +36,16 @@ variety of languages and technologies.
 - [docker](tools/docker.md)
 - [git](tools/git.md)
 - [vscode](tools/vscode.md)
-  - [vscode settings](./guides/new-machine/vscode-settings.json)
+  - [vscode settings](./tools/vscode-settings.json)
 - [tmux](tools/tmux.md)
-- [jdk](./new-machine/mac-jdk.md)
+- [jdk](./guides/mac-jdk.md)
 
 ## Guides
 
-- [Basic level trainings](./basic-trainings.md)
-- [Advance level trainigs](./advance-trainings.md)
-- [pyenv-python](./new-machine/pyenv-python.md)
-- [jdk](./new-machine/mac-jdk.md)
+- [Basic level trainings](./guides/basic-trainings.md)
+- [Advance level trainigs](./guides/advance-trainings.md)
+- [pyenv-python](./guides/pyenv-python.md)
+- [jdk](./guides/mac-jdk.md)
 - [Setting up new macbook](./new-machine/macbook.md)
 
 ### Terminal Commands & Tricks

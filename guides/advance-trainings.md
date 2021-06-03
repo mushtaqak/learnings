@@ -2,8 +2,7 @@
 
 _Note_: This document deals with advance level trainings. If you want to follow basic level, please visit [basic training](./basic-trainings.md) document.
 
-It is expected that you have basic knowledge of programming concepts. So in this document, we will be focusing on more advance level trainings. Here is the list of dev tech trainings along with expectation outcomes. Please go through each of the below plants from top to bottom in order. 
-
+It is expected that you have basic knowledge of programming concepts. So in this document, we will be focusing on more advance level trainings. Here is the list of dev tech trainings along with expectation outcomes. Please go through each of the below plants from top to bottom in order.
 
 ## Backend
 
