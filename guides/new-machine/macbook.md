@@ -14,6 +14,7 @@
 - VLC
   - `$ brew install --cask vlc`
 - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
+- [Memory Clean 2](https://fiplab.com/apps/memory-clean-for-mac) (free version)
 - Caffeine
   - `$ brew install --cask caffeine`
 - Guidance (Azan timings)
