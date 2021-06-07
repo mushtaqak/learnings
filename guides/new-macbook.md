@@ -22,8 +22,9 @@
 - Android File Transfer
   - `brew install --cask android-file-transfer`
 - New File Menu
-  - Install via Mac Store
-  
+  - Install via Mac Store (not free anymore)
+- [Whatsapp](https://www.whatsapp.com)
+
 ## Dev Applications
 
 - [VS Code](https://code.visualstudio.com)
