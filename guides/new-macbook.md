@@ -65,3 +65,17 @@
 ## Configurations
 
 - [Git multiple accounts && SSH keys](https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46)
+
+## Clear data tips
+
+- Clear any personal files & folder
+  - Remove all documents, downloads, desktop items and other personal files & folders.
+- Clean Chrome / Firefox / Safari
+  - Clean all-time browsing history (with cookies) and passwords saved in each browser.
+  - Uninstall browser.
+  - For chrome, you might have to clean Library files as well, follow some good tutorial to clean Chrome on Mac.
+- Remove dot files
+  - This inludes anything that starts with dot, for example:
+    - Shell & environment files: `.bashrc`, `.bash_profile`, `.zshrc`, `.zsh_history`, etc
+    - Config files: `.npm`, `.npmrc`, `.yarnrc`, `.nvm`, `.pip`, `.pyenv`, `.gitconfig`, `.ssh`, etc
+    - Others like `.python_history`, `.cache`, `.kube`, `.krew`, `.ansible`, `.vscode`, `.docker` etc
