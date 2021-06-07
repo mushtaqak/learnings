@@ -66,6 +66,8 @@
 ## Configurations
 
 - [Git multiple accounts && SSH keys](https://medium.com/the-andela-way/a-practical-guide-to-managing-multiple-github-accounts-8e7970c8fd46)
+- Turn Off Auto-Correction from System Preferences -> Keyboard -> Text -> Uncheck "Correct Spelling Automatically"
+
 
 ## Clear data tips
 
