@@ -20,6 +20,8 @@
 - Guidance (Azan timings)
 - Android File Transfer
   - `brew install --cask android-file-transfer`
+- New File Menu
+  - Install via Mac Store
   
 ## Dev Applications
 

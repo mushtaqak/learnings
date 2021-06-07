@@ -46,7 +46,7 @@ variety of languages and technologies.
 - [Advance level trainigs](./guides/advance-trainings.md)
 - [pyenv-python](./guides/pyenv-python.md)
 - [jdk](./guides/mac-jdk.md)
-- [Setting up new macbook](./new-machine/macbook.md)
+- [Setting up new macbook](./guides/new-macbook.md)
 
 ### Terminal Commands & Tricks
 
