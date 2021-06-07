@@ -18,6 +18,7 @@
 - Caffeine
   - `$ brew install --cask caffeine`
 - Guidance (Azan timings)
+  - Install via Mac Store
 - Android File Transfer
   - `brew install --cask android-file-transfer`
 - New File Menu
