@@ -95,6 +95,6 @@ Checkout brew doctor again. There shouldn't have WARNING message.
 ### Make a version default
 
 - `$ nvm alias default 12.22.1`
-- `$ nvm alias default 12.22.1`
+- `$ nvm alias default lts/erbium`
 
 Referenced from [Install NVM, NodeJS, Yarn via Homebrew Gist](https://gist.github.com/nijicha/e5615548181676873118df79953cb709)
