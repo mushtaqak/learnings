@@ -48,7 +48,11 @@ variety of languages and technologies.
 - [jdk](./guides/mac-jdk.md)
 - [Setting up new macbook](./guides/new-macbook.md)
 
-### Terminal Commands & Tricks
+## Tutorials
+
+- [NodeJS Learning crash course]('./tutorials/../../README.md)
+
+## Terminal Commands & Tricks
 
 - [Mac Terminal](tools/mac-terminal.md)
 - [Miscellaneous](tools/commandline.md#miscellaneous)
