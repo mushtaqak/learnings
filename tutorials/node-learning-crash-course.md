@@ -14,21 +14,79 @@
 
 ### events module (event emitter & events)
 
+Useful when working with events & event listeners.
+
+    - const EventEmitter = require('events')
     - eventEmitter = new EventEmitter()
-    - eventEmitter.on('test', (data)=> console.log('Test event fired', data))
+    - eventEmitter.on('test', (data) => console.log('Test event fired', data))
     - eventEmitter.emit('test', data)
 
 ### readline module
 
-    - r = readline.createInterface
-    - r.question
-    - r.close
-    - r.setAttempt
-    - r.attempt
+Useful for user input manipulation.
+
+    - const readline = require('readline')
+    - r = readline.createInterface({ input: process.stdin, output: process.stdout}  )
+    - r.question('Please provide your name?', (userInput)=> console.log('Your entered data: ', userInput))
+    - r.close()
+    - r.setAttempt('Please provide your name again?')
+    - r.attempt()
+    - events
+      - `close`: when closing the readline.
+      - `line`: when user enters data.
 
 ### filesystem module
 
-    - fs.writeFile('test.txt', 'hello world', (error)=> error ? console.log(error): console.log('File created'))
+Useful when working with files, directories & streams.
+
+### working with files
+
+    - const fs = requires('fs')
+    - fs.writeFile('test.txt', 'hello world', (error) => error ? console.log(error) : console.log('File created'))
+    - fs.readFile('test.txt', 'utf8' , (error, file) => error? console.log(error) : console.log(file))
+    - fs.rename('test.txt', 'test2.txt', (error) => error ? console.log(error) : console.log('File renamed'))
+    - fs.appendFile('test.txt', 'New data to be appended',  (error) => error ? console.log(error) : console.log('Data appended'))
+    - fs.unlink('test.txt', (error) => error ? console.log(error) : console.log('File deleted'))
+
+#### working with folders
+
+    - const fs = requires('fs')
+    - fs.mkdir('test', (error) => error ? console.log(error) : console.log('Folder created'))
+    - fs.rmdir('test', (error) => error ? console.log(error) : console.log('Folder deleted'))
+    - fs.readdir('test', (error, files) => error ? console.log(error) : console.log(files))
+
+#### working with streams
+
+Useful when dealing with large file
+`readFile` uses Buffer - which has a fixed size. However streams do not have this limitation.
+We read data in chunks using stream as opposed to readFile which loads entire file into a buffer and then reads it.
+  
+    - const fs = require('fs')
+    - const readStream = fs.createReadStream('./test.txt', 'utf8')
+    - readStream.on('data', (chunk) => console.log(chunk))
+    - const writeStream = fs.createStreamStream('test2.txt')
+    - writeStream.write(chunk)
+
+#### working with pipes & pipe chaining
+
+Helps in writing data from sourse stream to destination stream.
+
+    - readStream.pipe(writeStream)
+    - // a module used for compression
+    - const zlib = require('zlib')
+    - // a transform stream
+    - const gzip = zlib.createGzip()
+    - // updated write stream - write a compressed file
+    - const writeStream = fs.createStreamStream('test2.txt.gz')
+    - // take chunk data from readStream to gzip stream and then to writeStream - a chained piping 
+    - readStream.pipe(gzip).pipe(writeStream)
+    - // a transform stream - unzip
+    - const unGzip = zlib.createGunzip()
+    - // updated read & write streams
+    - const readStream = fs.createReadStream('./comressed-file.txt.gz', 'utf8')
+    - const writeStream = fs.createStreamStream('uncompressed.txt')
+    - // read uncompress file, then un-zip it and then send to destination stream
+    - readStream.pipe(gzip).pipe(writeStream) 
 
 ## Course Reference
 
