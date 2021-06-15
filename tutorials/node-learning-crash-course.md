@@ -105,6 +105,7 @@ Creates a web server with nodejs
 `package.json` holds metadata for the project. `npm` is package manager.
 
     - npm init: creates pacakge.json - It means this command sets up metadata for the project (project name, version, description,  entry point, test command, git repo, etc.).
+    - npm init --yes: skips all these configurations, create package.json with default values.
     - npm install <package-name>: installs a package, adds it to package.json 's dependencies.
     - npm uninstall <package-name>: uninstalls a package & remove it from package.json 's dependencies.
     - package versioning
@@ -117,7 +118,31 @@ Creates a web server with nodejs
 
 ### Express Web Framework
 
-    - 
+A nodejs web server, gives us capability to write cleaner, less code.
+
+#### express basics
+
+    - npm install express
+    - const express = require('express');
+    - const app = express()
+    - app.get('/', (req, res) => res.send('Hello world from express'))
+    - app.listen(3000)
+    - // middleware
+    - app.use('/', () => console.log('in middleware))
+
+#### http get request, route & query params
+
+    - http://localhost:3000/products/foo/101
+    - app.get('/products/:category/:id', (req, res) => { console.log(req.params); res.send('Hello world from express'); }) 
+    - http://localhost:3000/products/foo/101?q=hello&s=world
+    - app.get('/products/:category/:id', (req, res) => { console.log(req.params); console.log(req.query ); res.send({ category: req.params.name, id: req.params.id}); })
+
+#### static files
+
+    - const path = require('path') // module that deals with paths
+    - __dirname: gives path where it is used. if used in app.js it will give directory name where app.js is.
+    - app.use('/public, express.static(path.join(__dirname, 'static')))
+    - res.sendFile(path.join(__dirname, 'static', 'index.html')))
 
 ## Course Reference
 
