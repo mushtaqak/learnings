@@ -144,6 +144,29 @@ A nodejs web server, gives us capability to write cleaner, less code.
     - app.use('/public, express.static(path.join(__dirname, 'static')))
     - res.sendFile(path.join(__dirname, 'static', 'index.html')))
 
+#### http post request, body parser & json
+
+    - npm install body-parser: installs body parser module.
+    - const bodyParser = require('body-parser')
+    - app.use(bodyParser.urlencoded({ extended: false })) // parse url encoded data
+    - app.post('/', (req, res) => { console.log(req.body); res.send('request processed') })
+    - app.use(bodyParser.json()) // parsesjson data
+    - app.post('/', (req, res) => { console.log(req.body); res.json({ success: true }) })
+
+#### express validation
+
+    - npm install joi
+    - const Joi = require('joi')
+    - schema: it is blueprint of the data - how the data should be, what it looks like. 
+    - const schema = Joi.object().keys({ email: Joi.string().trim().email().required(), password: Joi.string().trim().min(5).max(8).required() })
+    - Joi.validate(req.body, schema, (error, result) => error ? res.send('An error occured') : res.send ('data validated'))
+    - // schema can be combined
+    - const productSchema = Joi.array().items(Joi.string())
+    - const schema = Joi.object().keys({ categorySchema: schema, productSchema })
+    - 
+
+#### ejs tempates
+
 ## Course Reference
 
 Referenced from [Learn Node.js - Full Tutorial for Beginners](https://www.youtube.com/watch?v=RLtyhwFtXQA)
