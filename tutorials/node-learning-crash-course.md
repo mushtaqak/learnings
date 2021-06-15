@@ -39,7 +39,7 @@ Useful for user input manipulation.
 
 Useful when working with files, directories & streams.
 
-### working with files
+#### working with files
 
     - const fs = requires('fs')
     - fs.writeFile('test.txt', 'hello world', (error) => error ? console.log(error) : console.log('File created'))
@@ -163,9 +163,44 @@ A nodejs web server, gives us capability to write cleaner, less code.
     - // schema can be combined
     - const productSchema = Joi.array().items(Joi.string())
     - const schema = Joi.object().keys({ categorySchema: schema, productSchema })
-    - 
 
 #### ejs tempates
+
+A tempating language.
+
+    - app.set('view engine', 'ejs')
+    - res.render('index', { data: { userQuery: req.params.query }})
+    - // in view/index.ejs
+    - <p>You searched for  <%= data.userQuery %> </p>
+    - // http://localhost:3000/books ==> you searched for books
+
+#### Middleware
+
+A middleware is a code that executes between user request and server request handling.
+It is used for pre-request processing eg. restring some users to a website, doing authentication checks etc
+
+    - // custom middleware
+    - req.use((req, res, next) => { console.log('in middleware'); next()})
+    - next method must be invloked when creating custom middleware
+    - it is resposible for let express know I am finished process this request, so that it can move to other middlewares if present.
+    - req.url: gives request url 
+    - req.method: gives request method, eg GET, POST, DELETE
+    - // only work when `/foo` route is executed.
+    - req.use('/foo', (req, res, next) => { console.log('in middleware'); next()})
+    - in middelware we can update req or res objects
+    - req.foo = 'A new property to request object'
+
+#### express router
+
+It allows us to separate routes into differnt files. Makes code manageable.
+
+    - const route = express.Router();
+    - route.get('/', (req, res) => res.json({ success: true }))
+    - module.exports = route
+    - const peopleRoute = require('./routes/people') 
+    - app.use('/people', peopleRoute) // '/people' is base route for people route
+    - // add custom middleware
+    - route.use((req, res, next) => { console.log('in route middleware); next(); })
 
 ## Course Reference
 
