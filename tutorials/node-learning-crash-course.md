@@ -86,7 +86,38 @@ Helps in writing data from sourse stream to destination stream.
     - const readStream = fs.createReadStream('./comressed-file.txt.gz', 'utf8')
     - const writeStream = fs.createStreamStream('uncompressed.txt')
     - // read uncompress file, then un-zip it and then send to destination stream
-    - readStream.pipe(gzip).pipe(writeStream) 
+    - readStream.pipe(gzip).pipe(writeStream)
+
+### http module
+
+Creates a web server with nodejs
+
+    - const http = require('http')
+    - const server = http.createServer((req, res) => { res.write('Hello world from node web server'); res.end(); })
+    -  server.listen('3000'); // server running on port 3000
+    - req.url // has request url path.
+    - res.write // prepares response that would be sent back.
+    - res.end // sends response
+    - res.writeHead(200, { "Contend-Type": "application/json" }) // writes response header info 
+
+### package.json & npm
+
+`package.json` holds metadata for the project. `npm` is package manager.
+
+    - npm init: creates pacakge.json - It means this command sets up metadata for the project (project name, version, description,  entry point, test command, git repo, etc.).
+    - npm install <package-name>: installs a package, adds it to package.json 's dependencies.
+    - npm uninstall <package-name>: uninstalls a package & remove it from package.json 's dependencies.
+    - package versioning
+      - eg: ^4.17.10 => ^major.miner.patch or ~major.miner.patch
+      - major: a version that lets you know crashing changes has been added, informs of major changes / features. Upgrading the package might introduce some consequences.
+      - miner: a version that adds new functionality & it might deprecates or removes old functionality or features. But package can easily be used or upgraded in existing application.
+      - patch: a version which fixes some bugs and adds very miner improvements. Pacakge can easily be upgraded without much consequences.
+      - ^ (carrot sign): informs package manager to upgrade package if there is some miner or patch update but not major update.
+      - ~ tilde sign: means we only want patch update.
+
+### Express Web Framework
+
+    - 
 
 ## Course Reference
 
