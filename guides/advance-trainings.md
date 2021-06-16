@@ -48,7 +48,8 @@ Follow this 6-part tutorial to learn DRF from official resource.
 
 - [Introduction to Node.js](https://nodejs.dev/learn)
 - [Learn Node.js | Codecademy](https://www.codecademy.com/learn/learn-node-js)
- 
+- [NodeJS Crash Course](../tutorials/node-learning-crash-course.md)
+
 #### Expectation
 
 - Create basic nodejs app.
@@ -72,6 +73,22 @@ After completion of this guide, you should be able to understand and write basic
 #### Training resources  
 
 - [Learn GraphQL Fundamentals with Fullstack Tutorial](https://www.howtographql.com/basics/0-introduction/)
+
+---
+
+### Apollo Graphql
+
+#### Official Documentation
+
+[Full-stack apps with Apollo](https://www.apollographql.com/docs/tutorial/introduction/)
+
+#### Details
+
+Learn Apollo server and Apollo client.
+
+#### Expectations
+
+After completion of this guide, you should be able to understand and write basic Apollo server (backend) & Apollo client (frontend) working with graphql.
 
 ---
 
