@@ -5,6 +5,18 @@ variety of languages and technologies.
 
 ---
 
+## Guides
+
+- [Basic level trainings](./guides/basic-trainings.md)
+- [Advance level trainigs](./guides/advance-trainings.md)
+- [Setting up pyenv-python](./guides/pyenv-python.md)
+- [Seting up jdk](./guides/mac-jdk.md)
+- [Setting up new macbook](./guides/new-macbook.md)
+
+## Tutorials
+
+- [NodeJS Learning crash course]('./tutorials/../../README.md)
+
 ## Python
 
 - [pyenv-python](./guides/pyenv-python.md)
@@ -14,7 +26,7 @@ variety of languages and technologies.
 
 ## Django
 
-- [Djano Tutorial](./guides/advance-trainings.md#django--python)
+- [Django Tutorial](./guides/advance-trainings.md#django--python)
 - [.values()](django/values.md)
 - [.values_list()](django/values-list.md)
 - [django-orm-cookbook](django/django-orm-cookbook.md)
@@ -39,18 +51,6 @@ variety of languages and technologies.
   - [vscode settings](./tools/vscode-settings.json)
 - [tmux](tools/tmux.md)
 - [jdk](./guides/mac-jdk.md)
-
-## Guides
-
-- [Basic level trainings](./guides/basic-trainings.md)
-- [Advance level trainigs](./guides/advance-trainings.md)
-- [pyenv-python](./guides/pyenv-python.md)
-- [jdk](./guides/mac-jdk.md)
-- [Setting up new macbook](./guides/new-macbook.md)
-
-## Tutorials
-
-- [NodeJS Learning crash course]('./tutorials/../../README.md)
 
 ## Terminal Commands & Tricks
 
