@@ -16,8 +16,9 @@ variety of languages and technologies.
 ## Tutorials
 
 - [NodeJS & Express]('./../tutorials/nodejs/nodejs-express.md)
+- [NextJS]('./../tutorials/nodejs/nextjs.md)
 - [Apollo GraphQL Server & Client]('./../tutorials/nodejs/apollo-graphql-server-client.md)
-- [NodeJS & Express]('./../tutorials/nodejs/nextjs.md)
+- [TypeORM & TypeGraphQL](./tutorials/nodejs/typeorm-typegraphql.md)
 
 ## Python
 

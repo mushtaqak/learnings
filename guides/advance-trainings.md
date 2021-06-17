@@ -48,7 +48,8 @@ Follow this 6-part tutorial to learn DRF from official resource.
 
 - [Introduction to Node.js](https://nodejs.dev/learn)
 - [Learn Node.js | Codecademy](https://www.codecademy.com/learn/learn-node-js)
-- [NodeJS Crash Course](../tutorials/node-learning-crash-course.md)
+- [Learn Node.js with Mosh in 1 hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)
+- [NodeJS & Express](./../tutorials/nodejs/nodejs-express.md)
 
 #### Expectation
 
@@ -90,8 +91,58 @@ Learn Apollo server and Apollo client.
 
 After completion of this guide, you should be able to understand and write basic Apollo server (backend) & Apollo client (frontend) working with graphql.
 
+#### Training resources
+
+- [Apollo server & client](./../tutorials/nodejs/apollo-graphql-server-client.md)
+- [10-part tutorial](https://www.apollographql.com/docs/tutorial/introduction/)
+- [3-part Odyssy Course](https://odyssey.apollographql.com)
+  - [Part 1 - Complete basics: Apollo server & client](https://odyssey.apollographql.com/lift-off-part1)
+  - [Part 2 - Advanced: Querying & resolvers](https://odyssey.apollographql.com/lift-off-part2)
+  - [Part 3 - Advanced: Query Arguments & Mutations](https://odyssey.apollographql.com/lift-off-part3)
+
 ---
 
+### NextJS
+
+#### Official Documentation
+
+[Official NextJS Documentation](https://nextjs.org)
+
+#### Details
+
+Learn Restful nextjs framework.
+
+#### Expectations
+
+After completion of this guide, you should be able to understand and write basic nextjs application.
+
+#### Training resources
+
+- [NextJS](./../tutorials/nodejs/nextjs.md)
+
+---
+
+### TypeORM & TypeGraphql
+
+#### Official Documentations
+
+[TypeORM Official](https://typeorm.io/#/)
+[TypeGraphQL](https://typegraphql.com)
+
+#### Details
+
+Learn to build graphql APIs with TypeORM & TypeGraphQL
+
+#### Expectaions
+
+You should be able to build graphql application with type orm & typegraphql modeling.
+
+#### Training resources
+
+- [TypeORM & TypeGraphQL](./../tutorials/nodejs/typeorm-typegraphql.md)
+- [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)
+
+---
 ### Prisma2
 
 #### Official documentation
