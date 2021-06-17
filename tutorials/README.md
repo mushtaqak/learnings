@@ -1,7 +1,10 @@
 # List of tutorials
 
-## NodeJS
+## Javasccript
 
-- [NodeJS & Express](./nodejs/nodejs-express.md)
-- [Apollo GraphQL Server & Client](./nodejs/apollo-graphql-server-client.md)
-- [Next.js](./nodejs/nextjs.md)
+- [NodeJS & Express](./js/nodejs-express.md)
+- [Apollo GraphQL Server & Client](./js/apollo-graphql-server-client.md)
+- [TypeGraphQL](./js/typegraphql.md)
+- [TypeORM](./js/typeorm.md)
+- [Nest.js](./js/nestjs.md)
+- [Next.js](./js/nextjs.md)

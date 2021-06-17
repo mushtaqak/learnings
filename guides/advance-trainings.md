@@ -49,7 +49,7 @@ Follow this 6-part tutorial to learn DRF from official resource.
 - [Introduction to Node.js](https://nodejs.dev/learn)
 - [Learn Node.js | Codecademy](https://www.codecademy.com/learn/learn-node-js)
 - [Learn Node.js with Mosh in 1 hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)
-- [NodeJS & Express](./../tutorials/nodejs/nodejs-express.md)
+- [NodeJS & Express](./../tutorials/js/nodejs-express.md)
 
 #### Expectation
 
@@ -93,7 +93,7 @@ After completion of this guide, you should be able to understand and write basic
 
 #### Training resources
 
-- [Apollo server & client](./../tutorials/nodejs/apollo-graphql-server-client.md)
+- [Apollo server & client](./../tutorials/js/apollo-graphql-server-client.md)
 - [10-part tutorial](https://www.apollographql.com/docs/tutorial/introduction/)
 - [3-part Odyssy Course](https://odyssey.apollographql.com)
   - [Part 1 - Complete basics: Apollo server & client](https://odyssey.apollographql.com/lift-off-part1)
@@ -102,31 +102,30 @@ After completion of this guide, you should be able to understand and write basic
 
 ---
 
-### NextJS
+### NestJS
 
 #### Official Documentation
 
-[Official NextJS Documentation](https://nextjs.org)
+[Official NestJS Documentation](https://nestjs.com)
 
 #### Details
 
-Learn Restful nextjs framework.
+Learn nestjs framework.
 
 #### Expectations
 
-After completion of this guide, you should be able to understand and write basic nextjs application.
+After completion of this guide, you should be able to understand and write basic nestjs application.
 
 #### Training resources
 
-- [NextJS](./../tutorials/nodejs/nextjs.md)
+- [NestJS](./../tutorials/js/nestjs.md)
 
 ---
 
-### TypeORM & TypeGraphql
+### TypeGraphql
 
 #### Official Documentations
 
-[TypeORM Official](https://typeorm.io/#/)
 [TypeGraphQL](https://typegraphql.com)
 
 #### Details
@@ -139,10 +138,32 @@ You should be able to build graphql application with type orm & typegraphql mode
 
 #### Training resources
 
-- [TypeORM & TypeGraphQL](./../tutorials/nodejs/typeorm-typegraphql.md)
+- [TypeGraphQL](./../tutorials/js/typeorm-typegraphql.md)
 - [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)
 
 ---
+
+### TypeORM
+
+#### Official Documentations
+
+[TypeORM Official](https://typeorm.io/#/)
+
+#### Details
+
+Learn to build graphql APIs with TypeORM & TypeGraphQL
+
+#### Expectaions
+
+You should be able to build graphql application with type orm & typegraphql modeling.
+
+#### Training resources
+
+- [TypeORM Tutorial](./../tutorials/js/typeorm-typegraphql.md)
+- [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)
+
+---
+
 ### Prisma2
 
 #### Official documentation
@@ -181,6 +202,26 @@ Follow any one of the above tutorials to get know-how of how reactjs works. Thes
 #### Expectation
 
 Create basic reactjs app (todo app) that would utilise some basic react concepts, including functional & class based views, react lifecycle methods, react hooks etc.
+
+---
+
+### NextJS
+
+#### Official Documentation
+
+[Official NextJS Documentation](https://nextjs.org)
+
+#### Details
+
+Learn Restful nextjs framework.
+
+#### Expectations
+
+After completion of this guide, you should be able to understand and write basic nextjs application.
+
+#### Training resources
+
+- [NextJS](./../tutorials/js/nextjs.md)
 
 ---
 

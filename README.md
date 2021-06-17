@@ -15,10 +15,12 @@ variety of languages and technologies.
 
 ## Tutorials
 
-- [NodeJS & Express]('./../tutorials/nodejs/nodejs-express.md)
-- [NextJS]('./../tutorials/nodejs/nextjs.md)
-- [Apollo GraphQL Server & Client]('./../tutorials/nodejs/apollo-graphql-server-client.md)
-- [TypeORM & TypeGraphQL](./tutorials/nodejs/typeorm-typegraphql.md)
+- [NodeJS & Express]('./../tutorials/js/nodejs-express.md)
+- [NextJS]('./../tutorials/js/nextjs.md)
+- [NestJS]('./../tutorials/js/nestjs.md)
+- [Apollo GraphQL Server & Client]('./../tutorials/js/apollo-graphql-server-client.md)
+- [TypeGraphQL](./tutorials/js/typegraphql.md)
+- [TypeORM](./tutorials/js/typeorm-typegraphql.md)
 
 ## Python
 

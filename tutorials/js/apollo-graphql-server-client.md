@@ -15,13 +15,14 @@ Apollo is a platform for building a data graph, a communication layer that seaml
 
 ### Apollo Server
 
-Apollo Server is an extensible, open-source JavaScript GraphQL server.
-You have to define graphql schema & resolvers.
+- Apollo Server is an extensible, open-source JavaScript GraphQL server.
+- You have to define graphql schema & resolvers.
 
 ### Apollo Client
 
-Apollo Client is a customizable, open-source JavaScript GraphQL client.
-It lets you define queries directly within the UI components that use them, and automatically update those components as query results arrive or change. It also works seamlessly with TypeScript
+- Apollo Client is a customizable, open-source JavaScript GraphQL client.
+- It lets you define queries directly within the UI components that use them, and automatically update those components as query results arrive or change.
+- It also works seamlessly with TypeScript.
 
 ## Installation
 
