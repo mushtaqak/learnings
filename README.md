@@ -15,7 +15,9 @@ variety of languages and technologies.
 
 ## Tutorials
 
-- [NodeJS Learning crash course]('./tutorials/../../README.md)
+- [NodeJS & Express]('./../tutorials/nodejs/nodejs-express.md)
+- [Apollo GraphQL Server & Client]('./../tutorials/nodejs/apollo-graphql-server-client.md)
+- [NodeJS & Express]('./../tutorials/nodejs/nextjs.md)
 
 ## Python
 

@@ -1,4 +1,14 @@
-# Node Learning
+# NodeJS Learning
+
+## Official Documentation
+
+http://nodejs.dev/
+
+## Details
+
+## Installation
+
+For nodejs & nvm installation, refer to [nvm installation guide](../../guides/nvm-npm-yarn.md)
 
 ## Topics
 
@@ -238,3 +248,8 @@ Learn all about Node.js in the full course for beginners.
 ⌨️ (2:22:34) Getting Started With EJS Templates With Express
 ⌨️ (2:35:22) How does MiddleWare Work and Creating Custom Middleware
 ⌨️ (2:42:49) Working With The Express Router
+
+## References
+
+[Learn Node.js - Full Tutorial for Beginners](https://www.youtube.com/watch?v=RLtyhwFtXQA)
+[Learn Node.js with Mosh in 1 hour](https://www.youtube.com/watch?v=TlB_eWDSMt4)
