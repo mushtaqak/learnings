@@ -14,7 +14,12 @@ export class Book {
   name: string;
 
   @Field(() => Author)
-  // lazy: true to fix "Cannot return null for non-nullable field Book.author" when querying books query. It lazily fetches data.
+  // FIXME: save author in DB using createBook mutation
+  // JoinColumn is not needed on ManyToOne/OneToMany relations
+  // lazy: true
+  // - fixes "Cannot return null for non-nullable field Book.author" when querying books query.
+  // - It lazily fetches data.
+  // - it seems it causes issue when saving data in DB.
   @ManyToOne(() => Author, (author) => author.books, { lazy: true })
   author: Author;
 }
