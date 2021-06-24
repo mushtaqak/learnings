@@ -2,18 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Book {
-  id: ID!
-
-  """Book Name"""
-  name: String!
-}
-
 type Author {
   id: ID!
 
   """Name of author"""
   name: String!
+}
+
+type Book {
+  id: ID!
+
+  """Book Name"""
+  name: String!
+  author: Author!
 }
 
 type Query {

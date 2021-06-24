@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateAuthorInput } from './dto/create-author.input';
-import { UpdateAuthorInput } from './dto/update-author.input';
-import { Author } from './entities/author.entity';
+import { CreateAuthorInput, UpdateAuthorInput } from './dto';
+import { Author } from './entities';
 
 @Injectable()
 export class AuthorService {
@@ -19,7 +18,7 @@ export class AuthorService {
 
   async findAll() {
     const authors = await this.authorRepository.find();
-    return authors
+    return authors;
   }
 
   async findOne(name: string) {

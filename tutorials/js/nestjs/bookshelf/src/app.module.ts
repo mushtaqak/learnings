@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConnectionOptions } from 'typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BookModule } from './book/book.module';
-import { AuthorModule } from './author/author.module';
-import { Author } from './author/entities/author.entity';
-import { Book } from './book/entities/book.entity';
+import { Author, AuthorModule } from './author';
+import { Book, BookModule } from './book';
 import DatabaseConfig from './config/database.config';
 
 @Module({
@@ -16,20 +14,17 @@ import DatabaseConfig from './config/database.config';
     // TypeOrmModule.forRoot(DatabaseConfig() as ConnectionOptions),
     // for now directly pass typeorm settings to nestjs
     TypeOrmModule.forRoot({
-        type: "postgres",
-        host: "localhost",
-        port: 5432,
-        username: "postgres",
-        password: "password",
-        database: "bookshelf",
-        entities: [
-          Author,
-          Book,
-        ],
-        synchronize: true,
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'postgres',
+      password: 'password',
+      database: 'bookshelf',
+      entities: [Author, Book],
+      synchronize: true,
     }),
     GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql'
+      autoSchemaFile: 'schema.gql',
     }),
     BookModule,
     AuthorModule,

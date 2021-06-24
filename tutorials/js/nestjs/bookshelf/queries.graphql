@@ -1,0 +1,29 @@
+query authors {
+  authors {
+    name
+  }
+}
+
+query books {
+  books {
+    name
+  }
+}
+
+mutation createBook {
+  createBook(createBookInput: {
+    name: "Harry Potter & Goblet of Fire"
+  }) {
+    id
+    name
+  }
+}
+
+mutation createAuthor {
+  createAuthor(createAuthorInput: {
+    name: "JKR"
+  }) {
+    id
+    name
+  }
+}
