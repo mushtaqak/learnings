@@ -9,8 +9,8 @@ export class BookResolver {
   constructor(private readonly bookService: BookService) {}
 
   @Mutation(() => Book)
-  createBook(@Args('createBookInput') createBookInput: CreateBookInput) {
-    return this.bookService.create(createBookInput);
+  createBook(@Args('data') data: CreateBookInput) {
+    return this.bookService.create(JSON.parse(JSON.stringify(data)));
   }
 
   @Query(() => [Book], { name: 'books' })
@@ -24,8 +24,8 @@ export class BookResolver {
   }
 
   @Mutation(() => Book)
-  updateBook(@Args('updateBookInput') updateBookInput: UpdateBookInput) {
-    return this.bookService.update(updateBookInput.id, updateBookInput);
+  updateBook(@Args('data') data: UpdateBookInput) {
+    return this.bookService.update(data.id, data);
   }
 
   @Mutation(() => Book)

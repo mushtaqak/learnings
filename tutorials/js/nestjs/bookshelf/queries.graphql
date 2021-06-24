@@ -17,10 +17,9 @@ query books {
 }
 
 mutation createBook {
-  createBook(createBookInput: {
-    name: "Harry Potter & Goblet of Fire",
-    author: { name: "JKR" }
-  }) {
+  createBook(
+    data: { name: "Harry Potter & Goblet of Fire", author: { name: "JKR" } }
+  ) {
     id
     name
     author {
@@ -30,10 +29,12 @@ mutation createBook {
 }
 
 mutation createAuthor {
-  createAuthor(createAuthorInput: {
-    name: "JKR",
-    books: [{ name: "Harry Potter & Philosopher`s Stone"}]
-  }) {
+  createAuthor(
+    data: {
+      name: "JKR"
+      books: [{ name: "Harry Potter & Philosopher`s Stone" }]
+    }
+  ) {
     id
     name
     books {

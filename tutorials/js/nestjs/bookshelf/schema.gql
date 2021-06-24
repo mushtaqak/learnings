@@ -26,11 +26,11 @@ type Query {
 }
 
 type Mutation {
-  createBook(createBookInput: CreateBookInput!): Book!
-  updateBook(updateBookInput: UpdateBookInput!): Book!
+  createBook(data: CreateBookInput!): Book!
+  updateBook(data: UpdateBookInput!): Book!
   removeBook(id: String!): Book!
-  createAuthor(createAuthorInput: CreateAuthorInput!): Author!
-  updateAuthor(updateAuthorInput: UpdateAuthorInput!): Author!
+  createAuthor(data: CreateAuthorInput!): Author!
+  updateAuthor(data: UpdateAuthorInput!): Author!
   removeAuthor(id: String!): Author!
 }
 

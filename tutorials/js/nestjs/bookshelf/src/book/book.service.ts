@@ -12,14 +12,14 @@ export class BookService {
     private bookRepository: Repository<Book>,
   ) {}
 
-  async create(createbookInput: CreateBookInput) {
-    const book = await this.bookRepository.save(createbookInput);
+  async create(data: CreateBookInput) {
+    const book = await this.bookRepository.save(data);
     return book;
   }
 
   async findAll() {
     const books = await this.bookRepository.find();
-    return books
+    return books;
   }
 
   async findOne(name: string) {
@@ -27,7 +27,7 @@ export class BookService {
     return book;
   }
 
-  update(id: string, updatebookInput: UpdateBookInput) {
+  update(id: string, data: UpdateBookInput) {
     return `This action updates a #${id} book`;
   }
 
