@@ -11,9 +11,9 @@ export class AuthorService {
     private authorRepository: Repository<Author>,
   ) {}
 
-  async create(createAuthorInput: CreateAuthorInput) {
-    console.log({ createAuthorInput });
-    const author = await this.authorRepository.save(createAuthorInput);
+  async create(data: CreateAuthorInput) {
+    const authorData = this.authorRepository.create(data);
+    const author = await this.authorRepository.save(authorData);
     return author;
   }
 
@@ -27,7 +27,7 @@ export class AuthorService {
     return author;
   }
 
-  update(id: string, updateAuthorInput: UpdateAuthorInput) {
+  update(id: string, data: UpdateAuthorInput) {
     // TODO: add this functionality
     return `This action updates a #${id} author`;
   }
