@@ -19,7 +19,7 @@ export class Book {
   // lazy: true
   // - fixes "Cannot return null for non-nullable field Book.author" when querying books query.
   // - It lazily fetches data.
-  // - it seems it causes issue when saving data in DB.
+  // - it seems it causes issue when saving data in DB, so it can not be set with cascade: true
   @ManyToOne(() => Author, (author) => author.books, { lazy: true })
   author: Author;
 }

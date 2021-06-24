@@ -28,6 +28,7 @@ export class AuthorService {
   }
 
   update(id: string, updateAuthorInput: UpdateAuthorInput) {
+    // TODO: add this functionality
     return `This action updates a #${id} author`;
   }
 

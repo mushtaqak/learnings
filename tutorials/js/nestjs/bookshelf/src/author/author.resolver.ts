@@ -9,6 +9,7 @@ export class AuthorResolver {
 
   @Mutation(() => Author)
   createAuthor(@Args('data') data: CreateAuthorInput) {
+    // TODO: Ideally we should not need to parse data to save related relation data (book)
     return this.authorService.create(JSON.parse(JSON.stringify(data)));
   }
 

@@ -28,6 +28,7 @@ export class BookService {
   }
 
   update(id: string, data: UpdateBookInput) {
+    // TODO: add this functionality
     return `This action updates a #${id} book`;
   }
 
