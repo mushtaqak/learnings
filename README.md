@@ -21,7 +21,7 @@ variety of languages and technologies.
 - [Apollo GraphQL Server & Client]('./../tutorials/js/apollo-graphql-server-client.md)
 - [Apollo Server Express]('./../tutorials/js/apollo-express.md)
 - [TypeGraphQL](./tutorials/js/typegraphql.md)
-- [TypeORM](./tutorials/js/typeorm-typegraphql.md)
+- [TypeORM](./tutorials/js/typeorm/typeorm.md)
 
 ## Python
 

@@ -196,3 +196,13 @@ const timber = await User.findOne({ firstName: "Timber", lastName: "Saw" });
 
 await timber.remove();
 ```
+
+## Sample Projects
+
+### [bookshelf](./bookshelf/README.md) - A Book-Author application
+
+A TypeORM, GraphQL & Apollo Server Express application.
+
+### [bookshelf](../nestjs/bookshelf/installation.md) - A Book-Author application
+
+A NestJS, TypeORM, GraphQL & Apollo Server Express application.

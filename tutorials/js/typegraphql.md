@@ -168,6 +168,16 @@ const schema = await buildSchema({
 // ...creating express server or sth
 ```
 
+## Sample Projects
+
+### [bookshelf](./typeorm/bookshelf/README.md) - A Book-Author application
+
+A TypeORM, GraphQL & Apollo Server Express application.
+
+### [bookshelf](./nestjs/bookshelf/installation.md) - A Book-Author application
+
+A NestJS, TypeORM, GraphQL & Apollo Server Express application.
+
 ## References
 
 - [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)

@@ -10,7 +10,7 @@
 
 ## Topics
 
-## Samples
+## Sample Projects
 
 ### [bookshelf](./bookshelf/installation.md) - A Book-Author application
 

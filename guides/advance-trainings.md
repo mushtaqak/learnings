@@ -159,7 +159,7 @@ You should be able to build graphql application with type orm & typegraphql mode
 
 #### Training resources
 
-- [TypeORM Tutorial](./../tutorials/js/typeorm-typegraphql.md)
+- [TypeORM Tutorial](./../tutorials/js/typeorm/typeorm.md)
 - [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)
 
 ---
