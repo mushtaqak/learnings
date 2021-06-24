@@ -17,7 +17,9 @@ export class BookService {
   async create(data: CreateBookInput) {
     const bookData = this.bookRepository.create(data);
     // TODO: We shouldn't be doing this - there should be some other way.
-    bookData.author = await this.authorService.create(data.author);
+    if (data?.author) {
+      bookData.author = await this.authorService.create(data.author);
+    }
     const book = await this.bookRepository.save(bookData);
     return book;
   }
