@@ -7,6 +7,7 @@ type Author {
 
   """Name of author"""
   name: String!
+  books: [Book!]!
 }
 
 type Book {
@@ -36,21 +37,25 @@ type Mutation {
 input CreateBookInput {
   """Book Name"""
   name: String!
-}
-
-input UpdateBookInput {
-  """Book Name"""
-  name: String
-  id: ID!
+  author: CreateAuthorInput
 }
 
 input CreateAuthorInput {
   """Name of author"""
   name: String!
+  books: [CreateBookInput!]
+}
+
+input UpdateBookInput {
+  """Book Name"""
+  name: String
+  author: CreateAuthorInput
+  id: ID!
 }
 
 input UpdateAuthorInput {
   """Name of author"""
   name: String
+  books: [CreateBookInput!]
   id: ID!
 }

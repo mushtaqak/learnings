@@ -1,11 +1,12 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Book } from '../book';
 import { AuthorService } from './author.service';
 import { AuthorResolver } from './author.resolver';
-import { Author } from './entities/author.entity';
+import { Author } from './entities';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Author])],
-  providers: [AuthorResolver, AuthorService]
+  imports: [forwardRef(() => Book), TypeOrmModule.forFeature([Author])],
+  providers: [AuthorResolver, AuthorService],
 })
 export class AuthorModule {}

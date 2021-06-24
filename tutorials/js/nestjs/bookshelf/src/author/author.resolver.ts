@@ -9,7 +9,7 @@ export class AuthorResolver {
 
   @Mutation(() => Author)
   createAuthor(@Args('createAuthorInput') data: CreateAuthorInput) {
-    return this.authorService.create(data);
+    return this.authorService.create(JSON.parse(JSON.stringify(data)));
   }
 
   @Query(() => [Author], { name: 'authors' })
