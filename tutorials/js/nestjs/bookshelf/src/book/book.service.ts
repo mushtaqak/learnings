@@ -1,19 +1,24 @@
-import { Injectable } from '@nestjs/common';
+import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateBookInput } from './dto/create-book.input';
-import { UpdateBookInput } from './dto/update-book.input';
-import { Book } from './entities/book.entity';
+import { AuthorService } from '../author';
+import { CreateBookInput, UpdateBookInput } from './dto';
+import { Book } from './entities';
 
 @Injectable()
 export class BookService {
   constructor(
     @InjectRepository(Book)
     private bookRepository: Repository<Book>,
+    @Inject(forwardRef(() => AuthorService))
+    private authorService: AuthorService,
   ) {}
 
   async create(data: CreateBookInput) {
-    const book = await this.bookRepository.save(data);
+    const bookData = this.bookRepository.create(data);
+    // TODO: We shouldn't be doing this - there should be some other way.
+    bookData.author = await this.authorService.create(data.author);
+    const book = await this.bookRepository.save(bookData);
     return book;
   }
 

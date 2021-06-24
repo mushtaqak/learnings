@@ -19,25 +19,19 @@ type Book {
 }
 
 type Query {
-  books: [Book!]!
-  book(name: String!): Book!
   authors: [Author!]!
   author(name: String!): Author!
+  books: [Book!]!
+  book(name: String!): Book!
 }
 
 type Mutation {
-  createBook(data: CreateBookInput!): Book!
-  updateBook(data: UpdateBookInput!): Book!
-  removeBook(id: String!): Book!
   createAuthor(data: CreateAuthorInput!): Author!
   updateAuthor(data: UpdateAuthorInput!): Author!
   removeAuthor(id: String!): Author!
-}
-
-input CreateBookInput {
-  """Book Name"""
-  name: String!
-  author: CreateAuthorInput
+  createBook(data: CreateBookInput!): Book!
+  updateBook(data: UpdateBookInput!): Book!
+  removeBook(id: String!): Book!
 }
 
 input CreateAuthorInput {
@@ -46,16 +40,22 @@ input CreateAuthorInput {
   books: [CreateBookInput!]
 }
 
-input UpdateBookInput {
+input CreateBookInput {
   """Book Name"""
-  name: String
+  name: String!
   author: CreateAuthorInput
-  id: ID!
 }
 
 input UpdateAuthorInput {
   """Name of author"""
   name: String
   books: [CreateBookInput!]
+  id: ID!
+}
+
+input UpdateBookInput {
+  """Book Name"""
+  name: String
+  author: CreateAuthorInput
   id: ID!
 }
