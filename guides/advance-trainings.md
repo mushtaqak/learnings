@@ -118,7 +118,7 @@ After completion of this guide, you should be able to understand and write basic
 
 #### Training resources
 
-- [NestJS](./../tutorials/js/nestjs.md)
+- [NestJS](./../tutorials/js/nestjs/nestjs.md)
 
 ---
 

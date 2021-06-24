@@ -17,7 +17,7 @@ variety of languages and technologies.
 
 - [NodeJS & Express]('./../tutorials/js/nodejs-express.md)
 - [NextJS]('./../tutorials/js/nextjs.md)
-- [NestJS]('./../tutorials/js/nestjs.md)
+- [NestJS]('./../tutorials/js/nestjs/nestjs.md)
 - [Apollo GraphQL Server & Client]('./../tutorials/js/apollo-graphql-server-client.md)
 - [Apollo Server Express]('./../tutorials/js/apollo-express.md)
 - [TypeGraphQL](./tutorials/js/typegraphql.md)

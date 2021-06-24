@@ -156,7 +156,7 @@ const timber = await repository.findOne({ firstName: "Timber", lastName: "Saw" }
 await repository.remove(timber);
 ```
 
-## ActiveRecord / Enity Example
+## ActiveRecord / Entity Example
 
 Alternatively, if you prefer to use the ActiveRecord implementation, you can use it as well:
 

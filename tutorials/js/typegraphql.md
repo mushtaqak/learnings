@@ -168,7 +168,6 @@ const schema = await buildSchema({
 // ...creating express server or sth
 ```
 
-
 ## References
 
 - [Build a GraphQL API with TypeGraphQL and TypeORM](https://blog.logrocket.com/how-build-graphql-api-typegraphql-typeorm/)
