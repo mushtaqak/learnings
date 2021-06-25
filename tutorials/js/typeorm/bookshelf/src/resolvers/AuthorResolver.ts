@@ -16,9 +16,7 @@ export class AuthorResolver {
 
   @Mutation(() => Author)
   async createAuthor(@Arg('data') data: CreateAuthorInput) {
-    const parsedData = JSON.parse(JSON.stringify(data)) as CreateAuthorInput
-    console.log({ data, parsedData })
-    const authorData = Author.create(parsedData);
+    const authorData = Author.create(data);
     const author = await authorData.save();
     return author;
   }

@@ -1,0 +1,41 @@
+### AUTHORS
+
+query authors {
+  authors {
+    id
+    name
+  }
+}
+
+query authorsWithBooks {
+  authors {
+    name
+    books {
+      name
+    }
+  }
+}
+
+mutation createAuthor {
+  createAuthor(data: { name: "JKR" }) {
+    id
+    name
+  }
+}
+
+mutation createAuthorWithBooks {
+  createAuthor(data: { name: "JKR", books: [{ name: "HP 1" }] }) {
+    id
+    name
+  }
+}
+
+mutation updateAuthor {
+  updateAuthor(id: "1", data: { name: "JK Rowling" }) {
+    name
+  }
+}
+
+mutation deleteAuthor {
+  deleteAuthor(id: "1")
+}

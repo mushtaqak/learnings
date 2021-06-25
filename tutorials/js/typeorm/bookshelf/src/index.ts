@@ -4,11 +4,11 @@ import { buildSchema } from 'type-graphql';
 import express, { json } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 
-import { AuthorResolver } from './resolvers';
+import { AuthorResolver, BookResolver } from './resolvers';
 
 async function main() {
   await createConnection();
-  const schema = await buildSchema({ resolvers: [AuthorResolver] });
+  const schema = await buildSchema({ resolvers: [AuthorResolver, BookResolver] });
   const server = new ApolloServer({ schema });
   await server.start();
   const app = express();
