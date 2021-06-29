@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorModule } from './author/author.module';
+import { BookModule } from './book/book.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { AuthorModule } from './author/author.module';
       // },
     }),
     AuthorModule,
+    BookModule,
   ],
   controllers: [AppController],
   providers: [AppService],
