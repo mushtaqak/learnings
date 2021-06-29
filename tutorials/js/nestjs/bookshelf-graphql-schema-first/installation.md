@@ -16,6 +16,8 @@ nest new bookshelf-graphql-schema-first
 
 `npm install --save @nestjs/typeorm typeorm pg apollo-server-express dotenv @nestjs/graphql graphql`
 
+To run ts-node scripts,  `npm install -g ts-node`
+
 ## Configurations
 
 - Add ormconfig.js
