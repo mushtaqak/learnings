@@ -3,6 +3,7 @@ type Author {
 
   """Name of author"""
   name: String!
+  age: String
   books: [Book!]!
 }
 

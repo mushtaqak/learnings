@@ -13,6 +13,10 @@ export class Author {
   @Column('text')
   name: string;
 
+  @Field(() => String, { description: 'Name of author' })
+  @Column('text')
+  age: string;
+
   @Field(() => [Book])
   // cascade: true
   // - allows to apply all DML on related relation (insert / update / delete)

@@ -25,11 +25,10 @@ import { Book } from './book';
       synchronize: true,
     }),
     GraphQLModule.forRoot({
-      autoSchemaFile: 'schema.gql',
-      // typePaths: ['./**/*.graphql'],
-      // definitions: {
-      //   path: join(process.cwd(), 'src/graphql.ts'),
-      // },
+      typePaths: ['./**/*.graphql'],
+      definitions: {
+        path: join(process.cwd(), 'src/graphql.schema.ts'),
+      },
     }),
     AuthorModule,
     BookModule,
