@@ -57,6 +57,48 @@ RUN_MIGRATIONS=false
 - Select Graphql - GraphQL (schema first)
 - Select (Y) - To create CRUD
 
-## Code
+Update `authors/authors.graphql`
 
-Now Update application code according to your usecases.
+```:gql
+type Author {
+  id: ID!
+
+  """Name of author"""
+  name: String!
+  books: [Book!]!
+}
+
+type Query {
+  authors: [Author!]!
+  author(name: String!): Author!
+}
+
+type Mutation {
+  createAuthor(data: CreateAuthorInput!): Author!
+  updateAuthor(data: UpdateAuthorInput!): Author!
+  removeAuthor(id: String!): Author!
+}
+
+input CreateAuthorInput {
+  """Name of author"""
+  name: String!
+  books: [CreateBookInput!]
+}
+
+input UpdateAuthorInput {
+  """Name of author"""
+  name: String
+  books: [CreateBookInput!]
+  id: ID!
+}
+```
+
+`nest g resource book`
+
+- Select Graphql - GraphQL (schema first)
+- Select (Y) - To create CRUD
+
+Update `book/book.graphql`
+
+- Generate types: `ts-node ./src/generate-typings.ts`
+- Run `npm start`
