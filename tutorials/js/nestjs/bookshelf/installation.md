@@ -52,8 +52,9 @@ RUN_MIGRATIONS=false
 ## Create module resources
 
 `nest g resource [module-name]`
-Select Graphql - Code First
-Select (Y) - To create CRUD
+
+- Select Graphql - Code First
+- Select (Y) - To create CRUD
 
 ## Code
 
