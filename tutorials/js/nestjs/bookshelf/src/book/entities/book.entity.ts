@@ -20,6 +20,7 @@ export class Book {
   // - fixes "Cannot return null for non-nullable field Book.author" when querying books query.
   // - It lazily fetches data.
   // - it seems it causes issue when saving data in DB, so it can not be set with cascade: true
+  // onDelete: true - to delete related books when deleting a author.
   @ManyToOne(() => Author, (author) => author.books, { lazy: true })
   author: Author;
 }
