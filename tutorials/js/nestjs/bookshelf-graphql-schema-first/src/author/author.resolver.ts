@@ -12,7 +12,7 @@ export class AuthorResolver {
     return this.authorService.create(createAuthorInput);
   }
 
-  @Query('author')
+  @Query('authors')
   findAll() {
     return this.authorService.findAll();
   }

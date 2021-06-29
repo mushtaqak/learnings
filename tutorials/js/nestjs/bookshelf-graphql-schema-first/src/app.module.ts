@@ -6,6 +6,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorModule } from './author/author.module';
 import { BookModule } from './book/book.module';
+import { Author } from './author';
+import { Book } from './book';
 
 @Module({
   imports: [
@@ -19,10 +21,12 @@ import { BookModule } from './book/book.module';
       username: 'postgres',
       password: 'password',
       database: 'bookshelf-schema-first',
+      entities: [Author, Book],
       synchronize: true,
     }),
     GraphQLModule.forRoot({
-      typePaths: ['./**/*.graphql'],
+      autoSchemaFile: 'schema.gql',
+      // typePaths: ['./**/*.graphql'],
       // definitions: {
       //   path: join(process.cwd(), 'src/graphql.ts'),
       // },
