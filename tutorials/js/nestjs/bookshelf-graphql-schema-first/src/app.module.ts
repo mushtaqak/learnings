@@ -17,7 +17,7 @@ import { AuthorModule } from './author/author.module';
       port: 5432,
       username: 'postgres',
       password: 'password',
-      database: 'bookshelf',
+      database: 'bookshelf-schema-first',
       synchronize: true,
     }),
     GraphQLModule.forRoot({
