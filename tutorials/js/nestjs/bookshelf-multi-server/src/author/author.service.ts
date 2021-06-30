@@ -1,26 +1,45 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Optional } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateAuthorInput } from './dto/create-author.input';
 import { UpdateAuthorInput } from './dto/update-author.input';
+import { Author } from './entities/author.entity';
 
 @Injectable()
 export class AuthorService {
-  create(createAuthorInput: CreateAuthorInput) {
-    return 'This action adds a new author';
+  constructor(
+    // FIXME: this does not get injected correctly
+    @Optional()
+    @InjectRepository(Author)
+    private authorRepository: Repository<Author>,
+  ) {}
+
+  async create(data: CreateAuthorInput) {
+    const authorData = this.authorRepository.create(data);
+    const author = await this.authorRepository.save(authorData);
+    return author;
   }
 
-  findAll() {
-    return `This action returns all author`;
+  async findAll() {
+    // const authors = await this.authorRepository.find();
+    const authors = [{ exampleField: 1} as Author];
+    return authors;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} author`;
+  async findOne(id: number) {
+    const author = await this.authorRepository.findOne({ exampleField: id });
+    return author;
   }
 
-  update(id: number, updateAuthorInput: UpdateAuthorInput) {
-    return `This action updates a #${id} author`;
+  async update(id: number, updateAuthorInput: UpdateAuthorInput) {
+    // TODO: implement this
+    const author = await this.authorRepository.findOne({ exampleField: id });
+    return author;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} author`;
+  async remove(id: number) {
+    // TODO: implement this
+    const author = await this.authorRepository.findOne({ exampleField: id });
+    return author;
   }
 }
