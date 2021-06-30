@@ -6,6 +6,7 @@ const express  = require('express');
 const http  = require('http');
 
 async function bootstrap() {
+  // Restful server
   const restExpress = express();
   const restApp = await NestFactory.create(
     AppModule.register({
@@ -16,6 +17,8 @@ async function bootstrap() {
     new ExpressAdapter(restExpress),
   );
   await restApp.init();
+
+  // GraphQL server
   http.createServer(restExpress).listen(4000);
   const gqlExpress = express();
   const gqlApp = await NestFactory.create(
