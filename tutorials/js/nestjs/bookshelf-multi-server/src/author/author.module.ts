@@ -5,8 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Author } from './entities/author.entity';
 
 @Module({
+  // imports: [TypeOrmModule.forFeature([Author])],
+  providers: [AuthorResolver, AuthorService],
+  exports: [AuthorService],
 })
 export class AuthorModule {
+  /*
   static register(options): DynamicModule {
     const module: DynamicModule = {
       module: AuthorModule,
@@ -23,4 +27,5 @@ export class AuthorModule {
     // }
     return module;
   }
+  */
 }

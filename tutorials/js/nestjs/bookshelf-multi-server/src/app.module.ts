@@ -32,6 +32,7 @@ export class AppModule {
           synchronize: true,
         }),
         GraphQLModule.forRoot({
+          include: [AuthorModule],
           autoSchemaFile: 'schema.gql',
         }),
         AuthorModule,

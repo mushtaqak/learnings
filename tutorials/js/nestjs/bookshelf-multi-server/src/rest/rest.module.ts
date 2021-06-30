@@ -5,14 +5,14 @@ import { RestController } from './rest.controller';
   controllers: [RestController]
 })
 export class RestModule {
-  static register(options): DynamicModule {
-    const module: DynamicModule = {
-      module: RestModule,
-    }
-    console.log({ options })
-    if (options.exposeRest) {
-      module.controllers = [RestController];
-    }
-    return module;
-  }
+  // static register(options): DynamicModule {
+  //   const module: DynamicModule = {
+  //     module: RestModule,
+  //   }
+  //   console.log({ options })
+  //   if (options.exposeRest) {
+  //     module.controllers = [RestController];
+  //   }
+  //   return module;
+  // }
 }
