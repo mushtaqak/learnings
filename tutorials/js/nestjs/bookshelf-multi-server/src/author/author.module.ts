@@ -5,12 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Author } from './entities/author.entity';
 
 @Module({
-  // imports: [TypeOrmModule.forFeature([Author])],
   providers: [AuthorResolver, AuthorService],
   exports: [AuthorService],
 })
 export class AuthorModule {
-  /*
+
   static register(options): DynamicModule {
     const module: DynamicModule = {
       module: AuthorModule,
@@ -18,7 +17,7 @@ export class AuthorModule {
       providers: [AuthorResolver, AuthorService],
       exports: [AuthorService],
     }
-    console.log({ options })
+    console.log({ authorOptions: options })
     // if (options.exposeGraphql) {
     //   module.providers = [AuthorResolver, AuthorService];
     //   module.imports = [TypeOrmModule.forFeature([Author])];
@@ -27,5 +26,4 @@ export class AuthorModule {
     // }
     return module;
   }
-  */
 }
