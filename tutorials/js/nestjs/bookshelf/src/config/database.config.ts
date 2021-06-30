@@ -1,4 +1,5 @@
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
+const dotenv = require('dotenv');
 
 dotenv.config();
 const database = {
@@ -10,9 +11,9 @@ const database = {
       password: "password",
       database: "bookshelf",
       entities: [
-        "dist/**/entites/*.entity.js"
+        "src/**/entites/*.entity.ts"
       ],
-      synchronize: false
+      synchronize: true,
     },
     test:  {
       type: "postgres",
@@ -41,4 +42,4 @@ const database = {
     ...database[process.env.NODE_ENV]
   })
 
-  export = DatabaseConfig;
+  export default DatabaseConfig;
