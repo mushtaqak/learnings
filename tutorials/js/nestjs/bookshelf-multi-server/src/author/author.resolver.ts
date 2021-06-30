@@ -13,7 +13,7 @@ export class AuthorResolver {
     return this.authorService.create(createAuthorInput);
   }
 
-  @Query(() => [Author], { name: 'author' })
+  @Query(() => [Author], { name: 'authors' })
   findAll() {
     return this.authorService.findAll();
   }

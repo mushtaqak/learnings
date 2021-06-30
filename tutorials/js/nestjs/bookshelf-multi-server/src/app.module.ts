@@ -4,17 +4,23 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RestModule } from './rest/rest.module';
+import { Author } from './author/entities/author.entity';
 import { AuthorModule } from './author/author.module';
 
 @Module({})
 export class AppModule {
   static register(options): DynamicModule {
-    return {
+    const module : DynamicModule = {
       module: AppModule,
-      imports: [
-        // TODO: use database configs from env
-        // TypeOrmModule.forRoot(DatabaseConfig() as ConnectionOptions),
-        // for now directly pass typeorm settings to nestjs
+      controllers: [AppController],
+      providers: [AppService],
+    };
+    if (options.exposeRest) {
+      module.imports = [RestModule];
+      console.log({ rest: options })
+    }
+    else if (options.exposeGraphql) {
+      module.imports = [
         TypeOrmModule.forRoot({
           type: 'postgres',
           host: 'localhost',
@@ -22,18 +28,16 @@ export class AppModule {
           username: 'postgres',
           password: 'password',
           database: 'bookshelf',
-          // entities: [Author, Book],
+          entities: ['src/**/entites/*.entity.ts'],
           synchronize: true,
         }),
         GraphQLModule.forRoot({
           autoSchemaFile: 'schema.gql',
         }),
-        // AuthorModule, BookModule,
-        RestModule,
         AuthorModule,
-      ],
-      controllers: [AppController],
-      providers: [AppService],
-    };
+      ];
+      console.log({ gql: options })
+    }
+    return module;
   }
 }
