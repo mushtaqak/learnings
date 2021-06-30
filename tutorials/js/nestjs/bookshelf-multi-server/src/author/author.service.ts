@@ -9,7 +9,6 @@ import { Author } from './entities/author.entity';
 export class AuthorService {
   constructor(
     // FIXME: this does not get injected correctly
-    @Optional()
     @InjectRepository(Author)
     private authorRepository: Repository<Author>,
   ) {}
@@ -21,8 +20,8 @@ export class AuthorService {
   }
 
   async findAll() {
-    // const authors = await this.authorRepository.find();
-    const authors = [{ exampleField: 1} as Author];
+    const authors = await this.authorRepository.find();
+    // const authors = [{ exampleField: 1} as Author];
     return authors;
   }
 

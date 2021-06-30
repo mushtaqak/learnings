@@ -1,0 +1,23 @@
+[{
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "password",
+    "database": "bookshelf",
+    "synchronize": true,
+    "logging": true
+  },
+  {
+    "name": "gql",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "password",
+    "database": "bookshelf",
+    "synchronize": true,
+    "logging": true
+  }
+]

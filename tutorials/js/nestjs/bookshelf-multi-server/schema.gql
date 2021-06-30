@@ -3,7 +3,9 @@
 # ------------------------------------------------------
 
 type Author {
-  """Example field (placeholder)"""
+  id: ID!
+
+  """exampleField 2"""
   exampleField: Int!
 }
 
