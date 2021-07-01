@@ -27,13 +27,18 @@ export class AuthorService {
     return author;
   }
 
-  update(id: string, data: UpdateAuthorInput) {
-    // TODO: add this functionality
-    return `This action updates a #${id} author`;
+  async update(data: UpdateAuthorInput) {
+    const author = await this.authorRepository.findOne({ where: { id: data.id } });
+    if (!author) throw new Error('Author not found!');
+    Object.assign(author, data);
+    await this.authorRepository.save(author);
+    return author;
   }
 
   async remove(id: string) {
-    // TODO: add this functionality
-    return true;
+    const author = await this.authorRepository.findOne({ id });
+    if (!author) throw new Error('Author not found!');
+    await this.authorRepository.remove(author);
+    return author;
   }
 }

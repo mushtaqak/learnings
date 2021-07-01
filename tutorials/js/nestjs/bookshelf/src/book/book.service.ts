@@ -34,13 +34,19 @@ export class BookService {
     return book;
   }
 
-  update(id: string, data: UpdateBookInput) {
-    // TODO: add this functionality
-    return `This action updates a #${id} book`;
+  async update(data: UpdateBookInput) {
+    const book = await this.bookRepository.findOne({ where: { id: data.id } });
+    if (!book) throw new Error('Book not found!');
+    Object.assign(book, data);
+    await this.bookRepository.save(book);
+    return book;
   }
 
   async remove(id: string) {
-    // TODO: add this functionality
-    return true;
+    // FIXME: fix cascade delete
+    const book = await this.bookRepository.findOne({ id });
+    if (!book) throw new Error('Book not found!');
+    await this.bookRepository.remove(book);
+    return book;
   }
 }
