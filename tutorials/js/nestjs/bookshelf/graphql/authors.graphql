@@ -31,11 +31,13 @@ mutation createAuthorWithBooks {
 }
 
 mutation updateAuthor {
-  updateAuthor(id: "1", data: { name: "JK Rowling" }) {
+  updateAuthor(data: { id: "1", name: "JK Rowling" }) {
     name
   }
 }
 
 mutation deleteAuthor {
-  deleteAuthor(id: "1")
+  removeAuthor(id: "1") {
+    name
+  }
 }
