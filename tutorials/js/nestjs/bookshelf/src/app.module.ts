@@ -10,6 +10,8 @@ import { LibraryModule } from './library/library.module';
 import DatabaseConfig from './config/database.config';
 import { logger } from './logger.middleware';
 import { LibraryController } from './library/library.controller';
+import { APP_FILTER } from '@nestjs/core';
+import { AnyExceptionFilter } from './any-exception.filter';
 
 @Module({
   imports: [
@@ -33,7 +35,15 @@ import { LibraryController } from './library/library.controller';
     LibraryModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    // apply exception filter
+    // FIXME: TypeError: response.status is not a function
+    {
+      provide: APP_FILTER,
+      useClass: AnyExceptionFilter,
+    },
+    AppService,
+  ],
 })
 export class AppModule {
   // apply logging middleware to /library route
