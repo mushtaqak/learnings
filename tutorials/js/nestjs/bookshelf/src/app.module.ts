@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ConnectionOptions } from 'typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -6,7 +6,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Author, AuthorModule } from './author';
 import { Book, BookModule } from './book';
+import { LibraryModule } from './library/library.module';
 import DatabaseConfig from './config/database.config';
+import { logger } from './logger.middleware';
+import { LibraryController } from './library/library.controller';
 
 @Module({
   imports: [
@@ -27,8 +30,16 @@ import DatabaseConfig from './config/database.config';
     }),
     BookModule,
     AuthorModule,
+    LibraryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  // apply logging middleware to /library route
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(logger)
+      .forRoutes(LibraryController);
+  }
+}
