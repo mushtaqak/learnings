@@ -1,9 +1,8 @@
 // const ScriptInterface = require('../script.interface');
 import ScriptInterface from '../script.interface';
 
-export default class Script1 {
+export default class Script1 implements ScriptInterface {
   constructor() {
-    // super();
     console.log('Hello script1 constructor function here!');
   }
   foo = () => {
