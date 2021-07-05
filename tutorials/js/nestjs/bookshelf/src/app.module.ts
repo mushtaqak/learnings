@@ -12,6 +12,7 @@ import { logger } from './logger.middleware';
 import { LibraryController } from './library/library.controller';
 import { APP_FILTER } from '@nestjs/core';
 import { AnyExceptionFilter } from './any-exception.filter';
+import { ScriptRunnerModule } from './script-runner/script-runner.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { AnyExceptionFilter } from './any-exception.filter';
     BookModule,
     AuthorModule,
     LibraryModule,
+    ScriptRunnerModule,
   ],
   controllers: [AppController],
   providers: [
