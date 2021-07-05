@@ -1,18 +1,11 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { ObjectType, Field } from '@nestjs/graphql';
+import {Entity, OneToMany } from 'typeorm';
+import { CoreEntity } from '../../models';
 import { Book } from '../../book';
 
 @ObjectType()
 @Entity()
-export class Author {
-  @Field(() => ID)
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
-  @Field(() => String, { description: 'Name of author' })
-  @Column('text')
-  name: string;
-
+export class Author extends CoreEntity {
   @Field(() => [Book])
   // cascade: true
   // - allows to apply all DML on related relation (insert / update / delete)

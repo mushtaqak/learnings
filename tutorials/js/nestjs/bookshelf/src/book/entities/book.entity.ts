@@ -1,18 +1,11 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { ObjectType, Field } from '@nestjs/graphql';
+import { Entity, ManyToOne } from 'typeorm';
+import { CoreEntity } from '../../models';
 import { Author } from '../../author';
 
 @ObjectType()
 @Entity()
-export class Book {
-  @Field(() => ID)
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
-  @Field(() => String, { description: 'Book Name' })
-  @Column('text')
-  name: string;
-
+export class Book extends CoreEntity {
   @Field(() => Author)
   // FIXME: save author in DB using createBook mutation
   // JoinColumn is not needed on ManyToOne/OneToMany relations
