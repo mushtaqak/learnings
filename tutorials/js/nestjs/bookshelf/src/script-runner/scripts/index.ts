@@ -7,7 +7,6 @@ fs.readdirSync('src/script-runner/scripts').forEach(function (file) {
   if (file.indexOf('.ts') > -1 && file != 'index.ts') {
     const fileNameWithoutExt = file.replace('.ts', '');
     const jsFileName = file.replace('.ts', '.js');
-    // exports[file.replace('.js', '')] = require('./' + file);
     exports[fileNameWithoutExt] = require('./' + jsFileName);
   }
 });
