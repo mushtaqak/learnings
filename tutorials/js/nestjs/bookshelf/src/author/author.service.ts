@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAuthorInput, UpdateAuthorInput } from './dto';
@@ -9,6 +10,7 @@ export class AuthorService {
   constructor(
     @InjectRepository(Author)
     private authorRepository: Repository<Author>,
+    private configService: ConfigService,
   ) {}
 
   async create(data: CreateAuthorInput) {
@@ -18,6 +20,7 @@ export class AuthorService {
   }
 
   async findAll() {
+    console.log('Verifiying config service & env, ENV MODE: ', this.configService.get("MODE"))
     const authors = await this.authorRepository.find();
     return authors;
   }
