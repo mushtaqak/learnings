@@ -6,18 +6,38 @@ import ScriptRunner from './script-runner';
 @Injectable()
 export class ScriptRunnerService {
   scriptRunner = new ScriptRunner();
-  create(createScriptRunnerDto: CreateScriptRunnerDto) {
-    return 'This action adds a new scriptRunner';
+  async create(file) {
+    let scriptCompiled = false;
+    try {
+      scriptCompiled = await this.scriptRunner.compileScripts();
+    } catch (exc) {
+      console.log('Exc', exc);
+    }
+    return {
+      filename: file.originalname,
+      scriptCompiled,
+    }
   }
 
-  findAll() {
-    this.scriptRunner.getAllScripts();
+  async findAll() {
+    try {
+      await this.scriptRunner.loadScripts();
+    } catch (exc) {
+      console.log('Exc', exc);
+    }
+
     return 'List of scripts';
   }
 
-  findOne(id: string) {
-    this.scriptRunner.run(id);
-    return `Running "${id}" script.`;
+  async findOne(id: string) {
+    let response = `Running "${id}" script.`;
+    try {
+      await this.scriptRunner.run(id);
+    } catch (exc) {
+      console.log('Exc', exc);
+      response = `Error while running "${id}" script`;
+    }
+    return response;
   }
 
   update(id: string, updateScriptRunnerDto: UpdateScriptRunnerDto) {

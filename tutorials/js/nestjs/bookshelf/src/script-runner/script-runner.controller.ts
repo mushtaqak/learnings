@@ -15,8 +15,7 @@ import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 
-const SCRIPTS_UPLOAD_DIR = 'src/script-runner/scripts';
-// const SCRIPTS_UPLOAD_DIR = './scripts';
+const SCRIPTS_UPLOAD_DIR = 'scripts';
 
 // file filter for scripts
 export const scriptFileFilter = (req, file, callback) => {
@@ -30,27 +29,18 @@ export const scriptFileFilter = (req, file, callback) => {
 export class ScriptRunnerController {
   constructor(private readonly scriptRunnerService: ScriptRunnerService) {}
 
-  @Post()
-  create(@Body() createScriptRunnerDto: CreateScriptRunnerDto) {
-    return this.scriptRunnerService.create(createScriptRunnerDto);
-  }
-
   @Post('upload')
   @UseInterceptors(
     FileInterceptor('file', {
       storage: diskStorage({
         destination: SCRIPTS_UPLOAD_DIR,
-        filename: (eq, file, callback) => callback(null, file.originalname),
+        filename: (req, file, callback) => callback(null, file.originalname),
       }),
       fileFilter: scriptFileFilter,
     }),
   )
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
-    // console.log({ file });
-    const response = {
-      filename: file.originalname,
-    };
-    return response;
+  create(@UploadedFile() file: Express.Multer.File) {
+    return this.scriptRunnerService.create(file);
   }
 
   @Get()
