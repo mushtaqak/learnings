@@ -7,15 +7,13 @@ import ScriptRunner from './script-runner';
 export class ScriptRunnerService {
   scriptRunner = new ScriptRunner();
   async create(file) {
-    let scriptCompiled = false;
     try {
-      scriptCompiled = await this.scriptRunner.compileScripts();
+      await this.scriptRunner.compileScripts();
     } catch (exc) {
       console.log('Exc', exc);
     }
     return {
       filename: file.originalname,
-      scriptCompiled,
     }
   }
 

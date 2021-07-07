@@ -1,8 +1,9 @@
-export default class ScriptRunner {
+const SCRIPTS_DIR = '../../scripts'; // this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
 
+export default class ScriptRunner {
   async compileScripts() {
     const { exec } = require('child_process');
-    const isCompiled = await exec(
+    await exec(
       'nest build --tsc',
       (error, stdout, stderr) => {
         if (error) {
@@ -18,21 +19,27 @@ export default class ScriptRunner {
         return true;
       },
     );
-    return isCompiled;
   }
 
   async loadScripts() {
     // dynamically load scripts
-    const SCRIPTS_DIR = '../../scripts'; // this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
     const scripts = await import(SCRIPTS_DIR);
-    // const scripts = require(scriptDir);
     console.log({ scripts });
     return scripts;
   }
 
+  async loadScript(scriptName: string) {
+    // dynamically load scripts
+    const script = await import(`${SCRIPTS_DIR}/${scriptName}`);
+    console.log({ script });
+    return script;
+  }
+
   async run(scriptName: string) {
-    const scripts = await this.loadScripts();
-    const scriptClass = scripts[scriptName].default;
+    // const scripts = await this.loadScripts();
+    // const scriptClass = scripts[scriptName].default;
+    const scriptModule = await this.loadScript(scriptName);
+    const scriptClass = scriptModule.default;
     console.log({ scriptClass });
     const script = new scriptClass();
     console.log({ script });
