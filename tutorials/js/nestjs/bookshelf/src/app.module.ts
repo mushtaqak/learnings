@@ -1,19 +1,17 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
-import { ConnectionOptions } from 'typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { Author, AuthorModule } from './author';
-import { Book, BookModule } from './book';
-import { LibraryModule } from './library/library.module';
 import { logger } from './logger.middleware';
-import { LibraryController } from './library/library.controller';
 import { APP_FILTER } from '@nestjs/core';
+import { AuthorModule } from './author';
+import { BookModule } from './book';
 import { AnyExceptionFilter } from './any-exception.filter';
 import { ScriptRunnerModule } from './script-runner/script-runner.module';
 import { typeOrmConfigAsync } from './config/typeorm.config';
+import { ScriptRunnerController } from './script-runner/script-runner.controller';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -40,7 +38,6 @@ import { typeOrmConfigAsync } from './config/typeorm.config';
     }),
     BookModule,
     AuthorModule,
-    LibraryModule,
     ScriptRunnerModule,
   ],
   controllers: [AppController],
@@ -55,10 +52,10 @@ import { typeOrmConfigAsync } from './config/typeorm.config';
   ],
 })
 export class AppModule {
-  // apply logging middleware to /library route
+  // apply logging middleware to /script-runner route
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(logger)
-      .forRoutes(LibraryController);
+      .forRoutes(ScriptRunnerController);
   }
 }

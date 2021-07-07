@@ -15,8 +15,8 @@ import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 
-// const SCRIPTS_UPLOAD_DIR = 'src/script-runner/scripts';
-const SCRIPTS_UPLOAD_DIR = './scripts';
+const SCRIPTS_UPLOAD_DIR = 'src/script-runner/scripts';
+// const SCRIPTS_UPLOAD_DIR = './scripts';
 
 // file filter for scripts
 export const scriptFileFilter = (req, file, callback) => {
