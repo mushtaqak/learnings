@@ -1,4 +1,5 @@
-const SCRIPTS_DIR = '../../scripts'; // this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
+// works with no webpack - in media scripts
+const SCRIPTS_DIR = '../../../scripts';
 
 export default class ScriptRunner {
   async compileScripts() {
@@ -23,7 +24,7 @@ export default class ScriptRunner {
 
   async loadScripts() {
     // dynamically load scripts
-    const scripts = await import(SCRIPTS_DIR);
+    const scripts = await import(SCRIPTS_DIR); // this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
     console.log({ scripts });
     return scripts;
   }
