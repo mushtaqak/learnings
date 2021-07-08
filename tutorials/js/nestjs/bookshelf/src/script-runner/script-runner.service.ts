@@ -7,10 +7,15 @@ import ScriptRunner from './script-runner';
 export class ScriptRunnerService {
   scriptRunner = new ScriptRunner();
   async create(file) {
-    try {
-      await this.scriptRunner.compileScripts();
-    } catch (exc) {
-      console.log('Exc', exc);
+    // if file is in ts format - do not compile since we are uploading js file directly
+    const fileExt = file.originalname.split('.')[1];
+    if (fileExt === 'ts') {
+      try {
+        await this.scriptRunner.compileScripts();
+      } catch (exc) {
+        const response = `Error while compile "${file.originalname}" script: ${exc.message}`;
+        console.log(response)
+      }
     }
     return {
       filename: file.originalname,
@@ -18,13 +23,14 @@ export class ScriptRunnerService {
   }
 
   async findAll() {
+    let response = '';
     try {
       await this.scriptRunner.loadScripts();
     } catch (exc) {
-      console.log('Exc', exc);
+      response = `Error while loading scripts: ${exc.message}`;
+      console.log(response);
     }
-
-    return 'List of scripts';
+    return response;
   }
 
   async findOne(id: string) {
@@ -32,8 +38,8 @@ export class ScriptRunnerService {
     try {
       await this.scriptRunner.run(id);
     } catch (exc) {
-      console.log('Exc', exc);
-      response = `Error while running "${id}" script`;
+      response = `Error while running "${id}" script: ${exc.message}`;
+      console.log(response);
     }
     return response;
   }

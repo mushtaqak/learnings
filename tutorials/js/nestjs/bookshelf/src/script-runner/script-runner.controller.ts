@@ -15,7 +15,7 @@ import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 
-const SCRIPTS_UPLOAD_DIR = 'scripts';
+const SCRIPTS_UPLOAD_DIR = 'dist/scripts'; // dist/scripts dir would not be compiled again.
 
 // file filter for scripts
 export const scriptFileFilter = (req, file, callback) => {

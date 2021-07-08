@@ -28,6 +28,7 @@ export default class ScriptRunner {
     return scripts;
   }
 
+  // TODO: read file from medai scripts directory - then we do not need to compile.
   async loadScript(scriptName: string) {
     // dynamically load scripts
     const script = await import(`${SCRIPTS_DIR}/${scriptName}`);
