@@ -1,6 +1,3 @@
-// works with no webpack - in media scripts
-const SCRIPTS_DIR = '../../../scripts';
-
 export default class ScriptRunner {
   async compileScripts() {
     const { exec } = require('child_process');
@@ -24,6 +21,8 @@ export default class ScriptRunner {
 
   async loadScripts() {
     // dynamically load scripts
+    // works with no webpack - in media scripts
+    const SCRIPTS_DIR = '../../../scripts';
     const scripts = await import(SCRIPTS_DIR); // this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
     console.log({ scripts });
     return scripts;
@@ -32,7 +31,13 @@ export default class ScriptRunner {
   // TODO: read file from medai scripts directory - then we do not need to compile.
   async loadScript(scriptName: string) {
     // dynamically load scripts
-    const script = await import(`${SCRIPTS_DIR}/${scriptName}`);
+    // works with webpack but these scripts are part of dist bundle (Which we do not want)
+    // import(`../../scripts/${scriptName}`) compiles these scripts prior to build - so this option may not be useful.
+
+    // use SCRIPTS_DIR when no webpack (webpack: false in nest-cli.json) otherwise this
+    // works with no webpack - in media scripts
+    const SCRIPTS_DIR = '../../../scripts';
+    const script = await import(`${SCRIPTS_DIR}/${scriptName}`); // this works with webpack - this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
     console.log({ script });
     return script;
   }

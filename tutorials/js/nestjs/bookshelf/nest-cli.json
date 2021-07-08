@@ -3,6 +3,7 @@
   "sourceRoot": "src",
   "monorepo": true,
   "compilerOptions": {
+    "webpack": true,
     "tsConfigPath": "tsconfig.json"
   }
 }
