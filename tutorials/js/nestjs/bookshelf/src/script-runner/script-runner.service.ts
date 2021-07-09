@@ -55,7 +55,34 @@ export class ScriptRunnerService {
     console.log({ script });
     if (script) {
       console.log('====== Running script ===');
-      eval(script.script);
+      // dirname is dist (bundled)
+      // eval('console.log(__dirname)');
+      try {
+        eval(script.script);
+      } catch (e) {
+        const message = `Error occured while running eval: ${e.message}`;
+        console.error(e);
+        return message;
+      }
+      /*
+      Limitations of eval
+        - we can not import a script A from script B. To do that we have to publish the script in someway (eq helpers.js).
+
+      Findings
+        - we can import any package which is part the node_modules - if not we have to get it installed via npm.
+            ```
+            var faker = require('faker');
+            console.log(faker.name.findName())
+            ```
+        - we can also import some helpers/utils from the source code (eg. ./helpers.js)
+
+            ```
+            const helpers = require('../helpers');
+            console.log({ helpers })
+            console.log('Hello from script4')
+            helpers.foo();
+            ```
+      */
       console.log('====== script is running ===');
     } else {
       console.log('Script not found');
