@@ -1,3 +1,4 @@
+import * as ts from 'typescript';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Like, Repository } from 'typeorm';
@@ -13,10 +14,15 @@ export class ScriptRunnerService {
     private scriptRecordRepository: Repository<ScriptRecord>,
   ) {}
   scriptRunner = new ScriptRunner();
+
+  isTS(fileName) {
+    return fileName.split('.')[1] === 'ts';
+  }
+
   async upload(file) {
     // if file is in ts format - do not compile since we are uploading js file directly
     const fileExt = file.originalname.split('.')[1];
-    if (fileExt === 'ts') {
+    if (this.isTS(file.originalname)) {
       try {
         await this.scriptRunner.compileScripts();
       } catch (exc) {
@@ -48,17 +54,43 @@ export class ScriptRunnerService {
     return response;
   }
 
+  runTsScript(code) {
+    /*
+    Run ts through eval
+    reference: https://stackoverflow.com/questions/45153848/evaluate-typescript-from-string#answer-45156405
+
+    import * as ts from 'typescript';
+    let code: string = `({
+        Run: (data: string): string => {
+            console.log(data); return Promise.resolve("SUCCESS"); }
+        })`;
+
+    let result = ts.transpile(code);
+    let runnalbe :any = eval(result);
+    runnalbe.Run("RUN!").then((result:string)=>{console.log(result);});
+    */
+    // eg script: const foo: any = () => console.log('Hello s1.ts'); foo();
+    console.log('ts compile & eval ...');
+    // first transpile then evaluate
+    const jsScript = ts.transpile("const foo: any = (){console.log('Hello s1.ts');}; foo();");
+    eval(jsScript);
+  }
+
   async findOne(name: string) {
-    const script = await this.scriptRecordRepository.findOne({
+    const scriptRecord = await this.scriptRecordRepository.findOne({
       where: { name: Like(`${name}%`) },
     });
-    console.log({ script });
-    if (script) {
-      console.log('====== Running script ===');
+    console.log({ scriptRecord });
+    if (scriptRecord) {
       // dirname is dist (bundled)
       // eval('console.log(__dirname)');
+      console.log('====== Running script ===');
       try {
-        eval(script.script);
+        if(this.isTS(scriptRecord.name)) {
+          this.runTsScript(scriptRecord.script);
+        } else {
+          eval(scriptRecord.script);
+        }
       } catch (e) {
         const message = `Error occured while running eval: ${e.message}`;
         console.error(e);
@@ -85,10 +117,11 @@ export class ScriptRunnerService {
       */
       console.log('====== script is running ===');
     } else {
-      console.log('Script not found');
-      return 'Script not found, please upload and try again.';
+      const message = 'Script record not found, please upload and try again.';
+      console.log(message);
+      return message;
     }
-    return script;
+    return scriptRecord;
   }
 
   async run(id: string) {
