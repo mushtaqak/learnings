@@ -2,6 +2,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModuleAsyncOptions, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { Author } from 'src/author';
 import { Book } from 'src/book';
+import { ScriptRecord } from 'src/script-runner/entities/script-record.entity';
 
 export default class TypeOrmConfig {
   static getOrmConfig(configService: ConfigService): TypeOrmModuleOptions {
@@ -14,7 +15,7 @@ export default class TypeOrmConfig {
         database: database,
         port: parseInt(configService.get("TYPEORM_PORT")),
         logging: configService.get("TYPEORM_LOGGING") === 'true',
-        entities: [Author, Book],
+        entities: [Author, Book, ScriptRecord],
         migrationsRun: configService.get("TYPEORM_MIGRATIONS_RUN") === 'false',
         synchronize: configService.get("TYPEORM_SYNCHRONIZE") === 'true'
     };

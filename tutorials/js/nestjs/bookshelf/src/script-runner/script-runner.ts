@@ -28,16 +28,30 @@ export default class ScriptRunner {
     return scripts;
   }
 
-  // TODO: read file from medai scripts directory - then we do not need to compile.
   async loadScript(scriptName: string) {
-    // dynamically load scripts
-    // works with webpack but these scripts are part of dist bundle (Which we do not want)
-    // import(`../../scripts/${scriptName}`) compiles these scripts prior to build - so this option may not be useful.
+    // 3 options to dynamically load scripts
 
-    // use SCRIPTS_DIR when no webpack (webpack: false in nest-cli.json) otherwise this
+    // option1: no webpack - everything works. new script files are also being run.
+    // (webpack: false in nest-cli.json)
     // works with no webpack - in media scripts
     const SCRIPTS_DIR = '../../../scripts';
     const script = await import(`${SCRIPTS_DIR}/${scriptName}`); // this works with webpack - this is needed according to https://stackoverflow.com/questions/58349959/react-dynamic-import-using-a-variable-doesnt-work#answer-58350377 othwerwise doesnt work
+
+    // option2: works with webpack - script files at build time are only runnable - new script files uploaded at runtime will not be available.
+    // (webpack: true in nest-cli.json)
+    // works with webpack (not useful)
+    // - but these scripts are part of dist bundle (Which we do not want)
+    // - also only bundled scripts will be runnable - new scripts uploaded at runtime will not be runnable.
+    // import(`../../scripts/${scriptName}`) compiles these scripts prior to build - so this option may not be useful.
+
+    // option3: works with webpack - every time new script file is uploaded - server restarts.
+    // (webpack: true in nest-cli.json)
+    // FIXME: webpack does not let us import files outside of /dist --> reproduce --> ./nest-cli.json --> webpack: true
+    // - [Dynamic Import from external URL will throw Module not found error](https://github.com/webpack/webpack/issues/8341)
+    // - [babel 7 does not let us import files outside of dist](https://github.com/babel/babel/issues/8309)
+    // const SCRIPTS_DIR = '../../scripts';
+    // const script = await import(/* webpackIgnore: true */ `../../scripts/${scriptName}`);
+
     console.log({ script });
     return script;
   }

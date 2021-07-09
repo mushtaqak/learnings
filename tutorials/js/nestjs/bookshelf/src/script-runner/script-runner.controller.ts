@@ -29,6 +29,7 @@ export const scriptFileFilter = (req, file, callback) => {
 export class ScriptRunnerController {
   constructor(private readonly scriptRunnerService: ScriptRunnerService) {}
 
+  // saves a file does not save in db
   @Post('upload')
   @UseInterceptors(
     FileInterceptor('file', {
@@ -39,18 +40,40 @@ export class ScriptRunnerController {
       fileFilter: scriptFileFilter,
     }),
   )
-  create(@UploadedFile() file: Express.Multer.File) {
-    return this.scriptRunnerService.create(file);
+  uploadFile(@UploadedFile() file: Express.Multer.File) {
+    return this.scriptRunnerService.upload(file);
   }
 
+  // saves file in DB
+  @Post()
+  @UseInterceptors(FileInterceptor('file'))
+  create(@UploadedFile() file: Express.Multer.File) {
+    console.log(file);
+    const script = {
+        name: file.originalname,
+        script: file.buffer.toString('utf-8'),
+    };
+    return this.scriptRunnerService.create(script)
+  }
+
+  // not usefull
   @Get()
   findAll() {
     return this.scriptRunnerService.findAll();
   }
 
+
+  // runs script using eval - script data from db
+  @Get('/script/:id')
+  findOne(@Param('id') name: string) {
+    console.log('using eval')
+    return this.scriptRunnerService.findOne(name);
+  }
+
+  // runs script using js/ts file in /scripts dir
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.scriptRunnerService.findOne(id);
+  run(@Param('id') id: string) {
+    return this.scriptRunnerService.run(id);
   }
 
   @Patch(':id')

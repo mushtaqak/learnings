@@ -14,11 +14,19 @@ type Author {
   books: [Book!]!
 }
 
+type ScriptRecord {
+  id: ID!
+  name: String!
+  script: String!
+}
+
 type Query {
   books: [Book!]!
   book(name: String!): Book!
   authors: [Author!]!
   author(name: String!): Author!
+  scripts: [ScriptRecord!]!
+  script(name: String!): ScriptRecord!
 }
 
 type Mutation {
@@ -28,6 +36,9 @@ type Mutation {
   createAuthor(data: CreateAuthorInput!): Author!
   updateAuthor(data: UpdateAuthorInput!): Author!
   removeAuthor(id: String!): Author!
+  createScriptRecord(data: CreateScriptRecordInput!): ScriptRecord!
+  updateScriptRecord(data: UpdateScriptRecordInput!): ScriptRecord!
+  removeScriptRecord(id: String!): ScriptRecord!
 }
 
 input CreateBookInput {
@@ -54,4 +65,14 @@ input UpdateAuthorInput {
   name: String
   books: [CreateBookInput!]
   id: ID!
+}
+
+input CreateScriptRecordInput {
+  name: String!
+  script: String!
+}
+
+input UpdateScriptRecordInput {
+  name: String!
+  script: String!
 }
