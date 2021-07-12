@@ -15,6 +15,7 @@ import { diskStorage } from 'multer';
 import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
+import { ClassValidationPipe } from 'src/pipes/class-validation.pipe';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -51,10 +52,19 @@ export class ScriptRunnerController {
   create(@UploadedFile() file: Express.Multer.File) {
     console.log(file);
     const script = {
-        name: file.originalname,
-        script: file.buffer.toString('utf-8'),
+      name: file.originalname,
+      script: file.buffer.toString('utf-8'),
     };
-    return this.scriptRunnerService.create(script)
+    return this.scriptRunnerService.create(script);
+  }
+
+  // just for validator
+  // works: { "name": "ali", "script": "a"}
+  // fails: { "name": 1 }
+  @Post('validate')
+  validate(@Body(new ClassValidationPipe()) script: CreateScriptRunnerDto) {
+    console.log({ script });
+    return 'validated';
   }
 
   // not usefull
@@ -63,11 +73,10 @@ export class ScriptRunnerController {
     return this.scriptRunnerService.findAll();
   }
 
-
   // runs script using eval - script data from db
   @Get('/script/:id')
   findOne(@Param('id') name: string) {
-    console.log('using eval')
+    console.log('using eval');
     return this.scriptRunnerService.findOne(name);
   }
 
