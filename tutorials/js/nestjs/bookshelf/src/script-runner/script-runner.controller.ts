@@ -9,6 +9,7 @@ import {
   UseInterceptors,
   UploadedFile,
   ParseIntPipe,
+  UseGuards,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
@@ -16,6 +17,7 @@ import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 import { ClassValidationPipe } from 'src/pipes/class-validation.pipe';
+import { AuthGuard } from 'src/guards/auth.guard';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -28,6 +30,7 @@ export const scriptFileFilter = (req, file, callback) => {
 };
 
 @Controller('script-runner')
+@UseGuards(AuthGuard)
 export class ScriptRunnerController {
   constructor(private readonly scriptRunnerService: ScriptRunnerService) {}
 
