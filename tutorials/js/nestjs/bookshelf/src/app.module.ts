@@ -6,7 +6,7 @@ import { logger } from './logger.middleware';
 import { APP_FILTER } from '@nestjs/core';
 import { AuthorModule } from './author';
 import { BookModule } from './book';
-import { AnyExceptionFilter } from './any-exception.filter';
+import { AnyExceptionFilter } from './filters/any-exception.filter';
 import { ScriptRunnerModule } from './script-runner/script-runner.module';
 import { typeOrmConfigAsync } from './config/typeorm.config';
 import { ScriptRunnerController } from './script-runner/script-runner.controller';
