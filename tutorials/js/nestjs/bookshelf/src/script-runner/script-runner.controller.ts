@@ -18,6 +18,7 @@ import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 import { ClassValidationPipe } from '../common/pipes/class-validation.pipe';
 import { AuthGuard } from '../common/guards/auth.guard';
+import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -31,6 +32,7 @@ export const scriptFileFilter = (req, file, callback) => {
 
 @Controller('script-runner')
 @UseGuards(AuthGuard)
+@UseInterceptors(LoggingInterceptor)
 export class ScriptRunnerController {
   constructor(private readonly scriptRunnerService: ScriptRunnerService) {}
 
