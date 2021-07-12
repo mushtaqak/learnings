@@ -1,6 +1,6 @@
 import { ObjectType, Field } from '@nestjs/graphql';
 import {Entity, OneToMany } from 'typeorm';
-import { CoreEntity } from '../../models';
+import { CoreEntity } from '../../common/models';
 import { Book } from '../../book';
 
 @ObjectType()

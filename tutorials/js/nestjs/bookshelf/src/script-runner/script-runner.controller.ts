@@ -16,8 +16,8 @@ import { diskStorage } from 'multer';
 import { ScriptRunnerService } from './script-runner.service';
 import { CreateScriptRunnerDto } from './dto/create-script-runner.dto';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
-import { ClassValidationPipe } from 'src/pipes/class-validation.pipe';
-import { AuthGuard } from 'src/guards/auth.guard';
+import { ClassValidationPipe } from '../common/pipes/class-validation.pipe';
+import { AuthGuard } from '../common/guards/auth.guard';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
