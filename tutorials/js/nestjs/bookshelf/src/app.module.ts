@@ -2,7 +2,7 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { logger } from './logger.middleware';
+import { logger } from './middlewares/logger.middleware';
 import { APP_FILTER } from '@nestjs/core';
 import { AuthorModule } from './author';
 import { BookModule } from './book';
