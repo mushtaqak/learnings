@@ -34,6 +34,7 @@ type Mutation {
   updateBook(data: UpdateBookInput!): Book!
   removeBook(id: String!): Book!
   createAuthor(data: CreateAuthorInput!): Author!
+  createManyAuthors(data: CreateAuthorInput!): Boolean!
   updateAuthor(data: UpdateAuthorInput!): Author!
   removeAuthor(id: String!): Author!
   createScriptRecord(data: CreateScriptRecordInput!): ScriptRecord!

@@ -12,6 +12,13 @@ export class AuthorResolver {
     return this.authorService.create(data);
   }
 
+  @Mutation(() => Boolean)
+  createManyAuthors(@Args('data') data: CreateAuthorInput) {
+    const authors = this.authorService.createMany([data]);
+    console.log({ authors })
+    return authors ? true : false;
+  }
+
   @Query(() => [Author], { name: 'authors' })
   findAll() {
     return this.authorService.findAll();
