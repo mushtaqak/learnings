@@ -8,6 +8,7 @@ import {
   Delete,
   UseInterceptors,
   UploadedFile,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
@@ -78,7 +79,7 @@ export class ScriptRunnerController {
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: string,
     @Body() updateScriptRunnerDto: UpdateScriptRunnerDto,
   ) {
     return this.scriptRunnerService.update(id, updateScriptRunnerDto);
