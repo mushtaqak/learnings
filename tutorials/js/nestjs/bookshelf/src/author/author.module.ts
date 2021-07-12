@@ -1,10 +1,11 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config';
 import { BookModule } from '../book';
+import { Author } from './entities';
 import { AuthorService } from './author.service';
 import { AuthorResolver } from './author.resolver';
-import { Author } from './entities';
-import { ConfigModule } from '@nestjs/config';
+import { AuthorSubscriber } from './author.subscriber';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { ConfigModule } from '@nestjs/config';
     TypeOrmModule.forFeature([Author]),
     ConfigModule,
   ],
-  providers: [AuthorService, AuthorResolver],
+  providers: [AuthorService, AuthorResolver, AuthorSubscriber],
   exports: [AuthorService],
 })
 export class AuthorModule {}
