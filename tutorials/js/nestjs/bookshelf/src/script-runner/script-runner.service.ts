@@ -44,6 +44,7 @@ export class ScriptRunnerService {
   }
 
   async findAll() {
+    console.log('in findall');
     let response = '';
     try {
       await this.scriptRunner.loadScripts();

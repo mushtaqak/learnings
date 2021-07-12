@@ -19,6 +19,8 @@ import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 import { ClassValidationPipe } from '../common/pipes/class-validation.pipe';
 import { AuthGuard } from '../common/guards/auth.guard';
 import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
+import { User } from '../common/decorators/user.decorator';
+import { Author } from '../author';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -74,7 +76,8 @@ export class ScriptRunnerController {
 
   // not usefull
   @Get()
-  findAll() {
+  findAll(@User() user: Author) {
+    console.log({ requestUser: user })
     return this.scriptRunnerService.findAll();
   }
 
@@ -88,6 +91,7 @@ export class ScriptRunnerController {
   // runs script using js/ts file in /scripts dir
   @Get(':id')
   run(@Param('id') id: string) {
+    console.log('Using js/ts file')
     return this.scriptRunnerService.run(id);
   }
 
