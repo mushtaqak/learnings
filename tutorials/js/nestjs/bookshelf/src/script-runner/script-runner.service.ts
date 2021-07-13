@@ -7,6 +7,7 @@ import { CreateScriptRecordInput } from './dto/create-script-record.input';
 import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 import { ScriptRecord } from './entities/script-record.entity';
 import ScriptRunner from './script-runner';
+import { EventEmitter2 } from '@nestjs/event-emitter';
 
 @Injectable()
 export class ScriptRunnerService {
@@ -14,6 +15,7 @@ export class ScriptRunnerService {
     @InjectRepository(ScriptRecord)
     private scriptRecordRepository: Repository<ScriptRecord>,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
+    private eventEmitter: EventEmitter2,
   ) {}
 
   // *** utils ***
@@ -25,8 +27,16 @@ export class ScriptRunnerService {
   // ***  db related ***
   // creates DB record
   async create(data: CreateScriptRecordInput) {
+    console.log('IN CREATE ')
     const createdScript = await this.scriptRecordRepository.create(data);
     const result = await this.scriptRecordRepository.save(createdScript);
+    this.eventEmitter.emit(
+      'script.created',
+      {
+        script: result,
+      }
+    );
+
     return result;
   }
 

@@ -5,6 +5,13 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  /*
+  // to enable version eg. http://localhost/v1/graphql
+  app.enableVersioning({
+    type: VersioningType.HEADER,
+    header: 'Custom-Header',
+  });
+  */
   // get port from config
   const configService = app.get(ConfigService);
   const port = configService.get('PORT');

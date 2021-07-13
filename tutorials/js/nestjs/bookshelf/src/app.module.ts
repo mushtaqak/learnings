@@ -12,9 +12,11 @@ import { typeOrmConfigAsync } from './common/config/typeorm.config';
 import { ScriptRunnerController } from './script-runner/script-runner.controller';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
+    EventEmitterModule.forRoot(),
     ConfigModule.forRoot({
       envFilePath: `./env/.env.${process.env.NODE_ENV || 'dev'}`,
       cache: true, // so that these keys are cached on subsequent calls
