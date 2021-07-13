@@ -35,10 +35,11 @@ export const scriptFileFilter = (req, file, callback) => {
 @Controller('script-runner')
 @UseGuards(AuthGuard)
 @UseInterceptors(LoggingInterceptor)
+// @UseInterceptors(CacheInterceptor) // to enable auto-caching
 export class ScriptRunnerController {
   constructor(private readonly scriptRunnerService: ScriptRunnerService) {}
 
-  // saves a file does not save in db
+  // uploads a script file - does not save in db
   @Post('upload')
   @UseInterceptors(
     FileInterceptor('file', {
@@ -77,23 +78,23 @@ export class ScriptRunnerController {
 
   // not usefull
   @Get()
-  findAll(@User() user: Author) {
+  findAllScriptFiles(@User() user: Author) {
     console.log({ requestUser: user })
-    return this.scriptRunnerService.findAll();
+    return this.scriptRunnerService.findAllScriptFiles();
   }
 
   // runs script using eval - script data from db
   @Get('/script/:id')
-  findOne(@Param('id') name: string) {
+  findAndRunScript(@Param('id') name: string) {
     console.log('using eval');
-    return this.scriptRunnerService.findOne(name);
+    return this.scriptRunnerService.findAndRunScript(name);
   }
 
   // runs script using js/ts file in /scripts dir
   @Get(':id')
-  run(@Param('id') id: string) {
+  runScriptFile(@Param('id') id: string) {
     console.log('Using js/ts file')
-    return this.scriptRunnerService.run(id);
+    return this.scriptRunnerService.runScriptFile(id);
   }
 
   @Patch(':id')

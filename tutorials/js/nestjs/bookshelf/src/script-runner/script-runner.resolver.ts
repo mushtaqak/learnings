@@ -15,12 +15,12 @@ export class ScriptRunnerResolver {
 
   @Query(() => [ScriptRecord], { name: 'scripts' })
   findAll() {
-    return this.scriptRunnerService.findAll();
+    return this.scriptRunnerService.findAll({});
   }
 
   @Query(() => ScriptRecord, { name: 'script' })
   findOne(@Args('name', { type: () => String }) name: string) {
-    return this.scriptRunnerService.findOne(name);
+    return this.scriptRunnerService.findAndRunScript(name);
   }
 
   @Mutation(() => ScriptRecord)
