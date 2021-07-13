@@ -33,6 +33,7 @@
     "apollo-server-express": "^2.25.2",
     "cache-manager": "^3.4.4",
     "child_process": "^1.0.2",
+    "compression": "^1.7.4",
     "dotenv": "^10.0.0",
     "faker": "^5.5.3",
     "graphql": "^15.5.1",
