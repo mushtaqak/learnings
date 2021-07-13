@@ -17,6 +17,7 @@ import { AppService } from './app.service';
   imports: [
     ConfigModule.forRoot({
       envFilePath: `./env/.env.${process.env.NODE_ENV || 'dev'}`,
+      cache: true, // so that these keys are cached on subsequent calls
     }),
     TypeOrmModule.forRootAsync(typeOrmConfigAsync),
     // TypeOrmModule.forRoot(DatabaseConfig() as ConnectionOptions),

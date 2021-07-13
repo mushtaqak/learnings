@@ -70,6 +70,7 @@ export class ScriptRunnerController {
   // fails: { "name": 1 }
   @Post('validate')
   validate(@Body(new ClassValidationPipe()) script: CreateScriptRunnerDto) {
+    // ClassValidationPipe might not be needed now that we are using app level validation
     console.log({ script });
     return 'validated';
   }
