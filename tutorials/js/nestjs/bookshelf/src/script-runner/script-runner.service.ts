@@ -163,7 +163,6 @@ export class ScriptRunnerService {
   // uploads script js/ts file
   async upload(file) {
     // if file is in ts format - do not compile since we are uploading js file directly
-    const fileExt = file.originalname.split('.')[1];
     if (this.isTS(file.originalname)) {
       try {
         await this.scriptRunner.compileScripts();

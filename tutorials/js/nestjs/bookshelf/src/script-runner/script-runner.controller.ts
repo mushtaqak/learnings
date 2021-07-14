@@ -12,6 +12,7 @@ import {
   UseGuards,
   Req,
   Res,
+  // StreamableFile,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -24,6 +25,8 @@ import { AuthGuard } from '../common/guards/auth.guard';
 import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
 import { User } from '../common/decorators/user.decorator';
 import { Author } from '../author';
+import { createReadStream } from 'fs';
+import { join } from 'path';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -98,6 +101,17 @@ export class ScriptRunnerController {
   findAndRunScript(@Param('id') name: string) {
     console.log('using eval');
     return this.scriptRunnerService.findAndRunScript(name);
+  }
+
+  @Get('/download/:id')
+  getFile(@Res() res: Response, @Param('id') name: string) {
+    // const file = createReadStream(join(process.cwd(), 'package.json')); // package.json file
+    const filePath = join(process.cwd(), `${SCRIPTS_UPLOAD_DIR}/${name}.js`);
+    const file = createReadStream(filePath);
+    console.log('in file download', { file })
+    file.pipe(res);
+    // or unccomment file.pipe line and use below
+    // return new StreamableFile(filePath);
   }
 
   // runs script using js/ts file in /scripts dir
