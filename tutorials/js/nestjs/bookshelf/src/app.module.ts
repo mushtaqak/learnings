@@ -17,6 +17,13 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
+    /*
+    CacheModule.register({
+      store: redisStore,
+      host: 'localhost',
+      port: 6379,
+    }),
+    */
     ScheduleModule.forRoot(),
     EventEmitterModule.forRoot(),
     ConfigModule.forRoot({

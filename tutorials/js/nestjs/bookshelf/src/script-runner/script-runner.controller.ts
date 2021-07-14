@@ -10,7 +10,10 @@ import {
   UploadedFile,
   ParseIntPipe,
   UseGuards,
+  Req,
+  Res,
 } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { ScriptRunnerService } from './script-runner.service';
@@ -70,16 +73,23 @@ export class ScriptRunnerController {
   // works: { "name": "ali", "script": "a"}
   // fails: { "name": 1 }
   @Post('validate')
-  validate(@Body(new ClassValidationPipe()) script: CreateScriptRunnerDto) {
+  validate(
+    @Body(new ClassValidationPipe()) script: CreateScriptRunnerDto,
+    @Req() request: Request,
+    @Res({ passthrough: true }) response: Response,
+  ) {
     // ClassValidationPipe might not be needed now that we are using app level validation
     console.log({ script });
+    // cookie implementation
+    response.cookie('validated', true) // set cookie
+    console.log({ cookies: request.cookies }); // or "request.cookies['validated']" // get cookie
     return 'validated';
   }
 
   // not usefull
   @Get()
   findAllScriptFiles(@User() user: Author) {
-    console.log({ requestUser: user })
+    console.log({ requestUser: user });
     return this.scriptRunnerService.findAllScriptFiles();
   }
 
@@ -93,7 +103,7 @@ export class ScriptRunnerController {
   // runs script using js/ts file in /scripts dir
   @Get(':id')
   runScriptFile(@Param('id') id: string) {
-    console.log('Using js/ts file')
+    console.log('Using js/ts file');
     return this.scriptRunnerService.runScriptFile(id);
   }
 
