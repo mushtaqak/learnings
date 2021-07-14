@@ -13,6 +13,7 @@ import {
   Req,
   Res,
   Session,
+  Sse,
   // StreamableFile,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
@@ -28,6 +29,8 @@ import { User } from '../common/decorators/user.decorator';
 import { Author } from '../author';
 import { createReadStream } from 'fs';
 import { join } from 'path';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const SCRIPTS_UPLOAD_DIR = 'scripts'; // dist/scripts dir would not be compiled again.
 
@@ -139,5 +142,10 @@ export class ScriptRunnerController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.scriptRunnerService.remove(id);
+  }
+
+  @Sse('sse')
+  sse() {
+    return interval(1000).pipe(map((_) => ({ data: { hello: 'world' } })));
   }
 }
