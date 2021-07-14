@@ -2,7 +2,8 @@ import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import * as compression from 'compression';
-import * as cookieParser from 'cookie-parser'
+import * as cookieParser from 'cookie-parser';
+import * as session from 'express-session';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -15,6 +16,15 @@ async function bootstrap() {
   // to use cookies
   app.use(cookieParser());
 
+  // to use sessions
+  app.use(
+    session({
+      secret: 'my-secret',
+      resave: false,
+      saveUninitialized: false,
+    }),
+  );
+
   /*
   // to enable version eg. http://localhost/v1/graphql
   app.enableVersioning({
@@ -22,12 +32,15 @@ async function bootstrap() {
     header: 'Custom-Header',
   });
   */
+
   // get port from config
   const configService = app.get(ConfigService);
   const port = configService.get('PORT');
-  console.log({ port })
+  console.log({ port });
+
   // auto-validation --- this will also add validation response messages
   app.useGlobalPipes(new ValidationPipe());
+  
   // start app
   await app.listen(port);
 }

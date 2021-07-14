@@ -12,6 +12,7 @@ import {
   UseGuards,
   Req,
   Res,
+  Session,
   // StreamableFile,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
@@ -80,12 +81,18 @@ export class ScriptRunnerController {
     @Body(new ClassValidationPipe()) script: CreateScriptRunnerDto,
     @Req() request: Request,
     @Res({ passthrough: true }) response: Response,
+    @Session() session: Record<string, any>,
   ) {
     // ClassValidationPipe might not be needed now that we are using app level validation
     console.log({ script });
     // cookie implementation
     response.cookie('validated', true) // set cookie
     console.log({ cookies: request.cookies }); // or "request.cookies['validated']" // get cookie
+
+    // session impl
+    // request.session.visits = request.session.visits ? request.session.visits + 1 : 1;
+    session.visits = session.visits ? session.visits + 1 : 1;
+    console.log({ visits: session.visits });
     return 'validated';
   }
 
