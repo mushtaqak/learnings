@@ -2,20 +2,22 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { logger } from './common/middlewares/logger.middleware';
 import { APP_FILTER } from '@nestjs/core';
-import { AuthorModule } from './author';
-import { BookModule } from './book';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { ScheduleModule } from '@nestjs/schedule';
+import { logger } from './common/middlewares/logger.middleware';
 import { AnyExceptionFilter } from './common/filters/any-exception.filter';
 import { ScriptRunnerModule } from './script-runner/script-runner.module';
 import { typeOrmConfigAsync } from './common/config/typeorm.config';
 import { ScriptRunnerController } from './script-runner/script-runner.controller';
+import { AuthorModule } from './author';
+import { BookModule } from './book';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
+    ScheduleModule.forRoot(),
     EventEmitterModule.forRoot(),
     ConfigModule.forRoot({
       envFilePath: `./env/.env.${process.env.NODE_ENV || 'dev'}`,

@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ScriptRecord {
+  id: ID!
+  name: String!
+  script: String!
+}
+
 type Book {
   id: ID!
   name: String!
@@ -12,12 +18,6 @@ type Author {
   id: ID!
   name: String!
   books: [Book!]!
-}
-
-type ScriptRecord {
-  id: ID!
-  name: String!
-  script: String!
 }
 
 type Query {
