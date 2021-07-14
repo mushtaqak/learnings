@@ -8,6 +8,7 @@ import { UpdateScriptRunnerDto } from './dto/update-script-runner.dto';
 import { ScriptRecord } from './entities/script-record.entity';
 import ScriptRunner from './script-runner';
 import { EventEmitter2 } from '@nestjs/event-emitter';
+import { HttpService } from '@nestjs/axios';
 
 @Injectable()
 export class ScriptRunnerService {
@@ -16,6 +17,7 @@ export class ScriptRunnerService {
     private scriptRecordRepository: Repository<ScriptRecord>,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private eventEmitter: EventEmitter2,
+    private httpService: HttpService,
   ) {}
 
   // *** utils ***
@@ -27,15 +29,12 @@ export class ScriptRunnerService {
   // ***  db related ***
   // creates DB record
   async create(data: CreateScriptRecordInput) {
-    console.log('IN CREATE ')
+    console.log('IN CREATE ');
     const createdScript = await this.scriptRecordRepository.create(data);
     const result = await this.scriptRecordRepository.save(createdScript);
-    this.eventEmitter.emit(
-      'script.created',
-      {
-        script: result,
-      }
-    );
+    this.eventEmitter.emit('script.created', {
+      script: result,
+    });
 
     return result;
   }
@@ -178,7 +177,16 @@ export class ScriptRunnerService {
 
   // finds all script files
   async findAllScriptFiles() {
-    console.log('in findall');
+    console.log('in findall script files');
+    await this.httpService
+      .post('http://localhost:3000/script-runner/validate', {
+        name: 'test',
+        script: 'test',
+      })
+      .subscribe((data) => {
+        console.log('httpService response', { data });
+      });
+
     let response = '';
     try {
       await this.scriptRunner.loadScripts();

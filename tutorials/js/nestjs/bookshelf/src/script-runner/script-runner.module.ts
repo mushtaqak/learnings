@@ -6,10 +6,20 @@ import { ScriptRunnerResolver } from './script-runner.resolver';
 import { ScriptRecord } from './entities/script-record.entity';
 import { ScriptCreatedListener } from './listeners/script-created.listener';
 import { TasksService } from './task.service';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ScriptRecord]), CacheModule.register()],
-  providers: [ScriptRunnerService, TasksService, ScriptRunnerResolver, ScriptCreatedListener],
+  imports: [
+    HttpModule,
+    TypeOrmModule.forFeature([ScriptRecord]),
+    CacheModule.register(),
+  ],
+  providers: [
+    ScriptRunnerService,
+    TasksService,
+    ScriptRunnerResolver,
+    ScriptCreatedListener,
+  ],
   controllers: [ScriptRunnerController],
   exports: [ScriptRunnerService],
 })

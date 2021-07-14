@@ -66,8 +66,6 @@ import { AppService } from './app.service';
 export class AppModule {
   // apply logging middleware to /script-runner route
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(logger)
-      .forRoutes(ScriptRunnerController);
+    consumer.apply(logger).forRoutes(ScriptRunnerController);
   }
 }
