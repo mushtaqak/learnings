@@ -2,14 +2,16 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { APP_FILTER } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ScheduleModule } from '@nestjs/schedule';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { logger } from './common/middlewares/logger.middleware';
 import { AnyExceptionFilter } from './common/filters/any-exception.filter';
 import { ScriptRunnerModule } from './script-runner/script-runner.module';
 import { typeOrmConfigAsync } from './common/config/typeorm.config';
 import { ScriptRunnerController } from './script-runner/script-runner.controller';
+import { CustomThrottlerGuard } from './common/guards/throttler-guard';
 import { AuthorModule } from './author';
 import { BookModule } from './book';
 import { AppController } from './app.controller';
@@ -24,6 +26,11 @@ import { AppService } from './app.service';
       port: 6379,
     }),
     */
+    // to prevent DoS (Denial of Service / brute-force) attacks
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 10,
+    }),
     ScheduleModule.forRoot(),
     EventEmitterModule.forRoot(),
     ConfigModule.forRoot({
@@ -47,6 +54,7 @@ import { AppService } from './app.service';
     */
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
+      // cors: true, // to enable cors for graphql
     }),
     BookModule,
     AuthorModule,
@@ -54,13 +62,17 @@ import { AppService } from './app.service';
   ],
   controllers: [AppController],
   providers: [
+    AppService,
     // apply exception filter
-    // FIXME: TypeError: response.status is not a function
     {
       provide: APP_FILTER,
       useClass: AnyExceptionFilter,
     },
-    AppService,
+    // apply throttler guard - dos preventer
+    {
+      provide: APP_GUARD,
+      useClass: CustomThrottlerGuard,
+    },
   ],
 })
 export class AppModule {

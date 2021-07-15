@@ -2,21 +2,20 @@ import {
   ExceptionFilter,
   Catch,
   HttpException,
-  ArgumentsHost,
   HttpStatus,
+  ExecutionContext,
 } from '@nestjs/common';
+import { getRequestResponse } from '../utils/request-response.util';
 
 @Catch()
 export class AnyExceptionFilter implements ExceptionFilter {
-  catch(error: Error, host: ArgumentsHost) {
-    // console.log({ host })
-    const response = host.switchToHttp().getResponse();
-
+  catch(error: Error, host: ExecutionContext) {
+    const { req, res } = getRequestResponse(host);
+    console.log({ res });
     const status =
       error instanceof HttpException
         ? error.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
-
-    response.status(status).json(error);
+    res.status(status).json(error);
   }
 }
