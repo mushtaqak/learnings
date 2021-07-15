@@ -52,6 +52,13 @@ export class AuthorService {
     return author;
   }
 
+  async findOrCreate(data: CreateAuthorInput) {
+    const existingAuthor = await this.findOne(data.name);
+    if (existingAuthor) return existingAuthor;
+    const author = await this.create(data);
+    return author;
+  }
+
   async update(data: UpdateAuthorInput) {
     const author = await this.authorRepository.findOne({
       where: { id: data.id },
