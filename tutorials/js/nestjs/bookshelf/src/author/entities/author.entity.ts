@@ -3,9 +3,12 @@ import {Entity, OneToMany } from 'typeorm';
 import { CoreEntity } from '../../common/models';
 import { Book } from '../../book';
 
+// author-books (1-m)
+
 @ObjectType()
 @Entity()
 export class Author extends CoreEntity {
+  // one-many (author-books): One author can write many books.
   @Field(() => [Book])
   // cascade: true
   // - allows to apply all DML on related relation (insert / update / delete)
