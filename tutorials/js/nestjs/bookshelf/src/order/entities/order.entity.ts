@@ -15,8 +15,8 @@ import { Book } from '../../book/entities/book.entity';
 @Entity()
 export class Order extends BaseEntity {
   @Field(() => ID)
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Field(() => Int)
   @Column()

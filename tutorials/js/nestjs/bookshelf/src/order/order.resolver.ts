@@ -13,23 +13,23 @@ export class OrderResolver {
     return this.orderService.create(createOrderInput);
   }
 
-  @Query(() => [Order], { name: 'order' })
+  @Query(() => [Order])
   findAll() {
     return this.orderService.findAll();
   }
 
-  @Query(() => Order, { name: 'order' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  @Query(() => Order)
+  findOne(@Args('id', { type: () => String }) id: string) {
     return this.orderService.findOne(id);
   }
 
   @Mutation(() => Order)
   updateOrder(@Args('updateOrderInput') updateOrderInput: UpdateOrderInput) {
-    return this.orderService.update(updateOrderInput.id, updateOrderInput);
+    return this.orderService.update(updateOrderInput);
   }
 
   @Mutation(() => Order)
-  removeOrder(@Args('id', { type: () => Int }) id: number) {
+  removeOrder(@Args('id', { type: () => String }) id: string) {
     return this.orderService.remove(id);
   }
 }

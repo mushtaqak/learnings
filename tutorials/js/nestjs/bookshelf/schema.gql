@@ -43,8 +43,10 @@ type Query {
   author(name: String!): Author!
   scripts: [ScriptRecord!]!
   script(name: String!): ScriptRecord!
-  category(id: Int!): Category!
-  order(id: Int!): Order!
+  categories: [Category!]!
+  category(name: String!): Category!
+  findAll: [Order!]!
+  findOne(id: String!): Order!
 }
 
 type Mutation {
@@ -61,10 +63,10 @@ type Mutation {
   removeScriptRecord(id: String!): ScriptRecord!
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
   updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
-  removeCategory(id: Int!): Category!
+  removeCategory(id: String!): Category!
   createOrder(createOrderInput: CreateOrderInput!): Order!
   updateOrder(updateOrderInput: UpdateOrderInput!): Order!
-  removeOrder(id: Int!): Order!
+  removeOrder(id: String!): Order!
 }
 
 input CreateBookInput {
@@ -110,23 +112,29 @@ input UpdateScriptRecordInput {
 }
 
 input CreateCategoryInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """Category name"""
+  name: String!
+  books: [CreateBookInput!]
+  parent: CreateCategoryInput
+  children: [CreateCategoryInput!]
 }
 
 input UpdateCategoryInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  """Category name"""
+  name: String
+  books: [CreateBookInput!]
+  parent: CreateCategoryInput
+  children: [CreateCategoryInput!]
   id: Int!
 }
 
 input CreateOrderInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  price: Float
+  book: CreateBookInput
 }
 
 input UpdateOrderInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  price: Float
+  book: CreateBookInput
   id: Int!
 }
