@@ -1,8 +1,8 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { AuthorService } from '../author';
-import { CreateBookInput, UpdateBookInput } from './dto';
+import { Author, AuthorService } from '../author';
+import { CreateBookInput, CreateBookWithAuthorInput, UpdateBookInput } from './dto';
 import { Book } from './entities';
 
 @Injectable()
@@ -19,6 +19,23 @@ export class BookService {
     // TODO: We shouldn't be doing this - there should be some other way.
     if (data?.author) {
       bookData.author = await this.authorService.findOrCreate(data.author);
+    }
+    const book = await this.bookRepository.save(bookData);
+    return book;
+  }
+
+  async createWithAuthorInput(data: CreateBookWithAuthorInput) {
+    console.log('in createWithAuthorInput');
+    const bookData = this.bookRepository.create(data);
+    // TODO: Find a way where we do not need to save author separately
+    // if (data?.authorId) {
+    //   // parse object to author
+    //   bookData.author = { id: data.authorId } as Author; // this does not use a different save call
+    // }
+    console.log({ data, bookData });
+    if (data.author) { // otherwise parse may be
+      // if we do not do this an error occurs: invalid input syntax for type uuid: \"{\"id\":\"214f0049-96b3-4796-bd69-bbda3e4fdbb3\"}\"",
+      bookData.author = Author.create(data.author); // parses object correctly.
     }
     const book = await this.bookRepository.save(bookData);
     return book;

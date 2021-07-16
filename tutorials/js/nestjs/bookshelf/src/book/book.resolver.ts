@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-import { CreateBookInput, UpdateBookInput } from './dto';
+import { CreateBookInput, CreateBookWithAuthorInput, UpdateBookInput } from './dto';
 import { Book } from './entities';
 import { BookService } from './book.service';
 
@@ -10,6 +10,11 @@ export class BookResolver {
   @Mutation(() => Book)
   createBook(@Args('data') data: CreateBookInput) {
     return this.bookService.create(data);
+  }
+
+  @Mutation(() => Book)
+  createWithAuthorInput(@Args('data') data: CreateBookWithAuthorInput) {
+    return this.bookService.createWithAuthorInput(data);
   }
 
   @Query(() => [Book], { name: 'books' })
