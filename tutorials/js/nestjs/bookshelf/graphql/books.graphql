@@ -43,8 +43,15 @@ mutation createWithAuthorInput {
   }
 }
 
-mutation createBookWithAuthor {
-  createBook(data: { name: "Ali2 New Book4", author: { name: "Ali2" } }) {
+mutation createBookWithNewAuthor {
+  createBook(data: { name: "Ali2 New Book4", author: { name: "Ali777" } }) {
+    id
+    name
+  }
+}
+
+mutation createBookWithExistingAuthor {
+  createBook(data: { name: "Ali 777 book", author: { id: "b761e8fb-1a3f-4fb6-ba54-7d7e65bbe67f" } }) {
     id
     name
   }

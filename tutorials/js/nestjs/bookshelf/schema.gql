@@ -71,14 +71,17 @@ type Mutation {
 
 input CreateBookInput {
   """Book Name"""
-  name: String!
+  name: String
   author: CreateAuthorInput
   categories: [CreateCategoryInput!]
 }
 
 input CreateAuthorInput {
+  """id"""
+  id: ID
+
   """Name of author"""
-  name: String!
+  name: String
   books: [CreateBookInput!]
 }
 
@@ -97,10 +100,11 @@ input CreateBookWithAuthorInput {
 }
 
 input UpdateAuthorInput {
+  id: ID!
+
   """Name of author"""
   name: String
   books: [CreateBookInput!]
-  id: ID!
 }
 
 input UpdateBookInput {

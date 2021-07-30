@@ -4,8 +4,8 @@ import { CreateAuthorInput, UpdateAuthorInput } from '../../author';
 
 @InputType()
 export class CreateBookInput {
-  @Field(() => String, { description: 'Book Name' })
-  name: string;
+  @Field(() => String, { nullable: true, description: 'Book Name' })
+  name?: string;
 
   @Field(() => CreateAuthorInput, { nullable: true })
   author?: CreateAuthorInput;

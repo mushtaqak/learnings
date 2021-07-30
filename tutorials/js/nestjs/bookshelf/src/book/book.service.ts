@@ -16,8 +16,7 @@ export class BookService {
 
   async create(data: CreateBookInput) {
     const bookData = this.bookRepository.create(data);
-    // TODO: We shouldn't be doing this - there should be some other way.
-    if (data?.author) {
+    if (data?.author && !data?.author?.id) { // TODO: We shouldn't be doing this - there should be some other way.
       bookData.author = await this.authorService.findOrCreate(data.author);
     }
     const book = await this.bookRepository.save(bookData);
@@ -42,7 +41,7 @@ export class BookService {
   }
 
   async findAll() {
-    const books = await this.bookRepository.find();
+    const books = await this.bookRepository.find({ relations: ['categories', 'author']});
     return books;
   }
 
