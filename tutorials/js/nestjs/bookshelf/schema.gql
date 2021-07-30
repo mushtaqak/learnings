@@ -73,12 +73,21 @@ input CreateBookInput {
   """Book Name"""
   name: String!
   author: CreateAuthorInput
+  categories: [CreateCategoryInput!]
 }
 
 input CreateAuthorInput {
   """Name of author"""
   name: String!
   books: [CreateBookInput!]
+}
+
+input CreateCategoryInput {
+  """Category name"""
+  name: String!
+  books: [CreateBookInput!]
+  parent: CreateCategoryInput
+  children: [CreateCategoryInput!]
 }
 
 input CreateBookWithAuthorInput {
@@ -98,6 +107,7 @@ input UpdateBookInput {
   """Book Name"""
   name: String
   author: CreateAuthorInput
+  categories: [CreateCategoryInput!]
   id: ID!
 }
 
@@ -109,14 +119,6 @@ input CreateScriptRecordInput {
 input UpdateScriptRecordInput {
   name: String!
   script: String!
-}
-
-input CreateCategoryInput {
-  """Category name"""
-  name: String!
-  books: [CreateBookInput!]
-  parent: CreateCategoryInput
-  children: [CreateCategoryInput!]
 }
 
 input UpdateCategoryInput {

@@ -19,7 +19,9 @@ export class CategoryService {
   }
 
   async findAll() {
-    const categories = await this.categoryRepository.find();
+    const categories = await this.categoryRepository.find({
+      relations: ['books'],
+    });
     return categories;
   }
 

@@ -17,27 +17,32 @@ query authorsWithBooks {
 }
 
 mutation createAuthor {
-  createAuthor(data: { name: "JKR" }) {
+  createAuthor(data: { name: "JKR h" }) {
     id
     name
   }
 }
 
+mutation createManyAuthors {
+  createManyAuthors(data: { name: "Mushi" })
+}
+
 mutation createAuthorWithBooks {
-  createAuthor(data: { name: "JKR", books: [{ name: "HP 1" }] }) {
+  createAuthor(data: { name: "Ali1", books: [{ name: "Ali1" }] }) {
     id
     name
   }
 }
 
 mutation updateAuthor {
-  updateAuthor(data: { id: "1", name: "JK Rowling" }) {
+  updateAuthor(data: { id: "c00f14c9-4cf3-445e-9684-784de0a83daf", name: "JK Rowling" }) {
     name
   }
 }
 
 mutation deleteAuthor {
-  removeAuthor(id: "1") {
+  removeAuthor(id: "0a5c20ca-0638-4f5d-b586-513fe4eb0c90") {
     name
   }
 }
+

@@ -1,0 +1,28 @@
+query categories {
+  categories {
+    name
+  }
+}
+
+query categoriesWithBooks {
+  categories {
+    name
+    books {
+      name
+    }
+  }
+}
+
+mutation createCategory {
+  createCategory(createCategoryInput: { name: "fiction" }) {
+    name
+  }
+}
+
+mutation createCategoryWithBooks {
+  createCategory(
+    createCategoryInput: { name: "fiction2", books: [{ name: "Narnia I " }] }
+  ) {
+    name
+  }
+}

@@ -11,6 +11,17 @@ query booksWithAuthor {
   books {
     name
     author {
+      id
+      name
+    }
+  }
+}
+
+query booksWithCategories {
+  books {
+    name
+    categories {
+      id
       name
     }
   }
@@ -22,22 +33,42 @@ mutation createBook {
     name
   }
 }
-
-mutation createBookWithAuthor {
-  createBook(data: { name: "HP7", author: { name: "JKR" } }) {
+mutation createWithAuthorInput {
+  # createWithAuthorInput(data: { name: "A2", authorId: "214f0049-96b3-4796-bd69-bbda3e4fdbb3" } ) {
+  createWithAuthorInput(
+    data: { name: "A4", author: { id: "214f0049-96b3-4796-bd69-bbda3e4fdbb3" } }
+  ) {
     id
     name
   }
 }
 
+mutation createBookWithAuthor {
+  createBook(data: { name: "Ali2 New Book4", author: { name: "Ali2" } }) {
+    id
+    name
+  }
+}
+
+mutation createBookWithCategories {
+  createBook(data: { name: "Narnia II", categories: [{ name: "c1" }] }) {
+    name
+  }
+}
+
 mutation updateBook {
-  updateBook( data: { id: "1", name: "HP2" }) {
+  updateBook(
+    data: {
+      id: "7fa15b55-b435-435b-bd41-46c8d8d218f0"
+      name: "HP & Prisoner of Azkaban"
+    }
+  ) {
     name
   }
 }
 
 mutation deleteBook {
-  removeBook(id: "1") {
+  removeBook(id: "d96b52d8-c21a-44f2-9e10-8ddeb3351142") {
     name
   }
 }

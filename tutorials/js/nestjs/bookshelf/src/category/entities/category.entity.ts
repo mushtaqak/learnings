@@ -6,6 +6,7 @@ import {
   ManyToOne,
   OneToMany,
   ManyToMany,
+  JoinTable,
 } from 'typeorm';
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Book } from '../../book';
@@ -20,6 +21,7 @@ export class Category extends CoreEntity {
   // many-many (category-books): Many categorys can be added to many book.
   @Field((type) => [Book], { nullable: true })
   @ManyToMany((type) => Book)
+  @JoinTable()
   books?: Book[];
 
   // many-one (category-category): Many category can have one parent.
