@@ -1,5 +1,6 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { RedisCacheService } from '../redis/redis-cache.service';
 import { Repository } from 'typeorm';
 import { Author, AuthorService } from '../author';
 import { CreateBookInput, CreateBookWithAuthorInput, UpdateBookInput } from './dto';
@@ -12,6 +13,7 @@ export class BookService {
     private bookRepository: Repository<Book>,
     @Inject(forwardRef(() => AuthorService))
     private authorService: AuthorService,
+    private readonly redisCacheService: RedisCacheService, // REMEMBER TO INJECT THIS
   ) {}
 
   async create(data: CreateBookInput) {
@@ -41,12 +43,20 @@ export class BookService {
   }
 
   async findAll() {
+    // const cachedBooks = await this.redisCacheService.get('books');
+    // console.log({ cachedBooks })
     const books = await this.bookRepository.find({ relations: ['categories', 'author']});
+    // await this.redisCacheService.set('books', books);
     return books;
   }
 
   async findOne(name: string) {
+    const cachedBook = await this.redisCacheService.get('book'); // this is not working
+    const cachedBookName = await this.redisCacheService.get('bookName'); // this is not working
+    console.log({ cachedBook, cachedBookName })
     const book = await this.bookRepository.findOne({ name });
+    await this.redisCacheService.set('bookName', book.name); // working
+    await this.redisCacheService.set('book', book); // working
     return book;
   }
 

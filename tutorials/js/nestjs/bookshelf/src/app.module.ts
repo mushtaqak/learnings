@@ -5,7 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ScheduleModule } from '@nestjs/schedule';
-import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { logger } from './common/middlewares/logger.middleware';
 import { AnyExceptionFilter } from './common/filters/any-exception.filter';
 import { ScriptRunnerModule } from './script-runner/script-runner.module';
@@ -18,16 +18,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CategoryModule } from './category/category.module';
 import { OrderModule } from './order/order.module';
+import { RedisCacheModule } from './redis/redis-cache.module';
 
 @Module({
   imports: [
-    /*
-    CacheModule.register({
-      store: redisStore,
-      host: 'localhost',
-      port: 6379,
-    }),
-    */
     // to prevent DoS (Denial of Service / brute-force) attacks
     ThrottlerModule.forRoot({
       ttl: 60,
@@ -63,6 +57,7 @@ import { OrderModule } from './order/order.module';
     ScriptRunnerModule,
     CategoryModule,
     OrderModule,
+    RedisCacheModule,
   ],
   controllers: [AppController],
   providers: [
