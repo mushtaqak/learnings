@@ -19,6 +19,7 @@ import { AppService } from './app.service';
 import { CategoryModule } from './category/category.module';
 import { OrderModule } from './order/order.module';
 import { RedisCacheModule } from './redis/redis-cache.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -58,6 +59,7 @@ import { RedisCacheModule } from './redis/redis-cache.module';
     CategoryModule,
     OrderModule,
     RedisCacheModule,
+    NotificationModule,
   ],
   controllers: [AppController],
   providers: [
