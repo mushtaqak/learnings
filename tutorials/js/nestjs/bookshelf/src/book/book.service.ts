@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { Author, AuthorService } from '../author';
 import { CreateBookInput, CreateBookWithAuthorInput, UpdateBookInput } from './dto';
 import { Book } from './entities';
+import { NotificationService } from 'src/notification/notification.service';
 
 @Injectable()
 export class BookService {
@@ -13,8 +14,9 @@ export class BookService {
     private bookRepository: Repository<Book>,
     @Inject(forwardRef(() => AuthorService))
     private authorService: AuthorService,
+    private notificationService: NotificationService,
     private readonly redisCacheService: RedisCacheService, // REMEMBER TO INJECT THIS
-  ) {}
+    ) {}
 
   async create(data: CreateBookInput) {
     const bookData = this.bookRepository.create(data);
@@ -22,6 +24,7 @@ export class BookService {
       bookData.author = await this.authorService.findOrCreate(data.author);
     }
     const book = await this.bookRepository.save(bookData);
+    this.notificationService.sendSlackNotification(`A new book "${book.name}" has been published to our bookshelf`);
     return book;
   }
 
