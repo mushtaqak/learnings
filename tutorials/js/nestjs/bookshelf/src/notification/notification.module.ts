@@ -5,7 +5,7 @@ import { NotificationService } from './notification.service';
 @Module({
   imports: [
     SlackModule.forRoot({
-      url: 'SLACK_WEBHOOK_URL',
+      url: process.env.SLACK_WEBHOOK_URL,
     }),
   ],
   controllers: [],

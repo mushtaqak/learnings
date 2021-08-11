@@ -10,10 +10,8 @@ export class NotificationService {
     @InjectSlack()
     private readonly slack: IncomingWebhook,
   ) {
-    // Read a url from the environment variables
-    const MS_TEAMS_WEBHOOK_URL = 'MS_TEAMS_WEBHOOK_URL';
-    // Initialize teams
-    this.teams = new TeamsIncomingWebhook(MS_TEAMS_WEBHOOK_URL);
+    // initiallize team hook
+    this.teams = new TeamsIncomingWebhook(process.env.MS_TEAMS_WEBHOOK_URL);
   }
 
   async broadcastNotification(message: string){
