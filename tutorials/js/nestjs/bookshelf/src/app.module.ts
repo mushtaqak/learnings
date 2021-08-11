@@ -20,13 +20,9 @@ import { CategoryModule } from './category/category.module';
 import { OrderModule } from './order/order.module';
 import { RedisCacheModule } from './redis/redis-cache.module';
 import { NotificationModule } from './notification/notification.module';
-import { SlackModule } from 'nestjs-slack-webhook';
 
 @Module({
   imports: [
-    SlackModule.forRoot({
-      url: "https://hooks.slack.com/services/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", // SLACK_WEBHOOK_URL
-    }),
     // https://www.npmjs.com/package/nestjs-slack-webhook
     // to prevent DoS (Denial of Service / brute-force) attacks
     ThrottlerModule.forRoot({

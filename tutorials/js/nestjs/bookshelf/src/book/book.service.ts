@@ -24,7 +24,7 @@ export class BookService {
       bookData.author = await this.authorService.findOrCreate(data.author);
     }
     const book = await this.bookRepository.save(bookData);
-    this.notificationService.sendSlackNotification(`A new book "${book.name}" has been published to our bookshelf`);
+    this.notificationService.broadcastNotification(`A new book "${book.name}" has been published to our bookshelf`);
     return book;
   }
 

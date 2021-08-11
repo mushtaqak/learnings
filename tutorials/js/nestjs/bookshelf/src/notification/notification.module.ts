@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
+import { SlackModule } from 'nestjs-slack-webhook';
 import { NotificationService } from './notification.service';
 
 @Module({
+  imports: [
+    SlackModule.forRoot({
+      url: 'SLACK_WEBHOOK_URL',
+    }),
+  ],
   controllers: [],
   providers: [NotificationService],
   exports: [NotificationService],
