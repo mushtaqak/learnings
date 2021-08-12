@@ -16,6 +16,10 @@ export class NotificationService {
     console.log({
       TEAMS: process.env.MS_TEAMS_WEBHOOK_URL,
       SLACK: process.env.SLACK_WEBHOOK_URL,
+      TWILIO_ACCOUNT_SID:process.env.TWILIO_ACCOUNT_SID,
+      TWILIO_AUTH_TOKEN:process.env.TWILIO_AUTH_TOKEN,
+      TWILIO_PHONE_NUMBER:process.env.TWILIO_PHONE_NUMBER,
+      TWILIO_TARGET_PHONE_NUMBER:process.env.TWILIO_TARGET_PHONE_NUMBER,
     });
     // initiallize team hook
     this.teams = new TeamsIncomingWebhook(process.env.MS_TEAMS_WEBHOOK_URL);
@@ -60,7 +64,7 @@ export class NotificationService {
       return await this.twilio.messages.create({
         body: message,
         from: process.env.TWILIO_PHONE_NUMBER,
-        to: process.env.TARGET_PHONE_NUMBER,
+        to: process.env.TWILIO_TARGET_PHONE_NUMBER,
       });
     } catch (e) {
       return e;
