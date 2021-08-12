@@ -3,10 +3,14 @@ import { IncomingWebhook } from '@slack/webhook';
 import { InjectSlack } from 'nestjs-slack-webhook';
 import { IncomingWebhook as TeamsIncomingWebhook } from 'ms-teams-webhook';
 import { InjectTwilio, TwilioClient } from 'nestjs-twilio';
+// import PUSHER from 'pusher'; // TypeError: pusher_1.default is not a constructor
+const Pusher = require('pusher');
 
 @Injectable()
 export class NotificationService {
   teams: TeamsIncomingWebhook;
+  pusher;
+
   constructor(
     @InjectSlack()
     private readonly slack: IncomingWebhook,
@@ -20,16 +24,31 @@ export class NotificationService {
       TWILIO_AUTH_TOKEN:process.env.TWILIO_AUTH_TOKEN,
       TWILIO_PHONE_NUMBER:process.env.TWILIO_PHONE_NUMBER,
       TWILIO_TARGET_PHONE_NUMBER:process.env.TWILIO_TARGET_PHONE_NUMBER,
+      PUSHER_APP_ID:process.env.PUSHER_APP_ID,
+      PUSHER_APP_KEY:process.env.PUSHER_APP_KEY,
+      PUSHER_SECRET:process.env.PUSHER_SECRET,
+      PUSHER_CLUSTER:process.env.PUSHER_CLUSTER,
     });
+
     // initiallize team hook
     this.teams = new TeamsIncomingWebhook(process.env.MS_TEAMS_WEBHOOK_URL);
+
+    // initiallize pusher
+    this.pusher = new Pusher({
+      appId: process.env.PUSHER_APP_ID,
+      key: process.env.PUSHER_APP_KEY,
+      secret: process.env.PUSHER_SECRET,
+      cluster: process.env.PUSHER_CLUSTER,
+      useTLS: true,
+    });
   }
 
   // sends notification to all services
   async broadcastNotification(message: string){
     await this.sendTeamsNotification(message);
     await this.sendSlackNotification(message);
-    await this.sendSMS(message);
+    // await this.sendSMS(message);
+    await this.sendPusherNotification(message);
   }
 
   async sendSlackNotification(message: string) {
@@ -69,5 +88,9 @@ export class NotificationService {
     } catch (e) {
       return e;
     }
+  }
+
+  async sendPusherNotification(message: string) {
+    await this.pusher.trigger('books', 'book_data', message);
   }
 }
