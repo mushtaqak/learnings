@@ -10,13 +10,18 @@ export class NotificationService {
     @InjectSlack()
     private readonly slack: IncomingWebhook,
   ) {
+    console.log({
+      TEAMS: process.env.MS_TEAMS_WEBHOOK_URL,
+      SLACK: process.env.SLACK_WEBHOOK_URL,
+    });
     // initiallize team hook
     this.teams = new TeamsIncomingWebhook(process.env.MS_TEAMS_WEBHOOK_URL);
   }
 
+  // sends notification to all services
   async broadcastNotification(message: string){
-    // await this.sendSlackNotification(message);
     await this.sendTeamsNotification(message);
+    await this.sendSlackNotification(message);
   }
 
   async sendSlackNotification(message: string) {
