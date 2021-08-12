@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { IncomingWebhook } from '@slack/webhook';
 import { InjectSlack } from 'nestjs-slack-webhook';
 import { IncomingWebhook as TeamsIncomingWebhook } from 'ms-teams-webhook';
+import { InjectTwilio, TwilioClient } from 'nestjs-twilio';
 
 @Injectable()
 export class NotificationService {
@@ -9,6 +10,8 @@ export class NotificationService {
   constructor(
     @InjectSlack()
     private readonly slack: IncomingWebhook,
+    @InjectTwilio()
+    private readonly twilio: TwilioClient,
   ) {
     console.log({
       TEAMS: process.env.MS_TEAMS_WEBHOOK_URL,
@@ -22,6 +25,7 @@ export class NotificationService {
   async broadcastNotification(message: string){
     await this.sendTeamsNotification(message);
     await this.sendSlackNotification(message);
+    await this.sendSMS(message);
   }
 
   async sendSlackNotification(message: string) {
@@ -49,5 +53,17 @@ export class NotificationService {
         ],
       }),
     );
+  }
+
+  async sendSMS(message: string) {
+    try {
+      return await this.twilio.messages.create({
+        body: message,
+        from: process.env.TWILIO_PHONE_NUMBER,
+        to: process.env.TARGET_PHONE_NUMBER,
+      });
+    } catch (e) {
+      return e;
+    }
   }
 }

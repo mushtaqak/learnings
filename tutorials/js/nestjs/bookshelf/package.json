@@ -49,11 +49,13 @@
     "helmet": "^4.6.0",
     "ms-teams-webhook": "^1.0.4",
     "nestjs-slack-webhook": "^1.2.0",
+    "nestjs-twilio": "^1.2.1",
     "pg": "^8.6.0",
     "redis": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6",
+    "twilio": "^3.67.0",
     "typeorm": "^0.2.34"
   },
   "devDependencies": {
