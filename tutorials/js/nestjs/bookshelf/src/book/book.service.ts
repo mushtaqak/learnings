@@ -3,7 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { RedisCacheService } from '../redis/redis-cache.service';
 import { Repository } from 'typeorm';
 import { Author, AuthorService } from '../author';
-import { CreateBookInput, CreateBookWithAuthorInput, UpdateBookInput } from './dto';
+import {
+  CreateBookInput,
+  CreateBookWithAuthorInput,
+  UpdateBookInput,
+} from './dto';
 import { Book } from './entities';
 import { NotificationService } from 'src/notification/notification.service';
 
@@ -16,15 +20,18 @@ export class BookService {
     private authorService: AuthorService,
     private notificationService: NotificationService,
     private readonly redisCacheService: RedisCacheService, // REMEMBER TO INJECT THIS
-    ) {}
+  ) {}
 
   async create(data: CreateBookInput) {
     const bookData = this.bookRepository.create(data);
-    if (data?.author && !data?.author?.id) { // TODO: We shouldn't be doing this - there should be some other way.
+    if (data?.author && !data?.author?.id) {
+      // TODO: We shouldn't be doing this - there should be some other way.
       bookData.author = await this.authorService.findOrCreate(data.author);
     }
     const book = await this.bookRepository.save(bookData);
-    this.notificationService.broadcastNotification(`A new book "${book.name}" has been published to our bookshelf`);
+    this.notificationService.broadcastNotification(
+      `A new book "${book.name}" has been published to our bookshelf`,
+    );
     return book;
   }
 
@@ -37,7 +44,8 @@ export class BookService {
     //   bookData.author = { id: data.authorId } as Author; // this does not use a different save call
     // }
     console.log({ data, bookData });
-    if (data.author) { // otherwise parse may be
+    if (data.author) {
+      // otherwise parse may be
       // if we do not do this an error occurs: invalid input syntax for type uuid: \"{\"id\":\"214f0049-96b3-4796-bd69-bbda3e4fdbb3\"}\"",
       bookData.author = Author.create(data.author); // parses object correctly.
     }
@@ -48,7 +56,9 @@ export class BookService {
   async findAll() {
     // const cachedBooks = await this.redisCacheService.get('books');
     // console.log({ cachedBooks })
-    const books = await this.bookRepository.find({ relations: ['categories', 'author']});
+    const books = await this.bookRepository.find({
+      relations: ['categories', 'author'],
+    });
     // await this.redisCacheService.set('books', books);
     return books;
   }
@@ -56,7 +66,7 @@ export class BookService {
   async findOne(name: string) {
     const cachedBook = await this.redisCacheService.get('book'); // this is not working
     const cachedBookName = await this.redisCacheService.get('bookName'); // this is not working
-    console.log({ cachedBook, cachedBookName })
+    console.log({ cachedBook, cachedBookName });
     const book = await this.bookRepository.findOne({ name });
     await this.redisCacheService.set('bookName', book.name); // working
     await this.redisCacheService.set('book', book); // working

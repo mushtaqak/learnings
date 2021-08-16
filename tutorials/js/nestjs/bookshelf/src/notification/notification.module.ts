@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SlackModule } from 'nestjs-slack-webhook';
 import { TwilioModule } from 'nestjs-twilio';
 import { NotificationService } from './notification.service';
+import { NotificationController } from './notification.controller';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { NotificationService } from './notification.service';
       inject: [ConfigService],
     }),
   ],
-  controllers: [],
+  controllers: [NotificationController],
   providers: [NotificationService],
   exports: [NotificationService],
 })

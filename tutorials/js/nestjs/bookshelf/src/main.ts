@@ -1,13 +1,15 @@
-import { ValidationPipe } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { NestFactory } from '@nestjs/core';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
+import * as express from 'express';
 import * as compression from 'compression';
 import * as cookieParser from 'cookie-parser';
 import * as helmet from 'helmet';
 import * as csurf from 'csurf';
 import * as session from 'express-session';
-import { join } from 'path';
+import * as bodyParser from 'body-parser';
+import { ValidationPipe } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -28,7 +30,6 @@ async function bootstrap() {
 
   // to protect app against CSRF
   // app.use(csurf());
-
 
   // to use sessions
   app.use(
@@ -58,7 +59,13 @@ async function bootstrap() {
   // MVC settings
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
-  app.setViewEngine('hbs') // (Handlebars) engine --- we can set any templating engine like ejs
+  app.setViewEngine('hbs'); // (Handlebars) engine --- we can set any templating engine like ejs
+
+  // use body parser
+  app.use(bodyParser.json());
+
+  // Set static path
+  app.use(express.static(join(__dirname, '..', 'client')));
 
   // start app
   await app.listen(port);
