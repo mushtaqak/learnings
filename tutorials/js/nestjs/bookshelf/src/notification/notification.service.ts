@@ -11,16 +11,6 @@ const Pusher = require('pusher');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const webpush = require('web-push');
 
-const publicVapidKey =
-  'BJthRQ5myDgc7OSXzPCMftGw-n16F7zQBEN7EUD6XxcfTTvrLGWSIG7y_JxiWtVlCFua0S8MTB5rPziBqNx1qIo';
-const privateVapidKey = '3KzvKasA2SoCxsp0iIG_o9B0Ozvl1XDwI63JRKNIWBM';
-
-webpush.setVapidDetails(
-  'mailto:test@test.com',
-  publicVapidKey,
-  privateVapidKey,
-);
-
 @Injectable()
 export class NotificationService {
   subscribers = [];
@@ -44,6 +34,9 @@ export class NotificationService {
       PUSHER_APP_KEY: process.env.PUSHER_APP_KEY,
       PUSHER_SECRET: process.env.PUSHER_SECRET,
       PUSHER_CLUSTER: process.env.PUSHER_CLUSTER,
+      VAPID_PUBLIC_KEY: process.env.VAPID_PUBLIC_KEY,
+      VAPID_PRIVATE_KEY: process.env.VAPID_PRIVATE_KEY,
+      VAPID_EMAIL: process.env.VAPID_EMAIL,
     });
 
     // initiallize team hook
@@ -57,6 +50,13 @@ export class NotificationService {
       cluster: process.env.PUSHER_CLUSTER,
       useTLS: true,
     });
+
+    // initialize webpush
+    webpush.setVapidDetails(
+      process.env.VAPID_EMAIL,
+      process.env.VAPID_PUBLIC_KEY,
+      process.env.VAPID_PRIVATE_KEY,
+    );
   }
 
   // sends notification to all services
