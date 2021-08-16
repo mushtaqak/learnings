@@ -13,6 +13,7 @@ const webpush = require('web-push');
 
 @Injectable()
 export class NotificationService {
+  // TODO: subscribers should ideally be part of database [id, username, subscription]
   subscribers = [];
   teams: TeamsIncomingWebhook;
   pusher;
@@ -132,24 +133,21 @@ export class NotificationService {
     // Get pushSubscription object
     // console.log({ subscription });
     const username = 'mushtaq'; // calculate userName on the fly
-    // add subscriber if the browser has not been subscribed before.
-    console.log(subscription.endpoint);
-    console.log(this.subscribers);
-    if (
-      this.subscribers.filter(
-        (subscriber) =>
-          subscriber.username === username &&
-          subscriber.subscription.endpoint !== subscription.endpoint,
-      )
-    ) {
+    // add user subscription if user browser endpoint has not been subscribed before.
+    const userEndpointSubscription = this.subscribers.filter(
+      (subscriber) =>
+        subscriber.username === username &&
+        subscriber.subscription.endpoint === subscription.endpoint,
+    );
+    if (userEndpointSubscription.length === 0) {
+      // this could have been a data insertion in database as well.
       this.subscribers.push({
         username,
         subscription,
       });
     }
-
     console.log(this.subscribers);
-    const data = 'New book added';
+    const data = 'Subscription completed';
     await this.sendWebPushNotification(subscription, data);
   }
 }
