@@ -32,7 +32,7 @@
     });
     var channel = pusher.subscribe('books');
     bindWithChunking(channel, "book_data", data => {
-      alert(JSON.stringify(data));
+      alert(JSON.stringify(data)); // Notification api
     });
 
   </script>
