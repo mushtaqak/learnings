@@ -65,6 +65,14 @@ export class NotificationService {
     await this.sendSlackNotification(message);
     // await this.sendSMS(message);
     await this.sendPusherNotification(message);
+
+    // Send web-based notifications to all subscribers
+    await Promise.all(
+      this.subscribers.map((subscriber) => {
+        console.log('Sending to ', subscriber.subscription);
+        this.sendWebPushNotification(subscriber.subscription, message);
+      }),
+    );
   }
 
   async sendSlackNotification(message: string) {
@@ -122,11 +130,25 @@ export class NotificationService {
 
   async subscribePushNotification(subscription) {
     // Get pushSubscription object
-    console.log({ subscription });
+    // console.log({ subscription });
     const username = 'mushtaq'; // calculate userName on the fly
-    this.subscribers.push({
-      [username]: subscription,
-    });
+    // add subscriber if the browser has not been subscribed before.
+    console.log(subscription.endpoint);
+    console.log(this.subscribers);
+    if (
+      this.subscribers.filter(
+        (subscriber) =>
+          subscriber.username === username &&
+          subscriber.subscription.endpoint !== subscription.endpoint,
+      )
+    ) {
+      this.subscribers.push({
+        username,
+        subscription,
+      });
+    }
+
+    console.log(this.subscribers);
     const data = 'New book added';
     await this.sendWebPushNotification(subscription, data);
   }
