@@ -4,6 +4,9 @@ import { SlackModule } from 'nestjs-slack-webhook';
 import { TwilioModule } from 'nestjs-twilio';
 import { NotificationService } from './notification.service';
 import { NotificationController } from './notification.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { SubscriptionService } from './subscription.service';
+import { Subscription } from './entities/subscription.entity';
 
 @Module({
   imports: [
@@ -22,9 +25,10 @@ import { NotificationController } from './notification.controller';
       }),
       inject: [ConfigService],
     }),
+    TypeOrmModule.forFeature([Subscription]),
   ],
   controllers: [NotificationController],
-  providers: [NotificationService],
-  exports: [NotificationService],
+  providers: [NotificationService, SubscriptionService],
+  exports: [NotificationService, SubscriptionService],
 })
 export class NotificationModule {}
