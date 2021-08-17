@@ -1,8 +1,11 @@
+import { In } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { IncomingWebhook } from '@slack/webhook';
 import { InjectSlack } from 'nestjs-slack-webhook';
 import { IncomingWebhook as TeamsIncomingWebhook } from 'ms-teams-webhook';
 import { InjectTwilio, TwilioClient } from 'nestjs-twilio';
+import { SubscriptionService } from './subscription.service';
+import { ALL_PUSH_TYPES, PUSH_TYPES } from './constants';
 // import Pusher from 'pusher'; // TypeError: pusher_1.default is not a constructor
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Pusher = require('pusher');
@@ -13,8 +16,7 @@ const webpush = require('web-push');
 
 @Injectable()
 export class NotificationService {
-  // TODO: subscribers should ideally be part of database [id, username, subscription]
-  subscribers = [];
+  // subscribers = []; // deprecated in favor of db record
   teams: TeamsIncomingWebhook;
   pusher;
 
@@ -23,6 +25,7 @@ export class NotificationService {
     private readonly slack: IncomingWebhook,
     @InjectTwilio()
     private readonly twilio: TwilioClient,
+    private subscriptionService: SubscriptionService,
   ) {
     console.log({
       TEAMS: process.env.MS_TEAMS_WEBHOOK_URL,
@@ -60,20 +63,29 @@ export class NotificationService {
     );
   }
 
-  // sends notification to all services
-  async broadcastNotification(message: string) {
-    await this.sendTeamsNotification(message);
-    await this.sendSlackNotification(message);
-    // await this.sendSMS(message);
-    await this.sendPusherNotification(message);
-
-    // Send web-based notifications to all subscribers
-    await Promise.all(
-      this.subscribers.map((subscriber) => {
-        console.log('Sending to ', subscriber.subscription);
-        this.sendWebPushNotification(subscriber.subscription, message);
-      }),
-    );
+  // sends notification to push services
+  async broadcastNotification(
+    message: string,
+    notificatyonTypes = ALL_PUSH_TYPES,
+    users?: string[],
+  ) {
+    if (notificatyonTypes.includes(PUSH_TYPES.SLACK_PUSH_TYPE)) {
+      await this.sendSlackNotification(message);
+    }
+    if (notificatyonTypes.includes(PUSH_TYPES.TEAMS_PUSH_TYPE)) {
+      await this.sendTeamsNotification(message);
+    }
+    if (notificatyonTypes.includes(PUSH_TYPES.SMS_PUSH_TYPE)) {
+      await this.sendSMS(message);
+    }
+    if (notificatyonTypes.includes(PUSH_TYPES.PUSHER_PUSH_TYPE)) {
+      await this.sendPusherNotification(message);
+    }
+    if (notificatyonTypes.includes(PUSH_TYPES.WEB_PUSH_TYPE)) {
+      // Send web-based notifications to subscribers list
+      // const subscribers = this.subscribers; // deprecated in favour of db record
+      this.sendWebPushNotifications(message, users);
+    }
   }
 
   async sendSlackNotification(message: string) {
@@ -119,6 +131,26 @@ export class NotificationService {
     await this.pusher.trigger('books', 'book_data', message);
   }
 
+  // web push multi device notifications
+  async sendWebPushNotifications(message, users) {
+    const options =
+      users && users.length > 0
+        ? {
+            where: {
+              username: In(users),
+            },
+          }
+        : {};
+    const subscribers = await this.subscriptionService.findAll(options);
+    await Promise.all(
+      subscribers.map((subscriber) => {
+        console.log('Sending to ', subscriber.subscription);
+        this.sendWebPushNotification(subscriber.subscription, message);
+      }),
+    );
+  }
+
+  // web push single push
   async sendWebPushNotification(subscription, message) {
     // Create payload
     const payload = JSON.stringify({ title: message });
@@ -134,19 +166,22 @@ export class NotificationService {
     // console.log({ subscription });
     const username = 'mushtaq'; // calculate userName on the fly
     // add user subscription if user browser endpoint has not been subscribed before.
-    const userEndpointSubscription = this.subscribers.filter(
+    /* deprecated in favour of db record */
+    /*
+    const userEndpointSubscriptions = this.subscribers.filter(
       (subscriber) =>
         subscriber.username === username &&
         subscriber.subscription.endpoint === subscription.endpoint,
     );
-    if (userEndpointSubscription.length === 0) {
+    if (userEndpointSubscriptions.length === 0) {
       // this could have been a data insertion in database as well.
       this.subscribers.push({
         username,
         subscription,
       });
     }
-    console.log(this.subscribers);
+    */
+    await this.subscriptionService.subscribe(username, subscription);
     const data = 'Subscription completed';
     await this.sendWebPushNotification(subscription, data);
   }

@@ -10,6 +10,7 @@ import {
 } from './dto';
 import { Book } from './entities';
 import { NotificationService } from 'src/notification/notification.service';
+import { ALL_PUSH_TYPES } from 'src/notification/constants';
 
 @Injectable()
 export class BookService {
@@ -31,6 +32,7 @@ export class BookService {
     const book = await this.bookRepository.save(bookData);
     this.notificationService.broadcastNotification(
       `A new book "${book.name}" has been published to our bookshelf`,
+      ALL_PUSH_TYPES, // choose which push services to send notification
     );
     return book;
   }
