@@ -6,6 +6,7 @@ import { IncomingWebhook as TeamsIncomingWebhook } from 'ms-teams-webhook';
 import { InjectTwilio, TwilioClient } from 'nestjs-twilio';
 import { SubscriptionService } from './subscription.service';
 import { ALL_PUSH_TYPES, PUSH_TYPES } from './constants';
+import { SseService } from './sse.service';
 // import Pusher from 'pusher'; // TypeError: pusher_1.default is not a constructor
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Pusher = require('pusher');
@@ -26,6 +27,7 @@ export class NotificationService {
     @InjectTwilio()
     private readonly twilio: TwilioClient,
     private subscriptionService: SubscriptionService,
+    private readonly sseService: SseService,
   ) {
     console.log({
       TEAMS: process.env.MS_TEAMS_WEBHOOK_URL,
@@ -85,6 +87,9 @@ export class NotificationService {
       // Send web-based notifications to subscribers list
       // const subscribers = this.subscribers; // deprecated in favour of db record
       this.sendWebPushNotifications(message, users);
+    }
+    if (notificatyonTypes.includes(PUSH_TYPES.SSE_PUSH_TYPE)) {
+      this.sseService.addEvent({ data: { message } });
     }
   }
 

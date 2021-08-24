@@ -7,6 +7,7 @@ import { NotificationController } from './notification.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SubscriptionService } from './subscription.service';
 import { Subscription } from './entities/subscription.entity';
+import { SseService } from './sse.service';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import { Subscription } from './entities/subscription.entity';
     TypeOrmModule.forFeature([Subscription]),
   ],
   controllers: [NotificationController],
-  providers: [NotificationService, SubscriptionService],
+  providers: [NotificationService, SubscriptionService, SseService],
   exports: [NotificationService, SubscriptionService],
 })
 export class NotificationModule {}

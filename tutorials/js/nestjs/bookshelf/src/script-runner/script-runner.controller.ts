@@ -13,7 +13,6 @@ import {
   Req,
   Res,
   Session,
-  Sse,
   // StreamableFile,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
@@ -118,7 +117,7 @@ export class ScriptRunnerController {
     // const file = createReadStream(join(process.cwd(), 'package.json')); // package.json file
     const filePath = join(process.cwd(), `${SCRIPTS_UPLOAD_DIR}/${name}.js`);
     const file = createReadStream(filePath);
-    console.log('in file download', { file })
+    console.log('in file download', { file });
     file.pipe(res);
     // or unccomment file.pipe line and use below
     // return new StreamableFile(filePath);
@@ -144,8 +143,4 @@ export class ScriptRunnerController {
     return this.scriptRunnerService.remove(id);
   }
 
-  @Sse('sse')
-  sse() {
-    return interval(1000).pipe(map((_) => ({ data: { hello: 'world' } })));
-  }
 }

@@ -4,6 +4,7 @@ export enum PUSH_TYPES {
   SMS_PUSH_TYPE = 'SMS_PUSH',
   PUSHER_PUSH_TYPE = 'PUSHER_PUSH',
   WEB_PUSH_TYPE = 'WEB_PUSH',
+  SSE_PUSH_TYPE = 'SSE_PUSH',
 }
 export const ALL_PUSH_TYPES = [
   PUSH_TYPES.TEAMS_PUSH_TYPE,
@@ -11,4 +12,5 @@ export const ALL_PUSH_TYPES = [
   // PUSH_TYPES.SMS_PUSH_TYPE, // commented due to limited trial
   // PUSH_TYPES.PUSHER_PUSH_TYPE, // not used much.
   PUSH_TYPES.WEB_PUSH_TYPE,
+  PUSH_TYPES.SSE_PUSH_TYPE,
 ];
