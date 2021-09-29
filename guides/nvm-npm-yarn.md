@@ -6,6 +6,8 @@ Install nvm via Homebrew
 
 `$ brew install nvm`
 
+or `curl https://raw.githubusercontent.com/creationix/nvm/v0.38.2/install.sh | bash`
+
 Create system directory for nvm
 
 $ mkdir ~/.nvm
