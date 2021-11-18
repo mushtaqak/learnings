@@ -22,6 +22,7 @@ variety of languages and technologies.
 - [Apollo Server Express]('./../tutorials/js/apollo-express.md)
 - [TypeGraphQL](./tutorials/js/typegraphql.md)
 - [TypeORM](./tutorials/js/typeorm/typeorm.md)
+- [Scrapy](./tutorials/python/scrapy/../scrappy/README.md)
 
 ## Python
 
