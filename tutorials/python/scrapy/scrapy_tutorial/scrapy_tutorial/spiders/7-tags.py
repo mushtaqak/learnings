@@ -3,6 +3,13 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
+    # We can also define custom spider settings here
+    # custom_settings = {
+    #     # specifies exported fields and order
+    #     # using here just for ordering since this is a requirment to get data in json in this order
+    #     'FEED_EXPORT_FIELDS': ['name', 'address'],
+    # }
+    # we can also define allowed_domains here
 
     def start_requests(self):
         url = 'http://quotes.toscrape.com/'
