@@ -1,8 +1,8 @@
 import scrapy
 
 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+class TagQuotesSpider(scrapy.Spider):
+    name = "tag_quotes"
     # We can also define custom spider settings here
     # custom_settings = {
     #     # specifies exported fields and order

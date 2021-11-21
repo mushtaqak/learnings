@@ -1,8 +1,8 @@
 import scrapy
 
 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+class BasicQuotesSpider(scrapy.Spider):
+    name = "basic_quotes"
 
     def start_requests(self):
         urls = [

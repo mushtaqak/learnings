@@ -6,34 +6,34 @@
 
 ### Spiders
 
-### 1 - basic spider
+### 1 - basic quotes
 
-- `scrapy crawl quotes`
+- `scrapy crawl basic_quotes`
 
-### 2 - start_urls
+### 2 - start_urls quotes version
 
-- `scrapy crawl quotes`
+- `scrapy crawl start_urls_quotes`
 
-### 3 - store data
+### 3 - store feed quotes in differnt formats
 
-- `scrapy crawl quotes -O quotes.json`
-- `scrapy crawl quotes -o quotes.jl`
+- `scrapy crawl store_feed_quotes -O quotes.json`
+- `scrapy crawl store_feed_quotes -o quotes.jl`
 
-### 4 - follow links (pagination)
+### 4 - paginate quotes
 
-- `scrapy crawl quotes -o quotes.jl`
+- `scrapy crawl paginate_quotes -o quotes.jl`
 
-### 5 - response.follow (pagination)
+### 5 - follow paginate quotes (pagination version extended)
 
-- `scrapy crawl quotes -o quotes.jl`
+- `scrapy crawl follow_paginate_quotes -o quotes.jl`
 
-### 6 - store authors data
+### 6 - author quotes
 
-- `scrapy crawl authot -o authors.jl`
+- `scrapy crawl author_quotes -o authors.jl`
 
-### 6 - using argument
+### 6 - tag_quotes using argument
 
-- `scrapy crawl quotes -O quotes-humor.json -a tag=humor`
+- `scrapy crawl author_quotes -O quotes-humor.json -a tag=humor`
 
 ## Disclaimer
 
