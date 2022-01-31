@@ -7,6 +7,13 @@
 - Chrome / Firefox
   - `$ brew install --cask firefox`
   - `$ brew install --cask google-chrome`
+- Chrome Extensions
+
+  - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko/related?hl=en)
+  - [The Great Suspender Original](https://chrome.google.com/webstore/detail/the-great-suspender-origi/ahmkjjgdligadogjedmnogbpbcpofeeo/related?hl=en)
+  - [Toggl Time Tracker](https://chrome.google.com/webstore/detail/toggl-track-productivity/oejgccbfbmkkpaidnkphaiaecficdnfn)
+  - [ZenMate VPN](https://chrome.google.com/webstore/detail/zenmate-free-vpn%E2%80%93best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=en)
+
 - Antivirus (Kasperski)
 - MS Office
 - Zoom
