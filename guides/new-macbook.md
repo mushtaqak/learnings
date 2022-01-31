@@ -18,6 +18,7 @@
 - MS Office
 - Zoom
   - `$ brew install --cask zoom`
+- Slack
 - VLC
   - `$ brew install --cask vlc`
 - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
