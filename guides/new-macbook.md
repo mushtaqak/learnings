@@ -36,7 +36,9 @@
   - `brew install --cask android-file-transfer`
 - New File Menu
   - Install via Mac Store (not free anymore)
+  - Not needed anymore, since now MacOs can open terminal from a folder.
 - [Whatsapp](https://www.whatsapp.com)
+  - `$ brew install --cask whatsapp` 
 
 ## Dev Applications
 
