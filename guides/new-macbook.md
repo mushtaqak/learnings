@@ -21,6 +21,8 @@
   - `$ brew install --cask zoom`
 - Slack
   - `$ brew install --cask slack`
+- [MS Teams](https://www.microsoft.com/en-ww/microsoft-teams/download-app#desktopAppDownloadregion)
+  - `$ brew install --cask microsoft-teams`
 - VLC
   - `$ brew install --cask vlc`
 - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
@@ -47,7 +49,6 @@
 
 ## Office applications
 
-- [MS Teams](https://www.microsoft.com/en-ww/microsoft-teams/download-app#desktopAppDownloadregion)
 - openconnect
   - `$ brew install openconnect`
 
