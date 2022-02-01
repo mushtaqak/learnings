@@ -49,6 +49,7 @@
 - [Postman](https://www.postman.com/downloads/)
   - `$ brew install --cask postman` 
 - [PG Admin 4](https://www.pgadmin.org/download/)
+  - `$ brew install --cask pgadmin4`
 - [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
 
 ## Office applications
