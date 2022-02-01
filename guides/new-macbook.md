@@ -43,9 +43,11 @@
 ## Dev Applications
 
 - [VS Code](https://code.visualstudio.com)
+  - `$ brew install --cask visual-studio-code` 
   - Also install `Settings Sync` extension and turn it on.
   - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
 - [Postman](https://www.postman.com/downloads/)
+  - `$ brew install --cask postman` 
 - [PG Admin 4](https://www.pgadmin.org/download/)
 - [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
 
