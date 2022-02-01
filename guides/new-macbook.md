@@ -20,6 +20,7 @@
 - Zoom
   - `$ brew install --cask zoom`
 - Slack
+  - `$ brew install --cask slack`
 - VLC
   - `$ brew install --cask vlc`
 - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
