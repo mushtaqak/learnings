@@ -38,19 +38,24 @@
   - Install via Mac Store (not free anymore)
   - Not needed anymore, since now MacOs can open terminal from a folder.
 - [Whatsapp](https://www.whatsapp.com)
-  - `$ brew install --cask whatsapp` 
+  - `$ brew install --cask whatsapp`
+- Redis
+  - `$ brew install redis`
+  - `$ brew services start redis`
 
 ## Dev Applications
 
 - [VS Code](https://code.visualstudio.com)
-  - `$ brew install --cask visual-studio-code` 
+  - `$ brew install --cask visual-studio-code`
   - Also install `Settings Sync` extension and turn it on.
   - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
 - [Postman](https://www.postman.com/downloads/)
-  - `$ brew install --cask postman` 
+  - `$ brew install --cask postman`
 - [PG Admin 4](https://www.pgadmin.org/download/)
   - `$ brew install --cask pgadmin4`
 - [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
+- Red - UI for Redis
+  - Install via Mac Store
 
 ## Office applications
 
