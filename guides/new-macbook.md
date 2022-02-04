@@ -3,6 +3,9 @@
 ## Applications
 
 - [Quick Mac Setup Guide](https://sourabhbajaj.com/mac-setup/)
+- [11 Best Mac Apps](https://www.inputmag.com/guides/best-usb-cables-mechanical-keyboard)
+- Install Xcode command line tools
+  - `$ xcode-select --install` 
 - Install Homebrew
   - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - Chrome / Firefox
@@ -16,7 +19,8 @@
   - [ZenMate VPN](https://chrome.google.com/webstore/detail/zenmate-free-vpn%E2%80%93best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=en)
 
 - Antivirus (Kasperski)
-- MS Office
+- Microsoft 365
+   - Install via App Store 
 - Zoom
   - `$ brew install --cask zoom`
 - Slack
@@ -31,17 +35,27 @@
 - Caffeine
   - `$ brew install --cask caffeine`
 - Guidance (Azan timings)
-  - Install via Mac Store
+  - Install via App Store
 - Android File Transfer
   - `brew install --cask android-file-transfer`
 - New File Menu
-  - Install via Mac Store (not free anymore)
+  - Install via App Store (not free anymore)
   - Not needed anymore, since now MacOs can open terminal from a folder.
 - [Whatsapp](https://www.whatsapp.com)
   - `$ brew install --cask whatsapp`
 - Redis
   - `$ brew install redis`
   - `$ brew services start redis`
+- AppCleaner
+  - `$ brew install --cask appcleaner`
+- Rectangle
+  - `$ brew install --cask rectangle`
+- Hand Mirror
+  - Install via App Store
+- 4K Vidoe Downloader
+  - `$ brew install --cask 4k-video-downloader`
+- The Unarchiver
+  - Install via App Store  
 
 ## Dev Applications
 
