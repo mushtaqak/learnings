@@ -55,7 +55,10 @@
 - 4K Vidoe Downloader
   - `$ brew install --cask 4k-video-downloader`
 - The Unarchiver
-  - Install via App Store  
+  - Install via App Store
+- ITerm2
+  - `$ brew install --cask iterm2`
+-  
 
 ## Dev Applications
 
