@@ -35,9 +35,14 @@ Otherwise, whatever virtualenv defaults to will be the default.
 
 ## Other Commands
 
-1. `graph` will show you a dependency graph of your installed dependencies.
-2. `shell` will spawn a shell with the virtualenv activated. This shell can be deactivated by using exit.
-3. `run` will run a given command from the virtualenv, with any arguments forwarded (e.g. `$ pipenv run python` or `$ pipenv run pip freeze`).
-4. `check` checks for security vulnerabilities and asserts that PEP 508 requirements are being met by the current environment.
+1. `pipenv install` will install all packages mentioned in `Pipfile`.
+2. `pipenv install numpy` will install numpy package.
+3. `pipenv install --ignore-pipfile` will ignore `Pipfile` file but will install packages from `Pipfile.lock` file.
+4. `pipenv install --dev` installs dev dependencies
+5. `pipenv lock` creates `Pipfile.lock` file.
+6. `shell` will spawn a shell with the virtualenv activated. This shell can be deactivated by using exit.
+7. `graph` will show you a dependency graph of your installed dependencies. 
+8. `run` will run a given command from the virtualenv, with any arguments forwarded (e.g. `$ pipenv run python` or `$ pipenv run pip freeze`).
+9. `check` checks for security vulnerabilities and asserts that PEP 508 requirements are being met by the current environment.
 
 [More info on pipenv](https://docs.pipenv.org/en/latest/)
