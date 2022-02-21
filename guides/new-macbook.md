@@ -9,6 +9,8 @@
   - `$ xcode-select --install`
 - Install Homebrew
   - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- [bash autocompletion](https://sourabhbajaj.com/mac-setup/BashCompletion/)
+  - `$ brew install bash-completion`
 
 ## Applications
 
@@ -97,21 +99,29 @@
   - `$ brew install --cask visual-studio-code`
   - Also install `Settings Sync` extension and turn it on.
   - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
-- ITerm2
-  - `$ brew install --cask iterm2`
-- [Postman](https://www.postman.com/downloads/)
-  - `$ brew install --cask postman`
 - [postgres](https://postgresapp.com)
 - [PG Admin 4](https://www.pgadmin.org/download/)
   - `$ brew install --cask pgadmin4`
-- [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
-- Red - UI for Redis
-  - Install via Mac Store
+  - Postgres client
 - Redis
   - `$ brew install redis`
   - `$ brew services start redis`
+- Red - UI for Redis
+  - Install via Mac Store
+  - UI client for redis
+- [Postman](https://www.postman.com/downloads/)
+  - `$ brew install --cask postman`
+  - Send different type of requests
+- [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
 - openconnect
   - `$ brew install openconnect`
+  - Connect to a vpn channel
+- ITerm2
+  - `$ brew install --cask iterm2`
+  - Super terminal for Mac
+- tmux
+  - `$ brew install tmux`
+  - Terminal multiplexer
 
 ## Dev Packages
 
@@ -120,9 +130,6 @@
   - `$ git --version`
   - If for some reason git version does not return latest git version, follow [Use brew's git](https://katopz.medium.com/how-to-upgrade-git-ff00ea12be18) to get this straight.
   - If even after this it doesn't work, restart your machine and hopefully it will work, it always do :P
-- [bash autocompletion](https://sourabhbajaj.com/mac-setup/BashCompletion/)
-  - `$ brew install bash-completion`
-  - `$ brew install tmux`
 - [Python & pyenv](./pyenv-python.md)
 - [nvm, npm & yarn](./nvm-npm-yarn.md)
 - [tmux](../../tools/tmux.md)
