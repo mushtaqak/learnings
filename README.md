@@ -62,10 +62,10 @@ variety of languages and technologies.
 ## Terminal Commands & Tricks
 
 - [Mac Terminal](tools/mac-terminal.md)
-- [Miscellaneous](tools/commandline.md#miscellaneous)
+- [Miscellaneous](tools/terminal-commands-tips-tricks.md#miscellaneous)
 - [Port 8000 already in use](tools/mac-terminal.md#port-8000-already-in-use)
-- [scp](tools/commandline.md#scp-command)
-- [chmod cheetsheet](tools/commandline.md#chmod-cheetsheet)
+- [scp](tools/terminal-commands-tips-tricks.md#scp-command)
+- [chmod cheetsheet](tools/terminal-commands-tips-tricks.md#chmod-cheetsheet)
 
 ## Others
 

@@ -92,6 +92,8 @@
 - NordVPN
   - Install via App Store
   - Paid VPN
+- Typinst
+  - Install via App Store
 
 ## Dev Applications
 
