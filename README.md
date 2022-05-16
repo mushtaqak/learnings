@@ -12,6 +12,7 @@ variety of languages and technologies.
 - [Setting up pyenv-python](./guides/pyenv-python.md)
 - [Seting up jdk](./guides/mac-jdk.md)
 - [Setting up new macbook](./guides/new-macbook.md)
+- [Multiple git accounts](./guides/multiple-git-accounts.md)
 
 ## Tutorials
 
