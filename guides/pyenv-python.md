@@ -1,5 +1,9 @@
 # Install Python & PyEnv
 
+## Prequisite
+
+- `$ brew install openssl readline sqlite3 xz zlib`
+
 ## Install pyenv
 
 - `$ brew install pyenv`
@@ -10,6 +14,7 @@
 - `$ brew install pyenv`
 - `$ pyenv install 3.9.5`
 - `$ pyenv global 3.9.5`
+- `$ pyenv global system`
 - Modify `~/.bashrc`:
 
     ```:bash

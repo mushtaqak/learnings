@@ -46,3 +46,7 @@ Otherwise, whatever virtualenv defaults to will be the default.
 9. `check` checks for security vulnerabilities and asserts that PEP 508 requirements are being met by the current environment.
 
 [More info on pipenv](https://docs.pipenv.org/en/latest/)
+
+## Pipenv with Pyenv
+
+Use `pipenv` (for managing virtualenv & python modules) in conjuction with [`pyenv`](./pyenv-python.md) (for managing python version)
