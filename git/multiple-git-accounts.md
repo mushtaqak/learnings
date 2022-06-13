@@ -36,6 +36,9 @@ id_rsa_work2.pub
 - Create a new .config `$ touch config` and add following content:
 
 ```:bash
+Host *
+UseKeychain yes
+
 # Personal account - default config
 Host github.com-personal
    HostName github.com
