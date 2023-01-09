@@ -10,3 +10,7 @@
 - [Nest.js](./js/nestjs/nestjs.md)
 - [Next.js](./js/nextjs.md)
 - [Web Push Notifications](https://github.com/bradtraversy/node_push_notifications)
+
+## Python
+
+- [Scrpay](./python/scrapy/README.md)
