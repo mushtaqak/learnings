@@ -7,8 +7,7 @@
 - [11 Best Mac Apps](https://www.inputmag.com/guides/best-free-mac-apps-not-google-chrome-slack)
 - Install Xcode command line tools
   - `$ xcode-select --install`
-- Install Homebrew
-  - `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- Install [Homebrew](./../tools/brew.md)
 - [bash autocompletion](https://sourabhbajaj.com/mac-setup/BashCompletion/)
   - `$ brew install bash-completion`
 
@@ -21,6 +20,7 @@
     - [The Great Suspender Original](https://chrome.google.com/webstore/detail/the-great-suspender-origi/ahmkjjgdligadogjedmnogbpbcpofeeo/related?hl=en)
     - [Toggl Time Tracker](https://chrome.google.com/webstore/detail/toggl-track-productivity/oejgccbfbmkkpaidnkphaiaecficdnfn)
     - [ZenMate VPN](https://chrome.google.com/webstore/detail/zenmate-free-vpn%E2%80%93best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=en)
+    - [Urban VPN Desktop](https://www.urban-vpn.com/)
 - Firefox
   - `$ brew install --cask firefox`
 - [Bitdefender Virus Scanner](https://apps.apple.com/pk/app/bitdefender-virus-scanner/id500154009?mt=12)
