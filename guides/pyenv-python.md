@@ -38,7 +38,7 @@
 
 - Reference: [Use python3 instead of python2](https://opensource.com/article/19/5/python-3-default-mac)
 
-## pyenv commands
+## pyenv cpommands
 
 ### python version related commands
 
