@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Launch Scrapy Spider",
+      "type": "python",
+      "request": "launch",
+      "module": "scrapy",
+      // "args": ["runspider", "${file}"], // run file
+      "args": [
+        "crawl",
+        "[SPIDER_NAME]" // spider name
+        // "-a", // optional if there is an argument belwo
+        // "category=restaurants" // optional
+      ],
+      "console": "integratedTerminal"
+    }
+  ]
+}
