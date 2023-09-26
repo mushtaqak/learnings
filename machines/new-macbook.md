@@ -94,6 +94,9 @@
   - Paid VPN
 - Typinst
   - Install via App Store
+- [Sublime Text 3](https://www.sublimetext.com/3)
+  - [Use text editor as default](https://gomakethings.com/changing-the-default-text-editor-on-macos/#:~:text=By%20default%2C%20macOS%20uses%20Apple's,file%2C%20and%20it's%20pretty%20bad.)
+    - `defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'`
 
 ## Dev Applications
 
