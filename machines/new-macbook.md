@@ -29,6 +29,9 @@
 - Microsoft 365
   - Install via App Store
   - Individual application like `MS Word`, `MS Excel` can also be installed separately.
+- LibreOffice
+  - `$ brew install --cask libreoffice`
+  - Tip: [Make LibreOffice look like MS Office](https://www.howtogeek.com/788591/how-to-make-libreoffice-look-like-microsoft-office/)
 - Zoom
   - `$ brew install --cask zoom`
 - Slack
