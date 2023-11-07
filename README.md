@@ -9,6 +9,7 @@ variety of languages and technologies.
 
 - [Setting up new macbook](./machines/new-macbook.md)
 - [Setting up new centos](./machines/new-centos.md)
+- [Shell Aliases](./machines/shell-alias.md)
 
 ## Tutorials
 
