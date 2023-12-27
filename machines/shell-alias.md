@@ -17,7 +17,7 @@ alias gbranchc='git checkout -b'    # gbranchc new-branch
 
 ## Brew
 
-alias brewup='brew update && brew outdated && brew upgrade && brew bundle dump --file=~/Library/Mobile\ Documents/com~apple~CloudDocs/Brewfile'
+alias brewup='brew update && brew outdated && brew upgrade && brew bundle dump --file=~/Library/Mobile\ Documents/com~apple~CloudDocs/Brewfile --force'
 
 ## dev tools
 
