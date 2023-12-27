@@ -13,103 +13,168 @@
 
 ## Applications
 
-- Chrome
-  - `$ brew install --cask google-chrome`
-  - Chrome Extensions
-    - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko/related?hl=en)
-    - [The Great Suspender Original](https://chrome.google.com/webstore/detail/the-great-suspender-origi/ahmkjjgdligadogjedmnogbpbcpofeeo/related?hl=en)
-    - [Toggl Time Tracker](https://chrome.google.com/webstore/detail/toggl-track-productivity/oejgccbfbmkkpaidnkphaiaecficdnfn)
-    - [ZenMate VPN](https://chrome.google.com/webstore/detail/zenmate-free-vpn%E2%80%93best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=en)
-    - [Urban VPN Desktop](https://www.urban-vpn.com/)
-- Firefox
-  - `$ brew install --cask firefox`
-- [Bitdefender Virus Scanner](https://apps.apple.com/pk/app/bitdefender-virus-scanner/id500154009?mt=12)
-  - Install via App Store
-  - Only scans on user action
-- Microsoft 365
-  - Install via App Store
-  - Individual application like `MS Word`, `MS Excel` can also be installed separately.
-- LibreOffice
-  - `$ brew install --cask libreoffice`
-  - Tip: [Make LibreOffice look like MS Office](https://www.howtogeek.com/788591/how-to-make-libreoffice-look-like-microsoft-office/)
-- Zoom
-  - `$ brew install --cask zoom`
-- Slack
-  - Install via App Store  
-  - `$ brew install --cask slack`
-- [MS Teams](https://www.microsoft.com/en-ww/microsoft-teams/download-app#desktopAppDownloadregion)
-  - `$ brew install --cask microsoft-teams`
-- [Whatsapp](https://www.whatsapp.com)
-  - Install via App Store
-  - `$ brew install --cask whatsapp`
-- AppCleaner
-  - `$ brew install --cask appcleaner`
-  - Removes all related files for an application
-- VLC
-  - `$ brew install --cask vlc`
-  - Play multiple video / audio formats
-- The Unarchiver
-  - Install via App Store
-  - Un-compress zip / archived files
-- Rectangle
-  - `$ brew install --cask rectangle`
-  - Manage screen space in an organized way
-- Hand Mirror
-  - Install via App Store
-  - Preview face just before a meeting
-- [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
-  - `$ brew install --cask free-download-manager`
-  - Dowload files from anywhere
-  - Chrome / Safari extention available
-- 4K Vidoe Downloader
-  - `$ brew install --cask 4k-video-downloader`
-  - Download youtube videos
-- Guidance
-  - Install via App Store
-  - Azan timings and notification
-- Android File Transfer
-  - `$ brew install --cask android-file-transfer`
-  - Transfer files to android phones via cable
-- Zapya
-  - Install via App Store
-  - Transfer large files from devices (Android/iPhone to Mac)
-- New File Menu Free
-  - Install via App Store
-  - Add a "Create new file menue"
-- Bandwidth+
-  - Install via App Store
-  - Network usage monitor
-- Caffeine
-  - `$ brew install --cask caffeine`
-  - Manages Mac sleep process
-  - Amphetamine is a good alternate
-- [Memory Clean 2](https://fiplab.com/apps/memory-clean-for-mac) (free version)
-  - Cleans memory and informs about memory hogs
-- Jumpcut
-  - `$ brew install --cask jumpcut`
-  - Clipboard manager for Mac
-- HandBrake
-  - `$ brew install --cask handbrake`
-  - Used for video transcoding
-- [Screen Recording Lite](https://apps.apple.com/pk/app/screen-record-hd-screen-lite/id983477043?mt=12)
-- NordVPN
-  - Install via App Store
-  - Paid VPN
-- Typinst
-  - Install via App Store
-- [Sublime Text 3](https://www.sublimetext.com/3)
-  - [Use text editor as default](https://gomakethings.com/changing-the-default-text-editor-on-macos/#:~:text=By%20default%2C%20macOS%20uses%20Apple's,file%2C%20and%20it's%20pretty%20bad.)
-    - `defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'`
+- Browsers
+  - Chrome
+    - `$ brew install --cask google-chrome`
+    - Chrome Extensions
+      - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko/related?hl=en)
+      - [The Great Suspender Original](https://chrome.google.com/webstore/detail/the-great-suspender-origi/ahmkjjgdligadogjedmnogbpbcpofeeo/related?hl=en)
+      - [Toggl Time Tracker](https://chrome.google.com/webstore/detail/toggl-track-productivity/oejgccbfbmkkpaidnkphaiaecficdnfn)
+      - [ZenMate VPN](https://chrome.google.com/webstore/detail/zenmate-free-vpn%E2%80%93best-vpn/fdcgdnkidjaadafnichfpabhfomcebme?hl=en)
+      - [Urban VPN Desktop](https://www.urban-vpn.com/)
+  - Firefox
+    - `$ brew install --cask firefox`
+  - [Bitdefender Virus Scanner](https://apps.apple.com/pk/app/bitdefender-virus-scanner/id500154009?mt=12)
+    - Install via App Store
+    - Only scans on user action
+  - Microsoft Edge
+  - Brave
+- Social
+  - [Whatsapp](https://www.whatsapp.com)
+    - Install via App Store
+    - Or `$ brew install --cask whatsapp`
+  - Twitter
+    - Install via App Store
+  - Telegram
+    - Install via App Store
+  - Zoom
+    - `$ brew install --cask zoom`
+  - Slack
+    - Install via App Store  
+    - Or `$ brew install --cask slack`
+  - [MS Teams](https://www.microsoft.com/en-ww/microsoft-teams/download-app#desktopAppDownloadregion)
+    - `$ brew install --cask microsoft-teams`
 - [MAS](https://github.com/mas-cli/mas)
   - command line interface for the Mac App Store
   - Writes to Brewfile as well.
+- Utilities
+  - Zapya
+    - Install via App Store
+    - Transfer large files from devices (Android/iPhone to Mac)
+  - AppCleaner
+    - `$ brew install --cask appcleaner`
+    - Removes all related files for an application
+  - VLC
+    - `$ brew install --cask vlc`
+    - Play multiple video / audio formats
+  - The Unarchiver
+    - Install via App Store
+    - Un-compress zip / archived files
+  - [FDM (Free Download Manager)](https://www.freedownloadmanager.org/)
+    - `$ brew install --cask free-download-manager`
+    - Dowload files from anywhere
+    - Chrome / Safari extention available
+  - 4K Vidoe Downloader
+    - `$ brew install --cask 4k-video-downloader`
+    - Download youtube videos
+  - Android File Transfer
+    - `$ brew install --cask android-file-transfer`
+    - Transfer files to android phones via cable
+- Extra Utilities
+  - Typinst
+    - Install via App Store
+  - HandBrake
+    - `$ brew install --cask handbrake`
+    - Used for video transcoding
+  - [Screen Recording Lite](https://apps.apple.com/pk/app/screen-record-hd-screen-lite/id983477043?mt=12)
+- VPN & Security
+  - NordVPN
+    - Install via App Store
+    - Paid VPN
+  - Urban VPN Desktop
+    - Install via App Store
+    - Free
+  - Hotspot Shield
+    - Install via App Store
+    - Paid VPN
+  - 1 Password
+    - Install via App Store
+    - Manages Passwords across devices
+  - Bit Defender Scanner
+    - Install via App Store
+  - AdBlock fo Safari
+    - Install via App Store
+- Menu Utils
+  - [FipLab Apps](https://fiplab.com/)
+    - [Battery Health 2](https://fiplab.com/apps/battery-health-for-mac)
+    - [Memory Clean 2](https://fiplab.com/apps/memory-clean-for-mac) (free version)
+      - Cleans memory and informs about memory hogs
+    - [TaskTab](https://fiplab.com/apps/task-tab-for-mac)
+    - [CopyClip](https://fiplab.com/apps/copyclip-for-mac)
+    - Paste Plain Text
+    - [Download Shuttle](https://fiplab.com/apps/download-shuttle-for-mac)
+    - [Smart Countdown Timer](https://itunes.apple.com/us/app/smart-countdown-timer/id1410709951?mt=12)
+  - Hidden Bar
+    - Install via App Store
+    - Manages Desktop Menus effeciently. Must have app.
+  - TimeOut
+  - Rectangle
+    - `$ brew install --cask rectangle`
+    - Manage screen space in an organized way
+  - Hand Mirror
+    - Install via App Store
+    - Preview face just before a meeting
+  - One Thing
+    - Install via App Store
+    - Lets you add one custom menu which may be 1 thing more important.
+  - Bandwidth+
+    - Install via App Store
+    - Network usage monitor
+  - Caffeine
+    - `$ brew install --cask caffeine`
+    - Manages Mac sleep process
+    - Amphetamine is a good alternate
+  - Amphetamine
+    - Manages Mac sleep process
+    - Install via App Store
+  - Jumpcut
+    - `$ brew install --cask jumpcut`
+    - Clipboard manager for Mac
+  - Network Lite
+    - Install via App Store
+    - Displays network speed
+  - New File Menu Free
+    - Install via App Store
+    - Add a "Create new file menue"
+  - AlDente
+    - `$ brew install --cask aldente`
+    - Manages battery charging!  
+- Games
+  - Asphalt 8
+    - Install via App Store
+  - AmongUs
+    - Install via App Store
+- Islaminc
+  - Guidance
+    - Install via App Store
+    - Azan timings and notification
+  - Islam360
+    - Install via App Store
+    - Learn more about Islam, QUran & Hadith and more!
+  - Quranic
+    - Install via App Store
+    - Learn quranic arabic & vocabulary
+  - Learn Quran
+  - Alif
+    - Install via App Store
+    - Learn Arabic
 
 ## Dev Applications
 
+- Microsoft 365
+  - Install via App Store
+  - Individual application like `MS Word`, `MS Excel` can also be installed separately.
+  - Its not free. Its Read-Only free.
+- LibreOffice
+  - `$ brew install --cask libreoffice`
+  - Tip: [Make LibreOffice look like MS Office](https://www.howtogeek.com/788591/how-to-make-libreoffice-look-like-microsoft-office/)
 - [VS Code](https://code.visualstudio.com)
   - `$ brew install --cask visual-studio-code`
   - Also install `Settings Sync` extension and turn it on.
   - Also run `Install code` command from the VS Code command pallete to get `code` command in the shell terminal.
+- [Sublime Text 3](https://www.sublimetext.com/3)
+  - [Use text editor as default](https://gomakethings.com/changing-the-default-text-editor-on-macos/#:~:text=By%20default%2C%20macOS%20uses%20Apple's,file%2C%20and%20it's%20pretty%20bad.)
+    - `defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'`
 - [postgres](https://postgresapp.com)
 - [PG Admin 4](https://www.pgadmin.org/download/)
   - `$ brew install --cask pgadmin4`
@@ -124,6 +189,8 @@
   - `$ brew install --cask postman`
   - Send different type of requests
 - [Docker](https://desktop.docker.com/mac/stable/amd64/Docker.dmg)
+- Podman
+  - `$ brew install --cask podman-desktop`
 - openconnect
   - `$ brew install openconnect`
   - Connect to a vpn channel
@@ -133,6 +200,20 @@
 - tmux
   - `$ brew install tmux`
   - Terminal multiplexer
+- Android Studio
+  - Download from official [android website](https://developer.android.com/studio).
+- [HTTP Toolkit](https://httptoolkit.com/)
+  - `$ brew install --cask http-toolkit`
+  - Intercept & view all your HTTP
+- [Charles Proxy](https://www.charlesproxy.com/)
+  - View all of the HTTP and SSL / HTTPS traffic
+- PyCharm Community Edition
+  - [Download](https://www.jetbrains.com/edu-products/download/other-PCE.html) from JetBrains
+  - Free version
+- MySQL Workbench
+  - `$ brew install --cask mysqlworkbench`
+  - MySQL client
+- 
 
 ## Dev Packages
 
@@ -146,6 +227,7 @@
 - [tmux](../../tools/tmux.md)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 - [java](./mac-jdk.md)
+- mysql: `$brew install mysql`
 
 ## Other Applications
 
