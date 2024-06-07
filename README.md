@@ -78,6 +78,12 @@ variety of languages and technologies.
 
 - [Software Engineering Interview Resources](others/interview-resources.md)
 
+### Islamic
+
+- [Dor-e-Quran](https://github.com/miankhalid/dora-e-quran)
+- [Quran.com](https://quran.com)
+- [Ruku subjects](./islamic/ruku-subjects.pdf)
+
 ---
 
 ## Inspiration
