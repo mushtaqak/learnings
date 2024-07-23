@@ -21,7 +21,8 @@ variety of languages and technologies.
 - [pyenv-python](./python/pyenv-python.md)
 - [pipenv](./python/pipenv.md)
 - [pep8 E125: Continuation line with same indent as next logical line](./python/pep8-e125.md)
-- [Remove .pyc files](./python/remove-pyc.md)
+- [Remove .pyc files](./python/pip-tips.md#remove-pyc-files)
+- [Install from local package](./python/pip-tips.md#pip-install-from-local-package)
 
 ### Scrapy
 
