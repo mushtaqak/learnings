@@ -13,7 +13,9 @@
         // "-a", // optional if there is an argument belwo
         // "category=restaurants" // optional
       ],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      // to be able to apply debugging point to installed packages
+      "justMyCode": false
     }
   ]
 }
