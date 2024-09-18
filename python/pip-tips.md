@@ -5,3 +5,7 @@
 
 $ `pip install .`
 $ `pip install -e ".[extras-key-name-separated-by-camma-if-any]"`
+
+## pip install from a branch
+
+$ `pip install -e git+https://github.com/[package-path].git@[branch-name]#egg=[package-name]`
